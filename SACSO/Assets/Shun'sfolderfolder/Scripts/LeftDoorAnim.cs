@@ -25,6 +25,7 @@ public class LeftDoorAnim : MonoBehaviour
         {
             // アニメーションパラメータをNextStateにする。(ドアを開閉する) true:開く false:閉まる
             animator.SetBool("Open", NextState);
+            Debug.Log("****");
             GetComponent<Pushdoor>();
             //次のステートに変更
             if (NextState) NextState = false;
