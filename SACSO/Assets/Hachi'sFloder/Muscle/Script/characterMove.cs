@@ -26,7 +26,7 @@ public class characterMove : MonoBehaviour
     public float speedX;
     public float speedJump;
     public float accelerationZ;
-    public float punchspeed;
+   
     void Start()
     {
         //GetComponentでCharacterControllerwp取得して変数controllseで参照します。
@@ -42,6 +42,7 @@ public class characterMove : MonoBehaviour
         if (Input.GetKeyDown("left")) MoveToLeft();
         if (Input.GetKeyDown("right")) MoveToRight();
         if (Input.GetKeyDown("space")) Jump();
+        //攻撃は今のところＺ
         if (Input.GetKeyDown("z")) Attack();
 
         float acceleratedZ = moveDirection.z + (accelerationZ * Time.deltaTime);
@@ -58,7 +59,7 @@ public class characterMove : MonoBehaviour
 
         if (controller.isGrounded) moveDirection.y = 0;
 
-        animator.SetBool("run", moveDirection.z > 0.0f);
+        animator.SetBool("run", moveDirection.z >= 0.0f);
 
 
     }
