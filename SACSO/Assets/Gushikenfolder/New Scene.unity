@@ -152,9 +152,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scrollBlockObject: {fileID: 5190987969772659503, guid: cd6fee2dd360e9c43a0c3643da375907,
     type: 3}
-  blockPopPoint: {fileID: 1541518657}
+  blockPopPoint: {fileID: 682426503}
   blockMoveForward: {x: 0, y: 0, z: -6}
-  before_block_create_count: 2
+  before_block_create_count: 5
 --- !u!4 &682426503
 Transform:
   m_ObjectHideFlags: 0
@@ -163,11 +163,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682426501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.9, y: 0, z: -67}
+  m_LocalPosition: {x: 0, y: 0, z: 418}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1186510617
 PrefabInstance:
@@ -413,36 +413,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1541518656
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1541518657}
-  m_Layer: 0
-  m_Name: ScrollPoint
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1541518657
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1541518656}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 418}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2009485021
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -463,7 +433,7 @@ PrefabInstance:
     - target: {fileID: -4216859302048453862, guid: 82c5af1a6771bfc4e96d3a5e41961f72,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -66
+      value: -253
       objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 82c5af1a6771bfc4e96d3a5e41961f72,
         type: 3}
@@ -537,7 +507,7 @@ PrefabInstance:
     - target: {fileID: 5190987969772659491, guid: cd6fee2dd360e9c43a0c3643da375907,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -43
+      value: -249
       objectReference: {fileID: 0}
     - target: {fileID: 5190987969772659491, guid: cd6fee2dd360e9c43a0c3643da375907,
         type: 3}
