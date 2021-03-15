@@ -31,12 +31,12 @@ public class Player : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A)|| Input.GetKey(KeyCode.LeftArrow))        //左移動
         {
-            x = -7.0f;
+            x = -1 * speed;
         }
 
         if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))      //右移動
         {
-            x = 7.0f;
+            x = speed;
         }
 
 
