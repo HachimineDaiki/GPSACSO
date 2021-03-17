@@ -19,7 +19,7 @@ public class enemyMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        direction = new Vector3(transform.position.x, transform.position.y, -10f);    //ターゲットの座標
+        direction = new Vector3(transform.position.x, transform.position.y, -20f);    //ターゲットの座標
         KillFlg = false;
         distance = 0f;
         StartPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
@@ -51,7 +51,7 @@ public class enemyMove : MonoBehaviour
            distance = 1f;
         }
         transform.position = Vector3.Lerp(StartPosition, direction, distance);
-        if (distance >= 1.0f) KillFlg = true;
+        if (distance >= 1.0f) Destroy(gameObject);
         
     }
 
@@ -62,5 +62,13 @@ public class enemyMove : MonoBehaviour
         rb.AddForce(vector3, ForceMode.Impulse);
         rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
         Destroy(gameObject, 3f);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.name == "HitDet")
+        {
+            KillFlg = true;
+        }
     }
 }
