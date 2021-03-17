@@ -154,7 +154,6 @@ MonoBehaviour:
   scrollBlockObject: {fileID: 5190987969772659503, guid: cd6fee2dd360e9c43a0c3643da375907,
     type: 3}
   blockPopPoint: {fileID: 682426503}
-  blockMoveForward: {x: 0, y: 0, z: -6}
   before_block_create_count: 5
 --- !u!4 &682426503
 Transform:
