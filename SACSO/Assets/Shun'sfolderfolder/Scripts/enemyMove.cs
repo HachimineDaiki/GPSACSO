@@ -49,7 +49,7 @@ public class enemyMove : MonoBehaviour
     private void Move()
     {
         float Dushspd = 1.0f;
-        if (runaway.DushFlg) Dushspd = 3.0f;
+        if (runaway.DushFlg) Dushspd = 2.5f;
 
         if (distance <= 1f)
         {
@@ -66,7 +66,6 @@ public class enemyMove : MonoBehaviour
 
     private void Damege()
     {
-
         Vector3 vector3 = new Vector3(0f, 1.2f, 1.4f);
         rb.AddForce(vector3, ForceMode.Impulse);
         rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);

@@ -7,6 +7,7 @@ public class HitActive : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject HitDetect;
     float HitTime;      //攻撃有効時間
+    private Pmove play;
 
     [SerializeField] private const float AttackTime = 0.5f;
 
@@ -14,41 +15,25 @@ public class HitActive : MonoBehaviour
     {
         HitDetect.SetActive(false);
         HitTime = 0f;
+
+        play = GameObject.Find("MuscleHuman").GetComponent<Pmove>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(HitTime <= 0f)
-        {
-            HitAct();
-        }
-        Timer();
-        ChangeActive();
-
+        HitAct();
     }
 
     void HitAct()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (play.punch)
         {
             HitDetect.SetActive(true);
-            HitTime = AttackTime;
         }
-    }
-
-    void Timer()
-    {
-        if(HitTime > 0f)
+        else
         {
-            HitTime -= Time.deltaTime;
-
+            HitDetect.SetActive(false);
         }
-    }
-
-    void ChangeActive()
-    {
-        if(HitTime > 0f) HitDetect.SetActive(true);
-        else HitDetect.SetActive(false);
     }
 }
