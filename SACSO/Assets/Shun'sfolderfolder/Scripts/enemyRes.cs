@@ -41,7 +41,6 @@ public class enemyRes : MonoBehaviour
 
         int Range = Random.Range(0, 4);
         DecisionX = PosX[Range];
-        Debug.Log(Range);
 
         return DecisionX;
     }

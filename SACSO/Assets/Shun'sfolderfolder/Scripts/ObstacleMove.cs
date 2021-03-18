@@ -2,12 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-[RequireComponent(typeof(Rigidbody))]
-public class enemyMove : MonoBehaviour
+public class ObstacleMove : MonoBehaviour
 {
-    Vector3 direction; 
-    [SerializeField] private float speed =3.0f;        //敵の移動速度
+    Vector3 direction;
+    [SerializeField] private float speed = 3.0f;        //敵の移動速度
     [SerializeField] private float distance;
     [SerializeField] private Vector3 StartPosition;
 
@@ -53,15 +51,16 @@ public class enemyMove : MonoBehaviour
 
         if (distance <= 1f)
         {
-            distance += (Time.deltaTime / speed ) * Dushspd;
+            distance += (Time.deltaTime / speed) * Dushspd;
         }
         else
         {
-           distance = 1f;
+            distance = 1f;
         }
         transform.position = Vector3.Lerp(StartPosition, direction, distance);
+        transform.Rotate(Vector3.right * 5.0f, Space.World);
         if (distance >= 1.0f) Destroy(gameObject);
-        
+
     }
 
     private void Damege()
@@ -75,13 +74,12 @@ public class enemyMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.name == "HitDet")
+        if (other.name == "PlayerDet")
         {
-            KillFlg = true;
-            rb.freezeRotation = false;
+            playerLife.Damege();
         }
 
-        if (other.name == "PlayerDet")
+        if (other.name == "HitDet")
         {
             playerLife.Damege();
         }
