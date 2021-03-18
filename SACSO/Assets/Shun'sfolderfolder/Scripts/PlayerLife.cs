@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class PlayerLife : MonoBehaviour
         if(Life <= 0)
         {
             //ゲームオーバーへ
-
+            SceneManager.LoadScene("GameOver");
         }
     }
 }
