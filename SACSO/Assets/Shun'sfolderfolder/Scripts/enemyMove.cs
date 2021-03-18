@@ -11,6 +11,8 @@ public class enemyMove : MonoBehaviour
     [SerializeField] private float distance;
     [SerializeField] private Vector3 StartPosition;
 
+    private Runaway runaway;
+
 
     private bool KillFlg;       //殴られた判定
     Rigidbody rb;
@@ -19,11 +21,13 @@ public class enemyMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        direction = new Vector3(transform.position.x, transform.position.y, -20f);    //ターゲットの座標
+        direction = new Vector3(transform.position.x, transform.position.y, -90f);    //ターゲットの座標
         KillFlg = false;
         distance = 0f;
         StartPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
         speed = Random.Range(2.0f, 5.5f);
+
+        runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
 
     }
 
@@ -42,9 +46,12 @@ public class enemyMove : MonoBehaviour
 
     private void Move()
     {
+        float Dushspd = 1.0f;
+        if (runaway.DushFlg) Dushspd = 3.0f;
+
         if (distance <= 1f)
         {
-            distance += Time.deltaTime / speed;
+            distance += (Time.deltaTime / speed ) * Dushspd;
         }
         else
         {
@@ -69,6 +76,7 @@ public class enemyMove : MonoBehaviour
         if(other.name == "HitDet")
         {
             KillFlg = true;
+            rb.freezeRotation = false;
         }
     }
 }

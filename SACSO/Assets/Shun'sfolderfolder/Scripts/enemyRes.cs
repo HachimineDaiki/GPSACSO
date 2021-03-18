@@ -6,18 +6,30 @@ public class enemyRes : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject enemy;
+
+    [SerializeField] private float NextappearTime = 0f;
+    [SerializeField] private float ElapsedTime = 0f;
+
+    public float Maxsec = 5.0f;
+    public float Minsec = 2.0f;
+
+
     Vector3 RespornPosition;
     void Start()
     {
+        NextappearTime = Random.Range(Minsec, Maxsec);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        ElapsedTime += Time.deltaTime;
+
+        if (ElapsedTime > NextappearTime)
         {
-            RespornPosition = new Vector3(Xcreate(), enemy.transform.position.y, transform.position.z);
-            Instantiate(enemy, RespornPosition,enemy.transform.rotation);
+            enemySpawn();
+            ElapsedTime = 0f;
+            NextappearTime = Random.Range(Minsec, Maxsec);
         }
 
     }
@@ -32,5 +44,11 @@ public class enemyRes : MonoBehaviour
         Debug.Log(Range);
 
         return DecisionX;
+    }
+
+    void enemySpawn()
+    {
+        RespornPosition = new Vector3(Xcreate(), enemy.transform.position.y, transform.position.z);
+        Instantiate(enemy, RespornPosition, enemy.transform.rotation);
     }
 }
