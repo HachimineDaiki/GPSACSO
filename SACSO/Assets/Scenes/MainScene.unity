@@ -1213,23 +1213,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 10, z: 0}
---- !u!114 &81605377448135019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8214573136781588222}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc994b04bb04fd14096ae4182ed6272c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gravity: 50
-  speedZ: 0
-  speedX: 50
-  speedJump: 20
-  accelerationZ: 100
 --- !u!1 &86227810756460893
 GameObject:
   m_ObjectHideFlags: 0
@@ -3267,9 +3250,9 @@ GameObject:
   - component: {fileID: 4925635509834990829}
   - component: {fileID: 3085349094317058455}
   - component: {fileID: 81605377448135018}
-  - component: {fileID: 81605377448135019}
   - component: {fileID: 8214573136781588223}
   - component: {fileID: 8214573136781588224}
+  - component: {fileID: 8214573136781588225}
   m_Layer: 0
   m_Name: MuscleHuman
   m_TagString: Player
@@ -3303,6 +3286,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 0
+--- !u!114 &8214573136781588225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8214573136781588222}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fe4014434393b443836f1cb236cf61b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedX: 50
+  gravity: 50
 --- !u!1 &8230803827982074523
 GameObject:
   m_ObjectHideFlags: 0

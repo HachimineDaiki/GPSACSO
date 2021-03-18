@@ -22,7 +22,9 @@ public class Pmove : MonoBehaviour
 
     int targetLane;
 
-    bool nowExecCoroutine_ = false; //コルーチンが実行中かどうか
+    //bool nowExecCoroutine_ = false; //コルーチンが実行中かどうか
+
+    public bool punch = false;
 
       // Start is called before the first frame update
     void Start()
@@ -43,7 +45,7 @@ public class Pmove : MonoBehaviour
         if (Input.GetKeyDown("z")) MoveAttack();
         if (Input.GetButtonDown("Fire1")) MoveAttack();
 
-        if (Time.time - lastTimeArrowkeyDown_ > 0.25f)
+        if (Time.time - lastTimeArrowkeyDown_ > 0.1f)
         {
             MoveF310();
         }
@@ -59,29 +61,29 @@ public class Pmove : MonoBehaviour
         //走る
         animator.SetBool("run", PlayMove.z >= 0);
 
-
+        Debug.Log(Input.GetAxisRaw("R_Horizontal"));
     }
 
     void MoveF310()
     {
-        if (Input.GetAxisRaw("R_Horizontal") == 0)
+        if (Input.GetAxisRaw("Horizontal") == 0)
         {  
             lastTimeArrowkeyDown_ = Time.time;
         }
-        else if(Input.GetAxisRaw("R_Horizontal") == 1)
+        else if(Input.GetAxisRaw("Horizontal") == 1)
         {
             if (controller.isGrounded && targetLane < RLane) targetLane++;
             
             lastTimeArrowkeyDown_ = Time.time;
             
         }
-        else if (Input.GetAxisRaw("R_Horizontal") == -1)
+        else if(Input.GetAxisRaw("Horizontal") == -1)
         {
             if (controller.isGrounded && targetLane > LLane) targetLane--;
-            Debug.Log("ゴミ");
             lastTimeArrowkeyDown_ = Time.time;
-            
+
         }
+
     }
 
     public void MoveRight()
@@ -99,6 +101,12 @@ public class Pmove : MonoBehaviour
         if (controller.isGrounded)
         {
             animator.SetTrigger("attack");
+            punch = true;
+            Invoke("punchreset",0.8f);
         }
+    }
+    void punchreset()
+    {
+        punch = false;
     }
 }
