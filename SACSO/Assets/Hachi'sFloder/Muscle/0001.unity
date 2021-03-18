@@ -471,6 +471,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: MuscleHuman
       objectReference: {fileID: 0}
+    - target: {fileID: 3073771448749512055, guid: 19c9eca4474dd76409bc5eee43803397,
+        type: 3}
+      propertyPath: inputSpeed
+      value: 15
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19c9eca4474dd76409bc5eee43803397, type: 3}
 --- !u!1 &3296210805214317221 stripped
