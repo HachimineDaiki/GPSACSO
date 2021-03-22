@@ -74,12 +74,12 @@ public class ObstacleMove : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "PlayerDet")
+        if (other.name == "PlayerDet" && !runaway.DushFlg)
         {
             playerLife.Damege();
         }
 
-        if (other.name == "HitDet")
+        if (other.name == "HitDet" && !runaway.DushFlg)
         {
             playerLife.Damege();
         }
