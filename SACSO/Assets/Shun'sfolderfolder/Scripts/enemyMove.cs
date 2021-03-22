@@ -14,6 +14,10 @@ public class enemyMove : MonoBehaviour
     private Runaway runaway;
     private PlayerLife playerLife;
 
+    Material material;
+
+    float Des;
+
 
     private bool KillFlg;       //殴られた判定
     Rigidbody rb;
@@ -30,6 +34,9 @@ public class enemyMove : MonoBehaviour
 
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
         playerLife = GameObject.Find("MuscleHuman").GetComponent<PlayerLife>();
+
+        Des = 0f;
+        material = GetComponent<Renderer>().material;
 
     }
 
@@ -69,7 +76,7 @@ public class enemyMove : MonoBehaviour
         Vector3 vector3 = new Vector3(0f, 1.2f, 1.4f);
         rb.AddForce(vector3, ForceMode.Impulse);
         rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
-        Destroy(gameObject, 3f);
+        shadderBreak();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -77,12 +84,26 @@ public class enemyMove : MonoBehaviour
         if(other.name == "HitDet")
         {
             KillFlg = true;
+            Destroy(gameObject, 1f);
             rb.freezeRotation = false;
         }
 
         if (other.name == "PlayerDet")
         {
             playerLife.Damege();
+        }
+    }
+
+    private void shadderBreak()
+    {
+        if (Des < 1f)
+        {
+            Des += Time.deltaTime / 0.5f;
+        }
+
+        if (material.HasProperty("_Destruction"))
+        {
+            material.SetFloat("_Destruction", Des);
         }
     }
 }
