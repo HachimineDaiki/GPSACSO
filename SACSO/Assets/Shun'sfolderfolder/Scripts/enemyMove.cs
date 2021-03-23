@@ -90,7 +90,14 @@ public class enemyMove : MonoBehaviour
 
         if (other.name == "PlayerDet")
         {
-            playerLife.Damege();
+            if (runaway.DushFlg)
+            {
+                KillFlg = true;
+            }
+            else
+            {
+                playerLife.Damege();
+            }
         }
     }
 
