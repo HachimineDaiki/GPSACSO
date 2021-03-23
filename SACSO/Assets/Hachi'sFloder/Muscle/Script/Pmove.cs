@@ -61,7 +61,8 @@ public class Pmove : MonoBehaviour
         //走る
         animator.SetBool("run", PlayMove.z >= 0);
 
-        Debug.Log(Input.GetAxisRaw("R_Horizontal"));
+        Debug.Log(Input.GetAxisRaw("Horizontal"));
+
     }
 
     void MoveF310()

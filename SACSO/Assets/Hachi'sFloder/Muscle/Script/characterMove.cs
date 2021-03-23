@@ -59,7 +59,7 @@ public class characterMove : MonoBehaviour
 
         if (controller.isGrounded) moveDirection.y = 0;
 
-        animator.SetBool("run", moveDirection.z >= 0.0f);
+        animator.SetBool("run", moveDirection.z >= 1f);
 
 
     }
