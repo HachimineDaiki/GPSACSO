@@ -13,6 +13,7 @@ public class enemyMove : MonoBehaviour
 
     private Runaway runaway;
     private PlayerLife playerLife;
+    private ScoreCon score;
 
     Material material;
 
@@ -33,6 +34,7 @@ public class enemyMove : MonoBehaviour
         speed = Random.Range(2.0f, 5.5f);
 
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
+        score = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
         playerLife = GameObject.Find("MuscleHuman").GetComponent<PlayerLife>();
 
         Des = 0f;
@@ -84,6 +86,7 @@ public class enemyMove : MonoBehaviour
         if(other.name == "HitDet")
         {
             KillFlg = true;
+            score.AddPoint(100);
             Destroy(gameObject, 1f);
             rb.freezeRotation = false;
         }
@@ -93,6 +96,7 @@ public class enemyMove : MonoBehaviour
             if (runaway.DushFlg)
             {
                 KillFlg = true;
+                score.AddPoint(100);
             }
             else
             {

@@ -19,12 +19,30 @@ public class Runaway : MonoBehaviour
     void Update()
     {
         
-        if (_hp > 1 && !DushFlg)
+        //if (_hp > 1 && !DushFlg)
+        //{
+        //    DushFlg = true;
+        //    Invoke("Refresh", DushTime);
+        //}
+        //else
+        //{
+        //    _hp += 0.05f * Time.deltaTime;
+        //}
+
+        if(_hp >= 1f)       //ゲージがMAXになったら
         {
             DushFlg = true;
-            Invoke("Refresh", DushTime);
         }
-        else
+        else if(_hp <= 0)       //ゲージが0になったら
+        {
+            DushFlg = false;
+        }
+
+        if (DushFlg)        //tureならダッシュ状態
+        {
+            _hp -= 0.1f * Time.deltaTime;
+        }
+        else　           　 //falseなら通常状態
         {
             _hp += 0.05f * Time.deltaTime;
         }
