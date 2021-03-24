@@ -26,6 +26,11 @@ public class Pmove : MonoBehaviour
 
     public bool punch = false;
 
+
+
+    //長押し移動を防止する　　具志堅が操作
+    public bool MoveFlg=false;
+
       // Start is called before the first frame update
     void Start()
     {
@@ -40,7 +45,7 @@ public class Pmove : MonoBehaviour
     void Update()
     {
         //矢印の向きに移動
-        if (Input.GetKeyDown("left")) MoveLeft();
+        if (Input.GetKeyDown("left")) MoveLeft(); 
         if (Input.GetKeyDown("right")) MoveRight();
         if (Input.GetKeyDown("z")) MoveAttack();
         if (Input.GetButtonDown("Fire1")) MoveAttack();
@@ -61,40 +66,51 @@ public class Pmove : MonoBehaviour
         //走る
         animator.SetBool("run", PlayMove.z >= 0);
 
-        Debug.Log(Input.GetAxisRaw("Horizontal"));
+        //Debug.Log(Input.GetAxis("Horizontal"));
+        Debug.Log(MoveFlg);
 
     }
 
+ 
+
     void MoveF310()
     {
-        if (Input.GetAxisRaw("Horizontal") == 0)
-        {  
-            lastTimeArrowkeyDown_ = Time.time;
-        }
-        else if(Input.GetAxisRaw("Horizontal") == 1)
-        {
-            if (controller.isGrounded && targetLane < RLane) targetLane++;
-            
-            lastTimeArrowkeyDown_ = Time.time;
-            
-        }
-        else if(Input.GetAxisRaw("Horizontal") == -1)
-        {
-            if (controller.isGrounded && targetLane > LLane) targetLane--;
-            lastTimeArrowkeyDown_ = Time.time;
+ 
+            if (Input.GetAxis("Horizontal") == 0)
+            {
+                lastTimeArrowkeyDown_ = Time.time;
+
+                MoveFlg = false;   //具志堅が操作
+            }
+            else if (Input.GetAxis("Horizontal") == 1 && MoveFlg == false)
+            {
+                if (controller.isGrounded && targetLane < RLane) targetLane++;
+
+                lastTimeArrowkeyDown_ = Time.time;
+                MoveFlg = true;//具志堅が操作
 
         }
+            else if (Input.GetAxis("Horizontal") == -1 && MoveFlg == false)
+            {
+                if (controller.isGrounded && targetLane > LLane) targetLane--;
+
+                lastTimeArrowkeyDown_ = Time.time;
+                MoveFlg = true;//具志堅が操作
+        }
+    
 
     }
 
     public void MoveRight()
     {
         if (controller.isGrounded && targetLane < RLane) targetLane++;
+       
     }
   
     public void MoveLeft()
     {
         if (controller.isGrounded && targetLane > LLane) targetLane--;
+        
     }
 
     public void MoveAttack()
