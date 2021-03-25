@@ -212,7 +212,7 @@ Transform:
   m_LocalScale: {x: 86.18213, y: 1, z: 100000}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &868602725
 GameObject:
@@ -305,7 +305,7 @@ Transform:
   m_LocalScale: {x: 89.208755, y: 35.66496, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1289434766
 GameObject:
@@ -389,7 +389,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 19.624, y: 0, z: 0}
 --- !u!114 &1289434770
 MonoBehaviour:
@@ -931,7 +931,7 @@ Transform:
   - {fileID: 535013651701420041}
   - {fileID: 2026608241999338032}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2026608241999338032
 Transform:
@@ -1085,6 +1085,75 @@ Transform:
   m_Father: {fileID: 2035140788553035063}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2651975852218009889
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.28159618
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.099999994
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.9572563
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2600521415594525741, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412946625696276119, guid: ad41f80e60618ef4bb04f7bb53b10120,
+        type: 3}
+      propertyPath: m_Name
+      value: massuruhuku
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ad41f80e60618ef4bb04f7bb53b10120, type: 3}
 --- !u!4 &2814782606405893352
 Transform:
   m_ObjectHideFlags: 0
@@ -1274,7 +1343,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3296210805214317222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1302,6 +1371,7 @@ MonoBehaviour:
   speedX: 60
   gravity: 60
   punch: 0
+  MoveFlg: 0
 --- !u!4 &3350815800435287052
 Transform:
   m_ObjectHideFlags: 0
