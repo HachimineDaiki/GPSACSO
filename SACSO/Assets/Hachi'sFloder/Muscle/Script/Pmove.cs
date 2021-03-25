@@ -50,7 +50,7 @@ public class Pmove : MonoBehaviour
         if (Input.GetKeyDown("z")) MoveAttack();
         if (Input.GetButtonDown("Fire1")) MoveAttack();
 
-        if (Time.time - lastTimeArrowkeyDown_ > 0.1f)
+        if (Time.time - lastTimeArrowkeyDown_ > 0.01f)
         {
             MoveF310();
         }
