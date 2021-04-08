@@ -11,7 +11,7 @@ public class PartsHuge : MonoBehaviour
 
     private float RightHugeRate, LeftHugeRate;
 
-    private static float HugeRate = 0.2f;
+    private static float HugeRate = 0.05f;
     private static float SmallRate = 0.1f;
 
     Vector3 StartScale = new Vector3(1f, 1f, 1f);
@@ -79,7 +79,15 @@ public class PartsHuge : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            SmallRight();
+            HugeLeft();
+        }
+        if (Input.GetButtonDown("Fire1"))
+        {
+            HugeRight();
+        }
+        if (Input.GetButtonDown("Fire2"))
+        {
+            HugeLeft();
         }
     }
 }

@@ -50,6 +50,7 @@ public class Pmove : MonoBehaviour
         if (Input.GetKeyDown("z")) MoveAttack();
         if (Input.GetButtonDown("Fire1")) MoveAttack();
         if (Input.GetKeyDown("x")) MoveAttack2();
+        if (Input.GetButtonDown("Fire2")) MoveAttack2();
 
         if (Time.time - lastTimeArrowkeyDown_ > 0.01f)
         {
