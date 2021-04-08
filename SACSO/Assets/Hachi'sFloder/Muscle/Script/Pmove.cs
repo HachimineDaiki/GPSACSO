@@ -49,6 +49,8 @@ public class Pmove : MonoBehaviour
         if (Input.GetKeyDown("right")) MoveRight();
         if (Input.GetKeyDown("z")) MoveAttack();
         if (Input.GetButtonDown("Fire1")) MoveAttack();
+        if (Input.GetKeyDown("x")) MoveAttack2();
+        if (Input.GetButtonDown("Fire2")) MoveAttack2();
 
         if (Time.time - lastTimeArrowkeyDown_ > 0.01f)
         {
@@ -120,6 +122,15 @@ public class Pmove : MonoBehaviour
             animator.SetTrigger("attack");
             punch = true;
             Invoke("punchreset",0.8f);
+        }
+    }
+    public void MoveAttack2()
+    {
+        if (controller.isGrounded)
+        {
+            animator.SetTrigger("attack2");
+            punch = true;
+            Invoke("punchreset", 0.8f);
         }
     }
     void punchreset()

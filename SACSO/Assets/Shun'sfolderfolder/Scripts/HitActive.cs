@@ -16,7 +16,7 @@ public class HitActive : MonoBehaviour
         HitDetect.SetActive(false);
         HitTime = 0f;
 
-        play = GameObject.Find("MuscleHuman").GetComponent<Pmove>();
+        play = gameObject.GetComponent<Pmove>();
     }
 
     // Update is called once per frame

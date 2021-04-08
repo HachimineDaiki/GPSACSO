@@ -13,7 +13,7 @@ public class LifeChange : MonoBehaviour
     void Start()
     {
         LifeImage.sprite = Green;
-        playerLife = GameObject.Find("MuscleHuman").GetComponent<PlayerLife>();
+        playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
     }
 
     // Update is called once per frame
