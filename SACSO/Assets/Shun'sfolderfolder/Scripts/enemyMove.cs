@@ -15,10 +15,11 @@ public class enemyMove : MonoBehaviour
     private PlayerLife playerLife;
     private ScoreCon score;
 
+    public GameObject explosion;
+
     Material material;
 
     float Des;
-
 
     private bool KillFlg;       //殴られた判定
     Rigidbody rb;
@@ -75,20 +76,23 @@ public class enemyMove : MonoBehaviour
 
     private void Damege()
     {
-        Vector3 vector3 = new Vector3(0f, 1.2f, 1.4f);
+        Vector3 vector3 = new Vector3(0f, 0.6f, 2.8f);
         rb.AddForce(vector3, ForceMode.Impulse);
         rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
-        shadderBreak();
+        //shadderBreak();
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if(other.name == "HitDet")
         {
-            KillFlg = true;
+            //Instantiate(explosion, this.transform.position, Quaternion.identity);
+            Invoke("ExplosionSet",1f);
+;            KillFlg = true;
             score.AddPoint(100);
             Destroy(gameObject, 1f);
             rb.freezeRotation = false;
+            //Debug.Break();
         }
 
         if (other.name == "PlayerDet")
@@ -116,5 +120,9 @@ public class enemyMove : MonoBehaviour
         {
             material.SetFloat("_Destruction", Des);
         }
+    }
+    private void ExplosionSet()
+    {
+        Instantiate(explosion, this.transform.position, Quaternion.identity);
     }
 }
