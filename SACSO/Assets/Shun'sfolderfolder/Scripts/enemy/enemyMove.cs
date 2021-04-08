@@ -36,7 +36,7 @@ public class enemyMove : MonoBehaviour
 
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
         score = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
-        playerLife = GameObject.Find("MuscleHuman").GetComponent<PlayerLife>();
+        playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
 
         Des = 0f;
         material = GetComponent<Renderer>().material;
