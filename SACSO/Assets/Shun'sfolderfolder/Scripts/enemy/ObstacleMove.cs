@@ -27,7 +27,7 @@ public class ObstacleMove : MonoBehaviour
         speed = Random.Range(2.0f, 5.5f);
 
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
-        playerLife = GameObject.Find("MuscleHuman").GetComponent<PlayerLife>();
+        playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
 
     }
 
