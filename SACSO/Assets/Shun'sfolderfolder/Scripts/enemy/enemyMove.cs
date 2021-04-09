@@ -76,7 +76,7 @@ public class enemyMove : MonoBehaviour
 
     private void Damege()
     {
-        Vector3 vector3 = new Vector3(0f, 0.6f, 2.8f);
+        Vector3 vector3 = new Vector3(0f, 0.6f, 3.6f);
         rb.AddForce(vector3, ForceMode.Impulse);
         rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
         //shadderBreak();
@@ -87,10 +87,10 @@ public class enemyMove : MonoBehaviour
         if(other.name == "HitDet")
         {
             //Instantiate(explosion, this.transform.position, Quaternion.identity);
-            Invoke("ExplosionSet",1f);
+            Invoke("ExplosionSet",1.5f);
 ;            KillFlg = true;
             score.AddPoint(100);
-            Destroy(gameObject, 1f);
+            Destroy(gameObject, 1.5f);
             rb.freezeRotation = false;
             //Debug.Break();
         }
