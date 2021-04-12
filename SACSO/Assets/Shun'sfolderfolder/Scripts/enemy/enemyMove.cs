@@ -14,6 +14,7 @@ public class enemyMove : MonoBehaviour
     private Runaway runaway;
     private PlayerLife playerLife;
     private ScoreCon score;
+    private PartsHuge partsHuge;
 
     public GameObject explosion;
 
@@ -37,6 +38,7 @@ public class enemyMove : MonoBehaviour
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
         score = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
         playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
+        partsHuge = GameObject.Find("musslepants2Unity").GetComponent<PartsHuge>();
 
         Des = 0f;
         material = GetComponent<Renderer>().material;
@@ -92,6 +94,7 @@ public class enemyMove : MonoBehaviour
             score.AddPoint(100);
             Destroy(gameObject, 1.5f);
             rb.freezeRotation = false;
+            partsHuge.HugeParts(partsHuge.AttackInfo);
             //Debug.Break();
         }
 

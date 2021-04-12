@@ -11,11 +11,14 @@ public class PartsHuge : MonoBehaviour
 
     private float RightHugeRate, LeftHugeRate;
 
-    private static float HugeRate = 0.05f;
-    private static float SmallRate = 0.1f;
+    private static float HugeRate = 0.1f;
+    private static float SmallRate = 0.05f;
 
     Vector3 StartScale = new Vector3(1f, 1f, 1f);
-    Vector3 LastScale = new Vector3(2f, 1.5f, 3f);
+    Vector3 LastScale = new Vector3(3f, 1f, 3f);
+
+    public int AttackInfo = 0;      //0:ラン1:右パンチ2:左パンチ
+    private float AttackGracetime = 0;
 
 
     void Start()
@@ -23,13 +26,15 @@ public class PartsHuge : MonoBehaviour
         RightHugeRate = 0f;
         LeftHugeRate = 0f;
 
-
+        AttackInfo = 0;
+        AttackGracetime = 0f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        HugeTest();
+        //HugeTest();
+        AttackTime();
 
         RightArm.localScale = Vector3.Lerp(StartScale, LastScale, RightHugeRate);
         LefttArm.localScale = Vector3.Lerp(StartScale, LastScale, LeftHugeRate);
@@ -74,18 +79,64 @@ public class PartsHuge : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Z))
         {
-            HugeRight();
+            AttackInfo = 1;
         }
 
         if (Input.GetKeyDown(KeyCode.X))
         {
-            HugeLeft();
+            AttackInfo = 2;
         }
         if (Input.GetButtonDown("Fire1"))
         {
-            HugeRight();
+            AttackInfo = 1;
         }
         if (Input.GetButtonDown("Fire2"))
+        {
+            AttackInfo = 2;
+        }
+    }
+
+    void AttackTime()
+    {
+        if(AttackGracetime <= 0)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                AttackInfo = 1;
+                AttackGracetime = 0.4f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.X))
+            {
+                AttackInfo = 2;
+                AttackGracetime = 0.4f;
+            }
+            if (Input.GetButtonDown("Fire1"))
+            {
+                AttackInfo = 1;
+                AttackGracetime = 0.4f;
+            }
+            if (Input.GetButtonDown("Fire2"))
+            {
+                AttackInfo = 2;
+                AttackGracetime = 0.4f;
+            }
+        }
+
+        if(AttackGracetime > 0)
+        {
+            AttackGracetime -= Time.deltaTime;
+            if (AttackGracetime < 0) AttackGracetime = 0;
+        }
+        
+    }
+
+    public void HugeParts(int type)        //1:右パンチ2:左パンチ
+    {
+        if(type == 1)
+        {
+            HugeRight();
+        }else if(type == 2)
         {
             HugeLeft();
         }
