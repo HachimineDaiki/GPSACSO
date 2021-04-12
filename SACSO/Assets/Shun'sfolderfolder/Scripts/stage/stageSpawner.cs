@@ -18,8 +18,10 @@ public class stageSpawner : MonoBehaviour
     void Start()
     {
         CreateFlg = false;
-        
-        for(int i =5; i>0; i--)
+
+        NextRot = 0;
+
+        for (int i =5; i>0; i--)
         {
             Vector3 Pos = new Vector3(transform.position.x, transform.position.y, transform.position.z + (i * -100));
 
@@ -30,6 +32,9 @@ public class stageSpawner : MonoBehaviour
 
             lastObj = obj;
             GameObject.Destroy(obj, 30.0f - i*5.0f);
+
+
+
         }
     }
 
@@ -49,12 +54,12 @@ public class stageSpawner : MonoBehaviour
         GameObject obj = (GameObject)Instantiate(CreateObj, CreatePos, transform.rotation);
         // 作成したオブジェクトを子として登録
         obj.transform.parent = transform;
-        obj.transform.Rotate(0,0, obj.transform.position.z + NextRot);
+        obj.transform.Rotate(0,0, obj.transform.localRotation.z + NextRot);
 
 
         lastObj = obj;
 
-        NextRot += 3;
+        NextRot += 0;//3;
 
         if (NextRot >= 360) NextRot = 0;
 
