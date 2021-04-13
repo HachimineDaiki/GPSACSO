@@ -11,7 +11,7 @@ public class PartsHuge : MonoBehaviour
 
     private float RightHugeRate, LeftHugeRate;
 
-    private static float HugeRate = 0.1f;
+    private static float HugeRate = 0.34f;
     private static float SmallRate = 0.05f;
 
     Vector3 StartScale = new Vector3(1f, 1f, 1f);
@@ -20,6 +20,9 @@ public class PartsHuge : MonoBehaviour
     public int AttackInfo = 0;      //0:ラン1:右パンチ2:左パンチ
     private float AttackGracetime = 0;
 
+    private int[] HugeType = { 0, 0 };
+
+    private int NextEv = 5;
 
     void Start()
     {
@@ -28,6 +31,8 @@ public class PartsHuge : MonoBehaviour
 
         AttackInfo = 0;
         AttackGracetime = 0f;
+        HugeType[0] = 0;
+        HugeType[1] = 0;
     }
 
     // Update is called once per frame
@@ -42,33 +47,37 @@ public class PartsHuge : MonoBehaviour
 
     public void HugeRight()
     {
-        if(RightHugeRate <= 1f)
+        if(RightHugeRate < 1f)
         {
             RightHugeRate += HugeRate;
+            if (RightHugeRate > 1f) RightHugeRate = 1f;
         }
     }
 
     public void SmallRight()
     {
-        if (RightHugeRate >= 0f)
+        if (RightHugeRate > 0f)
         {
             RightHugeRate -= SmallRate;
+            if (RightHugeRate < 0f) RightHugeRate = 0f;
         }
     }
 
     public void HugeLeft()
     {
-        if (LeftHugeRate <= 1f)
+        if (LeftHugeRate < 1f)
         {
             LeftHugeRate += HugeRate;
+            if (LeftHugeRate > 1f) LeftHugeRate = 1f;
         }
     }
 
     public void SmallLeft()
     {
-        if (LeftHugeRate <= 0f)
+        if (LeftHugeRate < 0f)
         {
             LeftHugeRate -= SmallRate;
+            if (LeftHugeRate < 0f) LeftHugeRate = 0f;
         }
     }
 
@@ -133,12 +142,33 @@ public class PartsHuge : MonoBehaviour
 
     public void HugeParts(int type)        //1:右パンチ2:左パンチ
     {
-        if(type == 1)
+        //if(type == 1)
+        //{
+        //    if(HugeType[type-1]++ >= 10)
+        //    {
+        //        HugeRight();
+        //        HugeType[type - 1] = 0;
+        //    }
+        //}else if(type == 2)
+        //{
+        //    if (HugeType[type - 1]++ >= 10)
+        //    {
+        //        HugeLeft();
+        //        HugeType[type - 1] = 0;
+        //    }
+        //}
+
+        if (HugeType[type - 1]++ >= NextEv)
         {
-            HugeRight();
-        }else if(type == 2)
-        {
-            HugeLeft();
+            if (type == 1)
+            {
+                HugeRight();
+            }
+            else if(type == 2)
+            {
+                HugeLeft();
+            }
+                HugeType[type - 1] = 0;
         }
     }
 }

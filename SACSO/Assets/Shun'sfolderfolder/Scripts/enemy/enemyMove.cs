@@ -15,6 +15,10 @@ public class enemyMove : MonoBehaviour
     private PlayerLife playerLife;
     private ScoreCon score;
     private PartsHuge partsHuge;
+    //private AudioSource enemyaudio;
+
+    //public AudioClip sound01;
+    //public AudioClip sound02;
 
     public GameObject explosion;
 
@@ -28,6 +32,7 @@ public class enemyMove : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        //enemyaudio = gameObject.AddComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
         direction = new Vector3(transform.position.x, transform.position.y, -90f);    //ターゲットの座標
         KillFlg = false;
@@ -126,6 +131,7 @@ public class enemyMove : MonoBehaviour
     }
     private void ExplosionSet()
     {
+        //enemyaudio.PlayOneShot(sound01);
         Instantiate(explosion, this.transform.position, Quaternion.identity);
     }
 }
