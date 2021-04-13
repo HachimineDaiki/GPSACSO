@@ -7,17 +7,18 @@ public class enemyRes : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject enemy;
 
-    [SerializeField] private float NextappearTime = 0f;
-    [SerializeField] private float ElapsedTime = 0f;
+    private float NextappearTime = 0f;
+    private float ElapsedTime = 0f;
 
-    public float Maxsec = 5.0f;
-    public float Minsec = 2.0f;
+    private float Maxsec = 5.0f;
+    private float Minsec = 2.0f;
 
 
     Vector3 RespornPosition;
     void Start()
     {
         NextappearTime = Random.Range(Minsec, Maxsec);
+        ElapsedTime = 0f;
     }
 
     // Update is called once per frame
@@ -47,7 +48,7 @@ public class enemyRes : MonoBehaviour
 
     void enemySpawn()
     {
-        RespornPosition = new Vector3(Xcreate(), enemy.transform.position.y, transform.position.z);
+        RespornPosition = new Vector3(Xcreate(), enemy.transform.position.y, 520f);
         Instantiate(enemy, RespornPosition, enemy.transform.rotation);
     }
 }

@@ -640,9 +640,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 682426503}
-  - component: {fileID: 682426502}
   - component: {fileID: 682426504}
   - component: {fileID: 682426505}
+  - component: {fileID: 682426506}
+  - component: {fileID: 682426507}
   m_Layer: 8
   m_Name: StageScroll
   m_TagString: Untagged
@@ -650,23 +651,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &682426502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682426501}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c68da4bf313ef6749ba6ef1b334bfb5f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scrollBlockObject: {fileID: 2150865256629195447, guid: ba761142118494646b2b6e297b2f8a08,
-    type: 3}
-  blockPopPoint: {fileID: 682426503}
-  blockMoveForward: {x: 0, y: 0, z: -6}
-  before_block_create_count: 5
 --- !u!4 &682426503
 Transform:
   m_ObjectHideFlags: 0
@@ -675,7 +659,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682426501}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 520}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -694,10 +678,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 4048829827633176723, guid: 9b0ba008343dd494880d18673b6ab1ec, type: 3}
-  NextappearTime: 0
-  ElapsedTime: 0
-  Maxsec: 5
-  Minsec: 2
 --- !u!114 &682426505
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -711,10 +691,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemy: {fileID: 7994530468297127178, guid: 84f07cafa201e324aa119a3a80bca5e7, type: 3}
-  NextappearTime: 0
-  ElapsedTime: 0
-  Maxsec: 5
-  Minsec: 2
+--- !u!114 &682426506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682426501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63042329ccadb0e42b2d6163f478b255, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CreateObj: {fileID: 4863109150210410064, guid: a981c171aad21bd4e8199add800062a1,
+    type: 3}
+  elapsedTime: 0
+  CposY:
+  - 0
+  - 500
+  - -500
+  startQuantity: 7
+  CreatType: 0
+  CreateFlg: 0
+--- !u!64 &682426507
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 682426501}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1 &862219033
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,7 +1035,7 @@ Camera:
   m_GameObject: {fileID: 1480747986}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1066,7 +1078,7 @@ Transform:
   m_GameObject: {fileID: 1480747986}
   m_LocalRotation: {x: 0.10765256, y: -0.017899027, z: 0.0019391302, w: 0.9940256}
   m_LocalPosition: {x: 5, y: 38, z: -38}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0.99999994}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -7256,7 +7268,7 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 10, z: 0}
 --- !u!95 &6917946252263339890
 Animator:
   serializedVersion: 3
@@ -7833,6 +7845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RightArm: {fileID: 4726301452480437423}
   LefttArm: {fileID: 161522279990748614}
+  AttackInfo: 0
 --- !u!114 &7836283861552521484
 MonoBehaviour:
   m_ObjectHideFlags: 0
