@@ -53,7 +53,7 @@ public class Pmove : MonoBehaviour
         if (Input.GetButtonDown("Fire2")) MoveAttack2();
 
         if (targetLane > 3) targetLane = 3;
-        if (targetLane < -3) targetLane = -3;
+        if(targetLane < -3) targetLane = -3;
 
         if (Time.time - lastTimeArrowkeyDown_ > 0.01f)
         {
