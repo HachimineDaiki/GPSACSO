@@ -29,7 +29,7 @@ public class CameraCon : MonoBehaviour
     {
         Dush();
         Right();
-        transform.position = Vector3.Lerp(StartPos, EndPos, Pos);
+        //transform.position = Vector3.Lerp(StartPos, EndPos, Pos);
 
 
     }

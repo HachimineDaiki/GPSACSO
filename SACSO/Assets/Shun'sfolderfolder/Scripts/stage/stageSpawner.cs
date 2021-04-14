@@ -87,7 +87,7 @@ public class stageSpawner : MonoBehaviour
     void FixedUpdate()
     {
         float apperTime = 0.5f;
-        if (CreatType > 2) apperTime = 0.3f;
+        if (CreatType > 2) apperTime = 0.25f;
 
 
         elapsedTime += Time.deltaTime;
@@ -101,7 +101,7 @@ public class stageSpawner : MonoBehaviour
             elapsedTime = 0;
         }
 
-        if(ChangeTime > 15.0f)
+        if(ChangeTime > 5.0f)
         {
             if(CreatType == 0)
             {

@@ -63,9 +63,6 @@ public class Player : MonoBehaviour
         //走る
         animator.SetBool("run", PlayMove.z >= 0);
 
-        //Debug.Log(Input.GetAxis("Horizontal"));
-        Debug.Log(MoveFlg);
-
     }
 
 
