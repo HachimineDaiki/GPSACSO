@@ -52,6 +52,9 @@ public class Pmove : MonoBehaviour
         if (Input.GetKeyDown("x")) MoveAttack2();
         if (Input.GetButtonDown("Fire2")) MoveAttack2();
 
+        if (targetLane > 3) targetLane = 3;
+        if(targetLane < -3) targetLane = -3;
+
         if (Time.time - lastTimeArrowkeyDown_ > 0.01f)
         {
             MoveF310();
@@ -86,7 +89,7 @@ public class Pmove : MonoBehaviour
             }
             else if (Input.GetAxis("Horizontal") == 1 && MoveFlg == false)
             {
-                if (controller.isGrounded && targetLane < RLane) targetLane++;
+                if (/*controller.isGrounded && */targetLane < RLane) targetLane++;
 
                 lastTimeArrowkeyDown_ = Time.time;
                 MoveFlg = true;//具志堅が操作
@@ -94,7 +97,7 @@ public class Pmove : MonoBehaviour
         }
             else if (Input.GetAxis("Horizontal") == -1 && MoveFlg == false)
             {
-                if (controller.isGrounded && targetLane > LLane) targetLane--;
+                if (/*controller.isGrounded && */targetLane > LLane) targetLane--;
 
                 lastTimeArrowkeyDown_ = Time.time;
                 MoveFlg = true;//具志堅が操作
@@ -105,13 +108,13 @@ public class Pmove : MonoBehaviour
 
     public void MoveRight()
     {
-        if (controller.isGrounded && targetLane < RLane) targetLane++;
+        if (/*controller.isGrounded &&*/ targetLane < RLane) targetLane++;
        
     }
   
     public void MoveLeft()
     {
-        if (controller.isGrounded && targetLane > LLane) targetLane--;
+        if (/*controller.isGrounded &&*/ targetLane > LLane) targetLane--;
         
     }
 
@@ -119,19 +122,21 @@ public class Pmove : MonoBehaviour
     {
         if (controller.isGrounded)
         {
-            animator.SetTrigger("attack");
-            punch = true;
-            Invoke("punchreset",0.8f);
         }
+
+        animator.SetTrigger("attack");
+        punch = true;
+        Invoke("punchreset", 0.8f);
     }
     public void MoveAttack2()
     {
         if (controller.isGrounded)
         {
-            animator.SetTrigger("attack2");
-            punch = true;
-            Invoke("punchreset", 0.8f);
         }
+
+        animator.SetTrigger("attack2");
+        punch = true;
+        Invoke("punchreset", 0.8f);
     }
     void punchreset()
     {

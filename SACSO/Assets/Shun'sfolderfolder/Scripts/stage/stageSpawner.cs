@@ -12,22 +12,29 @@ public class stageSpawner : MonoBehaviour
     private int NextRot;        //少しずつ回転させる
 
     [SerializeField] private float elapsedTime;
-    public float[] CposY ={0,500f,-500};
+    public float[] CposX = { 0, 0, 0, 500f };
+    public float[] CposY = { 0, 500f, -500, 500f };        //0:通常1:登り2:降り
+    public float[] CposZ = { 500f, 500f, 500f, 0 };        //0:通常1:登り2:降り
+
+    Vector3 TestPos = new Vector3( 500f, 500f, 0f );
 
     //private float[] floorType = {}
-
 
     private Vector3[] type = {
         new Vector3( 0f,0f,0f ),        //通常の床
         new Vector3( -45f,0f,0f ),        //登坂の床
-        new Vector3( 45f,0f,0f )       //下り坂の床
+        new Vector3( 45f,0f,0f ),       //下り坂の床
+        new Vector3( -37.5f,-120f,0f ),       //登り坂の床V2
+        new Vector3( -37.5f,-60f,0f ),       //下り坂の床V2
 
     };
 
     private Vector3[] StartPos = {
         new Vector3( 0f,0f,500f ),        //通常の床
         new Vector3( 0f,500f,500f ),        //登坂の床
-        new Vector3( 0f,-500f,500f )       //下り坂の床
+        new Vector3( 0f,-500f,500f ),       //下り坂の床
+        new Vector3( -500f * (float)System.Math.Sqrt(3f),750f,-500f ),        //登坂の床
+        new Vector3( 500f * (float)System.Math.Sqrt(3f),-750f,-500f ),        //下り坂の床V2
     };
 
     private Vector3[] EndtPos = {
@@ -36,6 +43,7 @@ public class stageSpawner : MonoBehaviour
         new Vector3( 0f,200f,-200f )       //下り坂の床
     };
 
+    private float ChangeTime;
 
 
     public int startQuantity = 6;
@@ -53,6 +61,7 @@ public class stageSpawner : MonoBehaviour
         NextRot = 0;
 
         elapsedTime = 0f;
+        ChangeTime = 0f;
 
         for (int i = startQuantity; i>0; i--)
         {
@@ -75,17 +84,37 @@ public class stageSpawner : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
+        float apperTime = 0.5f;
+        if (CreatType > 2) apperTime = 0.3f;
+
 
         elapsedTime += Time.deltaTime;
+        ChangeTime += Time.deltaTime;
 
         childMove();
-        if(elapsedTime > 0.5f)
+        if(elapsedTime > apperTime)
         {
             //Debug.Break();
             childCreate(new Vector3(0f,0f,0f), CreatType);
             elapsedTime = 0;
+        }
+
+        if(ChangeTime > 15.0f)
+        {
+            if(CreatType == 0)
+            {
+                CreatType = 3;
+            }else if(CreatType == 3)
+            {
+                CreatType = 4;
+            }
+            else
+            {
+                CreatType = 0;
+            }
+            ChangeTime = 0f;
         }
     }
 
@@ -93,9 +122,9 @@ public class stageSpawner : MonoBehaviour
     {
         Quaternion qua = Quaternion.Euler(type[num]);
 
-        Vector3 CreatePosition = new Vector3(0f, CposY[num], 500f);
+        //Vector3 CreatePosition = new Vector3(CposX[num], CposY[num], CposZ[num]);
         // プレハブからインスタンスを生成
-        GameObject obj = (GameObject)Instantiate(CreateObj, CreatePosition, qua);
+        GameObject obj = (GameObject)Instantiate(CreateObj, StartPos[num], qua);
         // 作成したオブジェクトを子として登録
         obj.transform.parent = transform;
         obj.transform.Rotate(0,0, obj.transform.localRotation.z + NextRot);
@@ -134,14 +163,19 @@ public class stageSpawner : MonoBehaviour
             }
             else if (childType.Type == 1)
             {
-                Debug.Log(y - (ScrollSpeed * Time.deltaTime));
-                //child.transform.localPosition = new Vector3(x, y - (ScrollSpeed * Time.deltaTime), z);
                   child.transform.localPosition = new Vector3(x, y - (ScrollSpeed * Time.deltaTime), z - (ScrollSpeed * Time.deltaTime));
-                Debug.Log(child.transform.localPosition);
             }
             else if (childType.Type == 2)
             {
                 child.transform.localPosition = new Vector3(x, y + (ScrollSpeed * Time.deltaTime), z - (ScrollSpeed * Time.deltaTime));
+            }
+            else if (childType.Type == 3)
+            {
+                child.transform.localPosition = new Vector3(x + ((ScrollSpeed * Time.deltaTime) * (float)System.Math.Sqrt(3f)), y - (ScrollSpeed * 1.5f * Time.deltaTime), z + (ScrollSpeed * Time.deltaTime));
+            }
+            else if (childType.Type == 4)
+            {
+                child.transform.localPosition = new Vector3(x - ((ScrollSpeed * Time.deltaTime) * (float)System.Math.Sqrt(3f)), y + (ScrollSpeed * 1.5f * Time.deltaTime), z + (ScrollSpeed * Time.deltaTime));
             }
 
             //子要素の向きで移動
