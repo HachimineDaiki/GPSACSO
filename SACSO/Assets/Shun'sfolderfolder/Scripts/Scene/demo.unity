@@ -7248,7 +7248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedX: 60
-  gravity: 60
+  gravity: 0.1
   punch: 0
   MoveFlg: 0
 --- !u!143 &6917946252263339889
