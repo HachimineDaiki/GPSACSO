@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor;
 
 
 [RequireComponent(typeof(Rigidbody))]
@@ -15,10 +16,11 @@ public class enemyMove : MonoBehaviour
     private PlayerLife playerLife;
     private ScoreCon score;
     private PartsHuge partsHuge;
-    //private AudioSource enemyaudio;
 
-    //public AudioClip sound01;
-    //public AudioClip sound02;
+    AudioSource audioSource;
+
+    public AudioClip sound01;
+    public AudioClip sound02;
 
     public GameObject explosion;
 
@@ -34,6 +36,7 @@ public class enemyMove : MonoBehaviour
     {
         //enemyaudio = gameObject.AddComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
+        audioSource = GetComponent<AudioSource>();
         direction = new Vector3(transform.position.x, transform.position.y, -90f);    //ターゲットの座標
         KillFlg = false;
         distance = 0f;
@@ -95,11 +98,12 @@ public class enemyMove : MonoBehaviour
         {
             //Instantiate(explosion, this.transform.position, Quaternion.identity);
             Invoke("ExplosionSet",1.5f);
-;            KillFlg = true;
+;           KillFlg = true;
             score.AddPoint(100);
-            Destroy(gameObject, 1.5f);
+            //Destroy(gameObject, 1.5f);
             rb.freezeRotation = false;
             partsHuge.HugeParts(partsHuge.AttackInfo);
+            audioSource.PlayOneShot(sound01);
             //Debug.Break();
         }
 
@@ -131,7 +135,9 @@ public class enemyMove : MonoBehaviour
     }
     private void ExplosionSet()
     {
-        //enemyaudio.PlayOneShot(sound01);
+        audioSource.PlayOneShot(sound02);
         Instantiate(explosion, this.transform.position, Quaternion.identity);
+        //gameObject.SetActive(false);
+        Destroy(gameObject, 2.0f);
     }
 }

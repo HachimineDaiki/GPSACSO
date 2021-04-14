@@ -4,8 +4,8 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - sound01: {fileID: 8300000, guid: 2256429363e234545b66cf95f803b9e9, type: 3}
-  - sound02: {fileID: 8300000, guid: 2256429363e234545b66cf95f803b9e9, type: 3}
+  - sound01: {fileID: 8300000, guid: 04dae46d4a8bb56499f31bb27ec747b8, type: 3}
+  - sound02: {instanceID: 0}
   - explosion: {fileID: 287059446183364576, guid: 7819f72fc962c8c48bf1ae3ec15d219e,
       type: 3}
   executionOrder: 0
