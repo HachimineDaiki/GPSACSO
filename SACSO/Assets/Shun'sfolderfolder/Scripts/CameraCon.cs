@@ -12,6 +12,7 @@ public class CameraCon : MonoBehaviour
     Vector3 EndPos;
 
     private Runaway runaway;
+    private stageSpawner spawner;
 
     void Start()
     {
@@ -20,6 +21,7 @@ public class CameraCon : MonoBehaviour
         EndPos = new Vector3(transform.position.x, transform.position.y + 20.0f, transform.position.z - 30.0f);
 
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
+        spawner = GameObject.Find("StageScroll").GetComponent<stageSpawner>();
     }
 
     // Update is called once per frame
