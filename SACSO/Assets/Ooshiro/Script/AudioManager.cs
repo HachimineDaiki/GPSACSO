@@ -33,25 +33,25 @@ public class AudioManager : MonoBehaviour
             if ((Input.GetKeyDown(KeyCode.Z)) && (WaitTime == 0))
             {
                 audioSource.PlayOneShot(sound2);
-                WaitTime = 180;
+                WaitTime = 135;
             }
 
             if ((Input.GetKeyDown(KeyCode.X)) && (WaitTime == 0))
             {
                 audioSource.PlayOneShot(sound2);
-                WaitTime = 140;
+                WaitTime = 130;
             }
 
             if ((Input.GetButtonDown("Fire1")) && (WaitTime == 0))
             {
                 audioSource.PlayOneShot(sound2);
-                WaitTime = 180;
+                WaitTime = 135;
             }
 
             if ((Input.GetButtonDown("Fire2")) && (WaitTime == 0))
             {
                 audioSource.PlayOneShot(sound2);
-                WaitTime = 140;
+                WaitTime = 130;
             }
 
             //左右移動音
