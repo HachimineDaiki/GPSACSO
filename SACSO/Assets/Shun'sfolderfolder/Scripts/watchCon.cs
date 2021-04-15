@@ -13,6 +13,8 @@ public class watchCon : MonoBehaviour
     private int OldType,NewType;
     private int num;
 
+    private float[] SXrot = { 10f, 0, -10f };
+    private float[] Xrot = { 0, -10f,10f };
 
     private float[] SYrot = { 120, 0, -120 };
     private float[] Yrot = { 0, -120, 120 };
@@ -64,8 +66,8 @@ public class watchCon : MonoBehaviour
         if (OldType != NewType)
         {
             ChageTim = true;
-            StartRot = new Vector3(transform.rotation.x, SYrot[num], transform.rotation.z);
-            EndRot = new Vector3(transform.rotation.x,Yrot[num], transform.rotation.z);
+            StartRot = new Vector3(SXrot[num], SYrot[num], transform.rotation.z);
+            EndRot = new Vector3(Xrot[num],Yrot[num], transform.rotation.z);
         }
 
        

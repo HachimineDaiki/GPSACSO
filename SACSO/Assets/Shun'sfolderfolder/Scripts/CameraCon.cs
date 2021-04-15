@@ -28,6 +28,7 @@ public class CameraCon : MonoBehaviour
     void FixedUpdate()
     {
         Dush();
+        Rot();
         Right();
         //transform.position = Vector3.Lerp(StartPos, EndPos, Pos);
 
@@ -60,6 +61,11 @@ public class CameraCon : MonoBehaviour
     {
         //カメラの回転でメビウスって伝わるんですか？！
         //transform.Rotate(0, 0, 0.1f);
+    }
+
+    float f = 0f;
+    void Rot()
+    {
     }
 
 }

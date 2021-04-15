@@ -39,7 +39,7 @@ public class Player : MonoBehaviour
 
     Vector3 rotatoin;
 
-    [SerializeField] stageSpawner spawner;
+    stageSpawner spawner;
 
 
     private int Snum;
@@ -203,9 +203,6 @@ public class Player : MonoBehaviour
         rotatoin = obj.transform.localEulerAngles;
         float Yrot = rotatoin.y;
 
-        //角度をラジアンに変換
-        //float rad = Mathf.Deg2Rad * (rotatoin.y);
-
         if (spawner.CreatType == 0)
         {
         }else if(spawner.CreatType ==3)
@@ -218,15 +215,9 @@ public class Player : MonoBehaviour
             Yrot %= 360;
         }
 
-
+        //角度をラジアンに変換
         float rad = Mathf.Deg2Rad * (Yrot);
         
-
-        float distanceX = transform.position.x;
-        float distanceZ = transform.position.z;
-
-        float[] r = { 0,-45,-90};
-
         //その角度のx座標+中心点を算出する
         float rx = ((Mathf.Cos(rad) * (MoveX * targetLane)) + 0);
 
@@ -234,41 +225,9 @@ public class Player : MonoBehaviour
         float rz = ((Mathf.Sin(rad) * (MoveX * targetLane)) + 0);
 
 
-        //if (spawner.CreatType == 0)
-        //{
-        //    //その角度のx座標+中心点を算出する
-        //    rx = ((Mathf.Cos(0) * (MoveX * Move)) + distanceX);
-
-        //    //その角度のy座標+中心点を算出する
-        //    rz = ((Mathf.Sin(0) * (MoveX * Move)) + distanceZ);
-        //    Debug.Log(0);
-        //}
-        //else if (spawner.CreatType == 3)
-
-        //{//その角度のx座標+中心点を算出する
-        //    rx = ((Mathf.Cos(-45) * (MoveX * -Move)) + distanceX);
-
-        //    //その角度のy座標+中心点を算出する
-        //     rz = ((Mathf.Sin(-45) * (MoveX * -Move)) + distanceZ);
-        //    Debug.Log(1);
-        //}
-        //else
-        //{
-        //    //その角度のx座標+中心点を算出する
-        //    rx = ((Mathf.Cos(-90) * (MoveX * Move)) + distanceX);
-
-        //    //その角度のy座標+中心点を算出する
-        //   rz = ((Mathf.Sin(-90) * (MoveX * Move)) + distanceZ);
-        //    Debug.Log(2);
-        //}
-
-        //transform.position = new Vector3(rx, transform.position.y, rz);
-
         StartPos = transform.position;
-        //EndPos = new Vector3(rx, transform.position.y, rz);
 
 
-        //StartPos = new Vector3, transform.position.y, rz);
         EndPos = new Vector3(rx, transform.position.y, rz);
 
         MoveSpeed = 0f;

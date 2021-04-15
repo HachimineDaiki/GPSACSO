@@ -17,7 +17,7 @@ public class TitleCon : MonoBehaviour
         if (Input.anyKeyDown)
         {
             //メインへ
-            SceneManager.LoadScene("MainScene");
+            SceneManager.LoadScene("Main");
         }
 
 
