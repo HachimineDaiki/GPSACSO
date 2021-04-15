@@ -8,10 +8,11 @@ public class ScoreCon : MonoBehaviour
     // Start is called before the first frame update
     private int score;
 
+
     public Text Scoretext;
     void Start()
     {
-        score = 0;
+        score =100;
         Scoretext.text = "Score : " + score;
     }
 

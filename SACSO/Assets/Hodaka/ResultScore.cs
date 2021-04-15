@@ -1,11 +1,11 @@
-﻿using System.Collections;
+﻿///////////////////////////////////////////
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ResultScore : MonoBehaviour
 {
-    private ScoreCon SC;//ScoreCon.csの参照
     private int scorePoint;//スコア用変数
     private Text scorePointText;//スコアのテキスト
 
@@ -24,3 +24,5 @@ public class ResultScore : MonoBehaviour
         scorePointText.text = scorePoint.ToString("000000");
     }
 }
+
+//////////////////////////////////
