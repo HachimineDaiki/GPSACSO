@@ -1,13 +1,21 @@
-﻿using System.Collections;
+﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using UnityEngine.Events;
+using UnityEngine.EventSystems;
 
-using UnityEngine;
 
 public class PauseScript : MonoBehaviour
 {
  [SerializeField]
     private GameObject pauseUI;
+
+    //AudioSource audiosource;
+
+    private void Start() {
+        //audiosource = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -21,11 +29,14 @@ public class PauseScript : MonoBehaviour
             if (pauseUI.activeSelf)
             {
                 Time.timeScale = 0f;
+                //audiosource.Pause();
+
                 //　ポーズUIが表示されてなければ通常通り進行
             }
             else
             {
                 Time.timeScale = 1f;
+                //audiosource.UnPause();
             }
         }
 
