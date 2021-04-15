@@ -6,7 +6,6 @@ public class Runaway : MonoBehaviour
 {
     Slider _slider;
     public bool DushFlg;
-    [SerializeField] private float DushTime = 15.0f;
     float _hp;
     void Start()
     {

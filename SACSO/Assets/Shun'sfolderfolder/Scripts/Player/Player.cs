@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     //動き幅
     const float LaneWidth = 15.0f;
 
-    float lastTimeArrowkeyDown_ = 0f; //最後にスティックを傾けた時間
 
     [SerializeField] private float speedX;
 
@@ -32,7 +31,6 @@ public class Player : MonoBehaviour
 
     //峻が書いてます
     const float MoveX = 15f;        //横の移動量
-    private int Move;           //0:移動なし 1:右移動  -1:左移動
     [SerializeField] private Vector3 StartPos, EndPos;
     [SerializeField] float MoveSpeed;            //0~1で動く
     [SerializeField] private bool charMoveFlg;
@@ -79,7 +77,10 @@ public class Player : MonoBehaviour
         if (targetLane < -3) targetLane = -3;
 
 
-     
+
+
+        Debug.Log(Input.GetAxis("Horizontal"));
+
         MoveF310();
 
 
@@ -135,22 +136,20 @@ public class Player : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") == 0)
         {
-            Move = 0;
             MoveFlg = false;
         }
         else if (Input.GetAxis("Horizontal") == 1 && MoveFlg == false && targetLane < 3)
         { 
-            Move = 1;
             MoveFlg = true;
             targetLane++;
             RotMoveDis();
         }
         else if (Input.GetAxis("Horizontal") == -1 && MoveFlg == false && targetLane > -3)
         {
-            Move = -1;
             MoveFlg = true;
             targetLane--;
             RotMoveDis();
+            Debug.Log(111);
         }
 
 

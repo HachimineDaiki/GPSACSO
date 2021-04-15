@@ -99,8 +99,6 @@ public class enemyMove : MonoBehaviour
 
     private void Move()
     {
-        float Dushspd = 1.0f;
-        if (runaway.DushFlg) Dushspd = 2.5f;
 
         if (distance <= 1f)
         {

@@ -6,7 +6,6 @@ public class HitActive : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject HitDetect;
-    float HitTime;      //攻撃有効時間
     private Player play;
 
     [SerializeField] private const float AttackTime = 0.5f;
@@ -14,7 +13,6 @@ public class HitActive : MonoBehaviour
     void Start()
     {
         HitDetect.SetActive(false);
-        HitTime = 0f;
 
         play = gameObject.GetComponent<Player>();
     }

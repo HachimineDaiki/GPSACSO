@@ -63,7 +63,6 @@ public class CameraCon : MonoBehaviour
         //transform.Rotate(0, 0, 0.1f);
     }
 
-    float f = 0f;
     void Rot()
     {
     }
