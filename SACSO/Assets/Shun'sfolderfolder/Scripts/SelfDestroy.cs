@@ -10,7 +10,7 @@ public class SelfDestroy : MonoBehaviour
         particle = this.GetComponent<ParticleSystem>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (particle.isStopped) //パーティクルが終了したか判別
         {

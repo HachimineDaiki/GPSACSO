@@ -6,6 +6,7 @@ public class enemyRes : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject enemy;
+    private enemyMove eneMove;
 
     private float NextappearTime = 0f;
     private float ElapsedTime = 0f;
@@ -22,7 +23,7 @@ public class enemyRes : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         ElapsedTime += Time.deltaTime;
 
@@ -49,6 +50,8 @@ public class enemyRes : MonoBehaviour
     void enemySpawn()
     {
         RespornPosition = new Vector3(Xcreate(), enemy.transform.position.y, 520f);
-        Instantiate(enemy, RespornPosition, enemy.transform.rotation);
+        GameObject obj = Instantiate(enemy, RespornPosition, enemy.transform.rotation);
+        eneMove = obj.GetComponent<enemyMove>();
+        //eneMove.Type = 
     }
 }

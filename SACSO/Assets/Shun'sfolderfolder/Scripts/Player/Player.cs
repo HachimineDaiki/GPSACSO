@@ -38,7 +38,7 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //矢印の向きに移動
         if (Input.GetKeyDown("left")) MoveLeft();

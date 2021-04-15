@@ -16,7 +16,7 @@ public class Runaway : MonoBehaviour
         _hp = 0;
     }
 
-    void Update()
+    void FixedUpdate()
     {
         
         //if (_hp > 1 && !DushFlg)

@@ -7,10 +7,22 @@ using UnityEditor;
 [RequireComponent(typeof(Rigidbody))]
 public class enemyMove : MonoBehaviour
 {
-    Vector3 direction; 
+    [SerializeField] Vector3 direction; 
     [SerializeField] private float speed =3.0f;        //敵の移動速度
     [SerializeField] private float distance;
     [SerializeField] private Vector3 StartPosition;
+
+    private Vector3[] StartPos = {
+        new Vector3( 0f,0f,500f ),        //通常の床
+        new Vector3( -500f * (float)System.Math.Sqrt(3f),750f,-500f ),        //登坂の床
+        new Vector3( 500f * (float)System.Math.Sqrt(3f),-750f,-500f ),        //下り坂の床V2
+    };
+
+    private Vector3[] EndPos = {
+        new Vector3( 0f,0f,-100f ),        //通常の床
+        new Vector3(100,-86,58 ),        //登坂の床
+        new Vector3( 500f * (float)System.Math.Sqrt(3f),-750f,-500f ),        //下り坂の床V2
+    };
 
     private Runaway runaway;
     private PlayerLife playerLife;
@@ -30,6 +42,8 @@ public class enemyMove : MonoBehaviour
 
     private bool KillFlg;       //殴られた判定
     Rigidbody rb;
+
+    public int Type;
 
     // Use this for initialization
     void Start()
@@ -54,7 +68,7 @@ public class enemyMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!KillFlg)
         {

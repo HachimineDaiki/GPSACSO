@@ -44,6 +44,7 @@ public class stageSpawner : MonoBehaviour
     };
 
     private float ChangeTime;
+    [SerializeField] private static float CTime = 10.0f;
 
 
     public int startQuantity = 6;
@@ -101,7 +102,7 @@ public class stageSpawner : MonoBehaviour
             elapsedTime = 0;
         }
 
-        if(ChangeTime > 5.0f)
+        if(ChangeTime > CTime)
         {
             if(CreatType == 0)
             {

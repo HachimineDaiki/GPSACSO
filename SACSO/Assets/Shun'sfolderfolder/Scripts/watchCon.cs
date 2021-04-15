@@ -8,8 +8,8 @@ public class watchCon : MonoBehaviour
 
     stageSpawner spawner;
 
-    [SerializeField] private bool ChageTim;
-    [SerializeField] private float RotSpeed;
+    private bool ChageTim;
+    private float RotSpeed;
     private int OldType,NewType;
     private int num;
 
@@ -17,7 +17,7 @@ public class watchCon : MonoBehaviour
     private float[] SYrot = { 120, 0, -120 };
     private float[] Yrot = { 0, -120, 120 };
 
-    [SerializeField] Vector3 StartRot,EndRot;
+    Vector3 StartRot,EndRot;
 
 
     // Start is called before the first frame update

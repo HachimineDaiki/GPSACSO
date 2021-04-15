@@ -14,7 +14,7 @@ public class PlayerLife : MonoBehaviour
     {
         Life = MaxLife;
     }
-    private void Update()
+    private void FixedUpdate()
     {
         if(transform.position.z != 0)
         {

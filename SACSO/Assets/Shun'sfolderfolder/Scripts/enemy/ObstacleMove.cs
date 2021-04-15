@@ -32,7 +32,7 @@ public class ObstacleMove : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (!KillFlg)
         {

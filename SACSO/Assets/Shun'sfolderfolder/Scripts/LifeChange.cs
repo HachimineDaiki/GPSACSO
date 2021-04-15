@@ -17,7 +17,7 @@ public class LifeChange : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if(playerLife.Life == 3)
         {
