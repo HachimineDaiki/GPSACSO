@@ -25,4 +25,11 @@ public class ScoreCon : MonoBehaviour
         score += 100;
         Scoretext.text = "Score :" + score;
     }
+
+    //スコアを記憶する
+    public void ScoreSave()
+    {
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.Save();
+    }
 }

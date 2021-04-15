@@ -5,9 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class PlayerLife : MonoBehaviour
 {
-    // Start is called before the first frame update
     public int Life;
     [SerializeField] private const int MaxLife = 3;
+
+    public ScoreCon SC;//ScoreCon.scの参照　こいつの書き方が分からないので大文字にしました　許してください
 
 
     void Start()
@@ -29,6 +30,8 @@ public class PlayerLife : MonoBehaviour
         Life--;
         if(Life <= 0)
         {
+            //スコアを記録する
+            SC.ScoreSave();
             //ゲームオーバーへ
             SceneManager.LoadScene("GameOver");
         }
