@@ -8,10 +8,11 @@ public class ScoreCon : MonoBehaviour
     // Start is called before the first frame update
     private int score;
 
+
     public Text Scoretext;
     void Start()
     {
-        score = 0;
+        score =100;
         Scoretext.text = "Score : " + score;
     }
 
@@ -24,5 +25,12 @@ public class ScoreCon : MonoBehaviour
     {
         score += 100;
         Scoretext.text = "Score :" + score;
+    }
+
+    //スコアを記憶する
+    public void ScoreSave()
+    {
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.Save();
     }
 }
