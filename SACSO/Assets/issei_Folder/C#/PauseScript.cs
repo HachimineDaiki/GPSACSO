@@ -12,9 +12,10 @@ public class PauseScript : MonoBehaviour
     private GameObject pauseUI;
 
     //AudioSource audiosource;
-
+    public bool pauseflg;
     private void Start() {
         //audiosource = GetComponent<AudioSource>();
+        pauseflg = false;
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class PauseScript : MonoBehaviour
             if (pauseUI.activeSelf)
             {
                 Time.timeScale = 0f;
+                pauseflg = true;
                 //audiosource.Pause();
 
                 //　ポーズUIが表示されてなければ通常通り進行
@@ -36,6 +38,7 @@ public class PauseScript : MonoBehaviour
             else
             {
                 Time.timeScale = 1f;
+                pauseflg = false;
                 //audiosource.UnPause();
             }
         }
