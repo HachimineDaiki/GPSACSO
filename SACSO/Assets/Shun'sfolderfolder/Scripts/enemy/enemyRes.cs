@@ -67,14 +67,14 @@ public class enemyRes : MonoBehaviour
 
         float Yrot = 0;
 
-        if (spawner.CreatType == 0)
+        if (spawner.CreatType % 3 == 0)
         {
         }
-        else if (spawner.CreatType ==1)
+        else if (spawner.CreatType % 3 ==1)
         {
             Yrot = 120;
         }
-        else if (spawner.CreatType == 2)
+        else if (spawner.CreatType % 3 == 2)
         {
             Yrot = 240;
         }
