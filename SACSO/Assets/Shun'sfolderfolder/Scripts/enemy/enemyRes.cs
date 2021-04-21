@@ -70,11 +70,11 @@ public class enemyRes : MonoBehaviour
         if (spawner.CreatType == 0)
         {
         }
-        else if (spawner.CreatType == 3)
+        else if (spawner.CreatType ==1)
         {
             Yrot = 120;
         }
-        else if (spawner.CreatType == 4)
+        else if (spawner.CreatType == 2)
         {
             Yrot = 240;
         }
@@ -97,7 +97,6 @@ public class enemyRes : MonoBehaviour
 
         RespornPosition = new Vector3(Xcreate(), enemy.transform.position.y, 520f);
         GameObject obj = Instantiate(enemy, StartPos[Snum], enemy.transform.rotation);
-        if (Snum == 1) Debug.Log(StartPos[Snum]);
         eneMove = obj.GetComponent<enemyMove>();
         eneMove.Type = Snum;
     }
