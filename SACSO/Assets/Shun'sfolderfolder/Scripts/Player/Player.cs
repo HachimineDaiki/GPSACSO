@@ -53,7 +53,7 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
 
         spawner = GameObject.Find("StageScroll").GetComponent<stageSpawner>();
-        Snum = spawner.CreatType;
+        Snum = spawner.CreatType % 3;
 
         charMoveFlg = false;
         targetLane = 0;
@@ -75,11 +75,6 @@ public class Player : MonoBehaviour
 
         if (targetLane > 3) targetLane = 3;
         if (targetLane < -3) targetLane = -3;
-
-
-
-
-        Debug.Log(Input.GetAxis("Horizontal"));
 
         MoveF310();
 
@@ -149,7 +144,6 @@ public class Player : MonoBehaviour
             MoveFlg = true;
             targetLane--;
             RotMoveDis();
-            Debug.Log(111);
         }
 
 
@@ -202,13 +196,13 @@ public class Player : MonoBehaviour
         rotatoin = obj.transform.localEulerAngles;
         float Yrot = rotatoin.y;
 
-        if (spawner.CreatType == 0)
+        if (spawner.CreatType % 3 == 0)
         {
-        }else if(spawner.CreatType ==3)
+        }else if(spawner.CreatType % 3 ==1)
         {
             Yrot += 240;
             Yrot %= 360;
-        }else if(spawner.CreatType == 4)
+        }else if(spawner.CreatType % 3 == 2)
         {
             Yrot += 120;
             Yrot %= 360;

@@ -13,6 +13,6 @@ public class stageTiming : MonoBehaviour
     // Update is called once per frame
     private void OnTrigge(Collider other)
     {
-        spawner.CreateFlg = true;
+        //spawner.CreateFlg = true;
     }
 }

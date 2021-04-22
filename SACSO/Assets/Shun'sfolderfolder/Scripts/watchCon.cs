@@ -11,13 +11,10 @@ public class watchCon : MonoBehaviour
     private bool ChageTim;
     private float RotSpeed;
     private int OldType,NewType;
-    private int num;
 
-    private float[] SXrot = { 10f, 0, -10f };
-    private float[] Xrot = { 0, -10f,10f };
+    private float[] SXrot = { 0, -10f, 10f };       //X軸の向き
 
-    private float[] SYrot = { 120, 0, -120 };
-    private float[] Yrot = { 0, -120, 120 };
+    private float[] SYrot = { 0, -120, 120 };
 
     Vector3 StartRot,EndRot;
 
@@ -27,8 +24,8 @@ public class watchCon : MonoBehaviour
     {
         spawner = stage.GetComponent<stageSpawner>();
         RotSpeed = 0;
-        OldType = spawner.CreatType;
-        NewType = spawner.CreatType;
+        OldType = spawner.CreatType % 3;
+        NewType = spawner.CreatType % 3;
         ChageTim = false;
     }
 
@@ -50,24 +47,16 @@ public class watchCon : MonoBehaviour
 
     void Check()
     {
-        if (NewType == 0)
-        {
-            num = 0;
-        }
-        else if (NewType == 3)
-        {
-            num = 1;
-        }
-        else
-        {
-            num = 2;
-        }
+        float ZrotS = 0f;
+        float ZrotE = 0f;
+        if (NewType >= 3) ZrotE = 180f;
+        if (OldType >= 3) ZrotS = 180f;
 
         if (OldType != NewType)
         {
             ChageTim = true;
-            StartRot = new Vector3(SXrot[num], SYrot[num], transform.rotation.z);
-            EndRot = new Vector3(Xrot[num],Yrot[num], transform.rotation.z);
+            StartRot = new Vector3(SXrot[OldType % 3], SYrot[OldType % 3], ZrotS);
+            EndRot = new Vector3(SXrot[NewType % 3],SYrot[NewType % 3], ZrotE);
         }
 
        
@@ -84,6 +73,7 @@ public class watchCon : MonoBehaviour
         {
             RotSpeed = 0f;
             ChageTim = false;
+            transform.rotation = Quaternion.Euler(EndRot);
         }
     }
 
