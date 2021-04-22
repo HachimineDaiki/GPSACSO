@@ -12,7 +12,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip sound5;
     public AudioClip sound6;
 
-    AudioSource audioSource;
+    public AudioSource audioSource;
+    public AudioSource audiosource2;
 
     GameObject movesound;
     GameObject gamemanager;
@@ -27,7 +28,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         //Componentを取得
-        audioSource = GetComponent<AudioSource>();
+        // audioSource = GetComponent<AudioSource>();
         movesound = GameObject.Find("musslepants2Unity");
         gamemanager = GameObject.Find("GameManeger");
         //expsound = GameObject.Find("enemy2.0");
@@ -81,9 +82,18 @@ public class AudioManager : MonoBehaviour
         }
         if (player.MoveFlg == false) sound3flg = false;
 
-        if (pausescript.pauseflg == true) audioSource.Pause();
+        if (pausescript.pauseflg == true)
+        {
+            audioSource.Pause();
+            audiosource2.Pause();
+        }
 
-        if (pausescript.pauseflg == false) audioSource.UnPause();
+        if (pausescript.pauseflg == false)
+        {
+            audioSource.UnPause();
+            audiosource2.UnPause();
+        }
+        
 
         //if (enemymove.KillFlg == true)
         //{
