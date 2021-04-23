@@ -74,14 +74,15 @@ public class StageSpwnerV2 : MonoBehaviour
             elapsedTime = 0;
         }
 
-        if (ChangeTime > CTime)
-        {
-            if (++CreatType >= 1)
-            {
-                CreatType = 0;
-            }
-            ChangeTime = 0f;
-        }
+        //いったん平面だけで走らせる
+        //if (ChangeTime > CTime)
+        //{
+        //    if (++CreatType >= 1)
+        //    {
+        //        CreatType = 0;
+        //    }
+        //    ChangeTime = 0f;
+        //}
     }
 
     void childCreate(int num)
