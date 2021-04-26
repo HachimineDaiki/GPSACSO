@@ -96,7 +96,7 @@ public class enemyRes : MonoBehaviour
 
 
         RespornPosition = new Vector3(Xcreate(), enemy.transform.position.y, 520f);
-        GameObject obj = Instantiate(enemy, StartPos[Snum], enemy.transform.rotation);
+        GameObject obj = Instantiate(enemy, RespornPosition, enemy.transform.rotation);
         eneMove = obj.GetComponent<enemyMove>();
         eneMove.Type = Snum;
     }
