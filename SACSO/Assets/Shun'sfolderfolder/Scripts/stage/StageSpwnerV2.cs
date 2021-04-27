@@ -7,22 +7,22 @@ public class StageSpwnerV2 : MonoBehaviour
     // Start is called before the first frame update
     [SerializeField] private GameObject CreateObj;
 
-    private float ScrollSpeed = 150.0f;
+    private float ScrollSpeed = 200.0f;
 
     [SerializeField] private float elapsedTime;
 
 
     private Vector3[] type = {          //床の角度
-        new Vector3( -30f,0f,0f ),        //登坂
+        new Vector3( 0f,0f,0f ),        //登坂
 
     };
 
     private Vector3[] StartPos = {      //床の出現する場所
-        new Vector3( 0f,300f,300f * (float)System.Math.Sqrt(3f) ),        //登坂
+        new Vector3( 0f,0f,500f),        //登坂
     };
 
     private float ChangeTime;
-    [SerializeField] private static float CTime = 5f;
+    //[SerializeField] private static float CTime = 5f;
 
 
     public int startQuantity = 6;       //初めに作成するステージの数
@@ -74,14 +74,15 @@ public class StageSpwnerV2 : MonoBehaviour
             elapsedTime = 0;
         }
 
-        if (ChangeTime > CTime)
-        {
-            if (++CreatType >= 1)
-            {
-                CreatType = 0;
-            }
-            ChangeTime = 0f;
-        }
+        //いったん平面だけで走らせる
+        //if (ChangeTime > CTime)
+        //{
+        //    if (++CreatType >= 1)
+        //    {
+        //        CreatType = 0;
+        //    }
+        //    ChangeTime = 0f;
+        //}
     }
 
     void childCreate(int num)
@@ -116,21 +117,18 @@ public class StageSpwnerV2 : MonoBehaviour
             float z = child.transform.localPosition.z;
 
 
-            //子のタイプによって移動処理の変更
+            //子要素のタイプによって移動処理を変える
             if (childType.Type == 0)
             {
-                child.transform.localPosition = new Vector3(x , 
-                    y - (ScrollSpeed * Time.deltaTime), z - (ScrollSpeed * Time.deltaTime * (float)System.Math.Sqrt(3f)));
+                child.transform.localPosition = new Vector3(x, y, z - (ScrollSpeed * Time.deltaTime));
             }
             else if (childType.Type == 1)
             {
-                child.transform.localPosition = new Vector3(x + ((ScrollSpeed * Time.deltaTime) * (float)System.Math.Sqrt(3f)), 
-                    y - (ScrollSpeed * 1.5f * Time.deltaTime), z + (ScrollSpeed * Time.deltaTime));
+                child.transform.localPosition = new Vector3(x + ((ScrollSpeed * Time.deltaTime) * (float)System.Math.Sqrt(3f)), y - (ScrollSpeed * 1.5f * Time.deltaTime), z + (ScrollSpeed * Time.deltaTime));
             }
             else if (childType.Type == 2)
             {
-                child.transform.localPosition = new Vector3(x - ((ScrollSpeed * Time.deltaTime) * (float)System.Math.Sqrt(3f)),
-                    y + (ScrollSpeed * 1.5f * Time.deltaTime), z + (ScrollSpeed * Time.deltaTime * Mathf.Sqrt(3)));
+                child.transform.localPosition = new Vector3(x - ((ScrollSpeed * Time.deltaTime) * (float)System.Math.Sqrt(3f)), y + (ScrollSpeed * 1.5f * Time.deltaTime), z + (ScrollSpeed * Time.deltaTime));
             }
         }
     }
