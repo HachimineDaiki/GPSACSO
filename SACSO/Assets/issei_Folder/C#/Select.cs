@@ -8,21 +8,30 @@ public class Select : MonoBehaviour
     PauseScript pausescript;
     GameObject gamemanager;
 
-    [SerializeField] private GameObject pauseUI;
+    public bool PauseControlflg;
+
+    [SerializeField] public GameObject pauseUI;
+    [SerializeField] public GameObject volumeUI;
+    [SerializeField] public GameObject BGMSlider;
+    [SerializeField] public GameObject SESlider;
 
     [SerializeField] private Button Return_To_Game;
     [SerializeField] private Button Return_To_Title;
-  //  [SerializeField] private Button Volume_adjustment;
+    [SerializeField] private Button Volume_adjustment;
     [SerializeField] private Button End_The_Game;
+    [SerializeField] private Button Return;
 
+    bool isCalledOnceVolume = false;
+    Button Return_Button;
     private void Start()
     {
         Return_To_Game.onClick.AddListener(ReturnGame);
         Return_To_Title.onClick.AddListener(ReturnTitle);
-       // Volume_adjustment.onClick.AddListener(Volume);
+        Volume_adjustment.onClick.AddListener(Volume);
+        Return.onClick.AddListener(ReturnScreen);
         End_The_Game.onClick.AddListener(EndGame);
 
-
+        PauseControlflg = false;
         gamemanager = GameObject.Find("GameManeger");
         pausescript = gamemanager.GetComponent<PauseScript>();
     }
@@ -41,9 +50,28 @@ public class Select : MonoBehaviour
         SceneManager.LoadScene("TitleScene");
     }
 
-    private void Volume()
+    public void Volume()
     {
+        PauseControlflg = true;
+        volumeUI.SetActive(!volumeUI.activeSelf);
+        pauseUI.SetActive(!pauseUI.activeSelf);
+        //button.VolumeSelect();
+        if (!pauseUI.activeSelf)
+        {
+            if (isCalledOnceVolume == false)
+            {
+                Return_Button = GameObject.Find("/Canvas/Panel2/Return_Button").GetComponent<Button>(); //ボタンが選択された状態になる
+                Return_Button.Select();
+                isCalledOnceVolume = true;
 
+            }
+
+        }
+
+        if (pauseUI.activeSelf == false && isCalledOnceVolume == true)
+        {
+            isCalledOnceVolume = false;
+        }
     }
 
     private void EndGame()
@@ -56,5 +84,16 @@ public class Select : MonoBehaviour
        #endif
     }
 
+    public void ReturnScreen()
+    {
+        volumeUI.SetActive(!volumeUI.activeSelf);
+        pauseUI.SetActive(!pauseUI.activeSelf);
+        PauseControlflg = false;
+    }
+
+    //void selectBGM()
+    //{
+    //    button = GameObject.Find("Canvas/Panel2/Return").GetComponent<Button>();
+    //}
 
 }

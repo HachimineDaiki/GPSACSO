@@ -5,7 +5,7 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    public AudioClip sound1;
+    public AudioClip sound1; //
     public AudioClip sound2;
     public AudioClip sound3;
     public AudioClip sound4;
@@ -49,35 +49,35 @@ public class AudioManager : MonoBehaviour
         {
             if ((Input.GetKeyDown(KeyCode.Z)) && (WaitTime == 0))
             {
-                audioSource.PlayOneShot(sound2);
+                audiosource2.PlayOneShot(sound2);
                 WaitTime = 135;
             }
 
             if ((Input.GetKeyDown(KeyCode.X)) && (WaitTime == 0))
             {
-                audioSource.PlayOneShot(sound2);
+                audiosource2.PlayOneShot(sound2);
                 WaitTime = 130;
             }
 
             if ((Input.GetButtonDown("Fire1")) && (WaitTime == 0))
             {
-                audioSource.PlayOneShot(sound2);
+                audiosource2.PlayOneShot(sound2);
                 WaitTime = 135;
             }
 
             if ((Input.GetButtonDown("Fire2")) && (WaitTime == 0))
             {
-                audioSource.PlayOneShot(sound2);
+                audiosource2.PlayOneShot(sound2);
                 WaitTime = 130;
             }
             //左右移動音
-            if (Input.GetKeyDown("left")) audioSource.PlayOneShot(sound3);
+            if (Input.GetKeyDown("left")) audiosource2.PlayOneShot(sound3);
 
-            if (Input.GetKeyDown("right")) audioSource.PlayOneShot(sound3);
+            if (Input.GetKeyDown("right")) audiosource2.PlayOneShot(sound3);
         }
         if(sound3flg == false)
         {
-            if (player.MoveFlg == true) audioSource.PlayOneShot(sound3);
+            if (player.MoveFlg == true) audiosource2.PlayOneShot(sound3);
             sound3flg = true;
         }
         if (player.MoveFlg == false) sound3flg = false;
