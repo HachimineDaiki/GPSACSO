@@ -11,17 +11,19 @@ public class PauseScript : MonoBehaviour
  [SerializeField]
     private GameObject pauseUI;
 
+    Select select;
     //AudioSource audiosource;
     public bool pauseflg;
     private void Start() {
         //audiosource = GetComponent<AudioSource>();
         pauseflg = false;
+        select = GetComponent<Select>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown("q") || Input.GetKeyDown("joystick button 7"))
+        if ((Input.GetKeyDown("q") || Input.GetKeyDown("joystick button 7")) && select.PauseControlflg == false)
         {
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
@@ -32,7 +34,7 @@ public class PauseScript : MonoBehaviour
                 Time.timeScale = 0f;
                 pauseflg = true;
                 //audiosource.Pause();
-
+                
                 //　ポーズUIが表示されてなければ通常通り進行
             }
             else
