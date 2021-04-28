@@ -75,14 +75,14 @@ public class stageSpawner : MonoBehaviour
             elapsedTime = 0;
         }
 
-        if(ChangeTime > CTime)
-        {
-            if(++CreatType >= 6)
-            {
-                CreatType = 0;
-            }
-            ChangeTime = 0f;
-        }
+        //if(ChangeTime > CTime)
+        //{
+        //    if(++CreatType >= 6)
+        //    {
+        //        CreatType = 0;
+        //    }
+        //    ChangeTime = 0f;
+        //}
     }
 
     void childCreate(int num)
