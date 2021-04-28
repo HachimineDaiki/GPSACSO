@@ -32,18 +32,13 @@ public class enemyMove : MonoBehaviour
     private ScoreCon score;
     private PartsHuge partsHuge;
 
-    AudioSource audioSource;
-
-    public AudioClip sound01;
-    public AudioClip sound02;
-
     public GameObject explosion;
 
     Material material;
 
     float Des;
 
-    private bool KillFlg;       //殴られた判定
+    public bool KillFlg;       //殴られた判定
     Rigidbody rb;
 
     public int Type;
@@ -61,7 +56,6 @@ public class enemyMove : MonoBehaviour
     {
         //enemyaudio = gameObject.AddComponent<AudioSource>();
         rb = GetComponent<Rigidbody>();
-        audioSource = GetComponent<AudioSource>();
         direction = new Vector3(transform.position.x, transform.position.y, -90f);    //ターゲットの座標
         KillFlg = false;
         distance = 0f;
@@ -152,7 +146,6 @@ public class enemyMove : MonoBehaviour
             //Destroy(gameObject, 1.5f);
             rb.freezeRotation = false;
             partsHuge.HugeParts(partsHuge.AttackInfo);
-            audioSource.PlayOneShot(sound01);
             //Debug.Break();
         }
 
@@ -185,7 +178,6 @@ public class enemyMove : MonoBehaviour
     }
     private void ExplosionSet()
     {
-        audioSource.PlayOneShot(sound02);
         Instantiate(explosion, this.transform.position, Quaternion.identity);
         //gameObject.SetActive(false);
         Destroy(gameObject, 2.0f);
