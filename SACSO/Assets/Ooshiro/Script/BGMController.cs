@@ -7,8 +7,8 @@ using UnityEngine.UI;
 
 public class BGMController : MonoBehaviour
 {
-    GameObject bgmslider;
-    Slider slider;
+    //[SerializeField] GameObject bgmslider;
+    [SerializeField] Slider slider;
 
     [SerializeField]
     private AudioMixer audioMixer;
@@ -16,8 +16,8 @@ public class BGMController : MonoBehaviour
     void Start()
     {
         
-        bgmslider = GameObject.Find("Canvas/Panel2/BGMSlider");
-        slider = bgmslider.GetComponent<Slider>();
+        //bgmslider = GameObject.Find("Canvas/Panel2/BGMSlider");
+        //slider = bgmslider.GetComponent<Slider>();
 
         float maxvolume = 100f;
         float nowvolume = 0f;

@@ -6,16 +6,16 @@ using UnityEngine.UI;
 
 public class SEController : MonoBehaviour
 {
-    GameObject seslider;
-    Slider slider2;
+    //[SerializeField] GameObject seslider;
+    [SerializeField] Slider slider2;
 
     [SerializeField]
     private AudioMixer audioMixer;
     // Start is called before the first frame update
     void Start()
     {
-        seslider = GameObject.Find("Canvas/Panel2/SESlider");
-        slider2 = seslider.GetComponent<Slider>();
+        //seslider = GameObject.Find("Canvas/Panel2/SESlider");
+        //slider2 = seslider.GetComponent<Slider>();
 
         float maxvolume = 100f;
         float nowvolume = 0f;

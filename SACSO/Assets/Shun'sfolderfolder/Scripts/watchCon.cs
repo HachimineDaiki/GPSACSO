@@ -27,6 +27,7 @@ public class watchCon : MonoBehaviour
         OldType = spawner.CreatType % 3;
         NewType = spawner.CreatType % 3;
         ChageTim = false;
+
     }
 
     // Update is called once per frame
