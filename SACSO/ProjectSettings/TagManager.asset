@@ -7,6 +7,8 @@ TagManager:
   - Wall
   - Door
   - enemy
+  - Trigger
+  - Trigger0
   layers:
   - Default
   - TransparentFX
