@@ -178,8 +178,9 @@ public class enemyMove : MonoBehaviour
     }
     private void ExplosionSet()
     {
-        Instantiate(explosion, this.transform.position, Quaternion.identity);
+        GameObject obj = Instantiate(explosion, this.transform.position, Quaternion.identity);
         //gameObject.SetActive(false);
         Destroy(gameObject, 2.0f);
+        Destroy(obj, 2.5f);
     }
 }
