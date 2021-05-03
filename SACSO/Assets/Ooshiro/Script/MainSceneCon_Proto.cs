@@ -3,23 +3,21 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TitleCon : MonoBehaviour
+
+public class MainSceneCon_Proto : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.GetKey(KeyCode.A))
         {
-            //メインへ
-            SceneManager.LoadScene("Main");
+            SceneManager.LoadScene("ClearScene");
         }
-
-
     }
 }
