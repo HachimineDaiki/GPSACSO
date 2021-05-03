@@ -4,11 +4,6 @@ using UnityEngine;
 
 public class ObstacleMove : MonoBehaviour
 {
-    Vector3 direction;
-    [SerializeField] private float speed = 3.0f;        //敵の移動速度
-    [SerializeField] private float distance;
-    [SerializeField] private Vector3 StartPosition;
-
     private Runaway runaway;
     private PlayerLife playerLife;
 
@@ -20,12 +15,7 @@ public class ObstacleMove : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        direction = new Vector3(transform.position.x, transform.position.y, -90f);    //ターゲットの座標
-        KillFlg = false;
-        distance = 0f;
-        StartPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
-        speed = Random.Range(2.0f, 5.5f);
-
+        
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
         playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
 
@@ -46,21 +36,7 @@ public class ObstacleMove : MonoBehaviour
 
     private void Move()
     {
-        float Dushspd = 1.0f;
-        if (runaway.DushFlg) Dushspd = 3.0f;
-
-        if (distance <= 1f)
-        {
-            distance += (Time.deltaTime / speed) * Dushspd;
-        }
-        else
-        {
-            distance = 1f;
-        }
-        transform.position = Vector3.Lerp(StartPosition, direction, distance);
-        transform.Rotate(Vector3.right * 5.0f, Space.World);
-        if (distance >= 1.0f) Destroy(gameObject);
-
+        
     }
 
     private void Damege()
