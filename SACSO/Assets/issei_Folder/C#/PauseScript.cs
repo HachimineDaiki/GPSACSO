@@ -16,7 +16,6 @@ public class PauseScript : MonoBehaviour
     public bool pauseflg;
     private void Start() {
         //audiosource = GetComponent<AudioSource>();
-        pauseflg = false;
         select = GetComponent<Select>();
     }
 
