@@ -124,11 +124,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1d5d8ccc8139a742a3035042e85ddce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  direction: {x: 0, y: 0, z: 0}
-  speed: 3
-  distance: 0
   explosion: {fileID: 287059446183364576, guid: 7819f72fc962c8c48bf1ae3ec15d219e,
     type: 3}
   KillFlg: 0
-  Type: 0
-  spawner: {fileID: 0}
