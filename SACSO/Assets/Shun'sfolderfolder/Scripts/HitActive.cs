@@ -6,7 +6,7 @@ public class HitActive : MonoBehaviour
 {
     // Start is called before the first frame update
     [SerializeField] private GameObject HitDetect;
-    private Player play;
+    private NewPlayer play;
 
     [SerializeField] private const float AttackTime = 0.5f;
 
@@ -14,7 +14,7 @@ public class HitActive : MonoBehaviour
     {
         HitDetect.SetActive(false);
 
-        play = gameObject.GetComponent<Player>();
+        play = gameObject.GetComponent<NewPlayer>();
     }
 
     // Update is called once per frame
