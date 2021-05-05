@@ -12,6 +12,9 @@ public class enemyMove : MonoBehaviour
     private ScoreCon score;
     private PartsHuge partsHuge;
 
+    public GameObject Drum;      //壊れる前のドラムを入れる（具志堅
+    public GameObject BreakDrum;//壊れた後のドラムを入れる
+
     public GameObject explosion;
 
     Material material;
@@ -62,6 +65,9 @@ public class enemyMove : MonoBehaviour
 
     private void Damege()
     {
+        Drum.SetActive(false);    //ドラムを非アクティブ（具志堅
+        BreakDrum.SetActive(true);//壊れたドラムをアクティブ
+
         Vector3 vector3 = new Vector3(0f, 0.6f, 3.6f);
         rb.AddForce(vector3, ForceMode.Impulse);
         rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
