@@ -15,25 +15,32 @@ public class MainSceneCon_Proto : MonoBehaviour
     Button button;
     Select select;
 
+    public bool CallOnlyOnce = false;
+
     // Start is called before the first frame update
     void Start()
     {
         select = GetComponent<Select>();
 
         YES_ClearButton.onClick.AddListener(YesButton);
-        YES_ClearButton.onClick.AddListener(NoButton);
+        NO_ClearButton.onClick.AddListener(NoButton);
     }
 
     // Update is called once per frame
     void Update()
     {
-        Invoke("GameClearCon", 5f);
+        if(CallOnlyOnce != true)
+        {
+            Invoke("GameClearCon", 5f);
+            CallOnlyOnce = true;
+        }
     }
 
     private void GameClearCon()
     {
         select.PauseControlflg = true;
         clearUI.SetActive(!clearUI.activeSelf);
+        //if(button != null)
         button = GameObject.Find("Canvas/Panel3/YES_ClearButton").GetComponent<Button>();
         button.Select();
         Time.timeScale = 0f;
@@ -41,15 +48,17 @@ public class MainSceneCon_Proto : MonoBehaviour
 
     private void YesButton()
     {
-        SceneManager.LoadScene("ClearScene");
         select.PauseControlflg = false;
         clearUI.SetActive(!clearUI.activeSelf);
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("ClearScene");
     }
 
     private void NoButton()
     {
+        select.PauseControlflg = false;
         clearUI.SetActive(!clearUI.activeSelf);
         Time.timeScale = 1f;
-
+        CallOnlyOnce = false;
     }
 }
