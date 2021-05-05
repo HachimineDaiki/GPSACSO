@@ -2848,6 +2848,18 @@ MonoBehaviour:
   YES_ClearButton: {fileID: 439221296}
   NO_ClearButton: {fileID: 706191320}
   CallOnlyOnce: 0
+--- !u!114 &1607262774
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607262772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37db3801eb9b60949b15599c8aa856aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1607262780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10429,6 +10441,8 @@ MonoBehaviour:
   LefttArm: {fileID: 8979568751746636501}
   AttackInfo: 0
   muscleup: 0
+  plt: 0
+  prt: 0
 --- !u!114 &6039293069686411822
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12160,6 +12174,8 @@ MonoBehaviour:
   LefttArm: {fileID: 161522279990748614}
   AttackInfo: 0
   muscleup: 0
+  plt: 0
+  prt: 0
 --- !u!114 &7836283861552521484
 MonoBehaviour:
   m_ObjectHideFlags: 0

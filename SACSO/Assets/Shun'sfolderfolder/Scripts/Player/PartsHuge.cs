@@ -25,6 +25,8 @@ public class PartsHuge : MonoBehaviour
     private int NextEv = 5;
 
     public bool muscleup;//カットイン（catinscript用のフラグ）
+    public bool plt; //筋肉点数用フラグ
+    public bool prt; //筋肉点数用フラグ
 
     void Start()
     {
@@ -46,6 +48,8 @@ public class PartsHuge : MonoBehaviour
         RightArm.localScale = Vector3.Lerp(StartScale, LastScale, RightHugeRate);
         LefttArm.localScale = Vector3.Lerp(StartScale, LastScale, LeftHugeRate);
         muscleup = false;
+        prt = false;
+        plt = false;
     }
 
     public void HugeRight()
@@ -167,11 +171,13 @@ public class PartsHuge : MonoBehaviour
             {
                 HugeRight();
                 muscleup = true;
+                prt = true;
             }
             else if(type == 2)
             {
                 HugeLeft();
                 muscleup = true;
+                plt = true;
             }
                 HugeType[type - 1] = 0;
         }
