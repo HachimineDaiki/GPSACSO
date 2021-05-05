@@ -10,6 +10,7 @@ public class DoramuCon : MonoBehaviour
     private PartsHuge partsHuge;
 
     public GameObject explosion;
+    [SerializeField] GameObject BreakObj;
 
     public bool KillFlg;       //殴られた判定
     Rigidbody rb;
@@ -40,6 +41,7 @@ public class DoramuCon : MonoBehaviour
         {
             Damege();
         }
+        if (Input.GetKeyDown(KeyCode.A)) Damege();
     }
 
     private void Move()
@@ -49,17 +51,18 @@ public class DoramuCon : MonoBehaviour
 
     private void Damege()
     {
-        Vector3 vector3 = new Vector3(0f, 0.6f, 3.6f);
-        rb.AddForce(vector3, ForceMode.Impulse);
-        rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
+        //Vector3 vector3 = new Vector3(0f, 0.6f, 3.6f);
+        //rb.AddForce(vector3, ForceMode.Impulse);
+        //rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
         //shadderBreak();
+        Instantiate(BreakObj, transform.position, BreakObj.transform.rotation);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.name == "HitDet")
         {
-            Debug.Break();
             Invoke("ExplosionSet", 1.5f);
             KillFlg = true;
             score.AddPoint(100);
