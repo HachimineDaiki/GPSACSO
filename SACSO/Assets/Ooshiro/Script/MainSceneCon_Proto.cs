@@ -31,7 +31,7 @@ public class MainSceneCon_Proto : MonoBehaviour
     {
         if(CallOnlyOnce != true)
         {
-            Invoke("GameClearCon", 5f);
+            Invoke("GameClearCon", 30f);
             CallOnlyOnce = true;
         }
     }
