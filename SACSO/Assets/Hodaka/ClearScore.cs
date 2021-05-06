@@ -20,13 +20,14 @@ public class ClearScore : MonoBehaviour
         //筋肉のスコア
         rightpoint = PlayerPrefs.GetInt("rpumpup", 0)*500;
         leftpoint = PlayerPrefs.GetInt("lpumpup", 0)*500;
-
+        //スコア加算
         scorePoint += rightpoint + leftpoint;
     }
 
     // Update is called once per frame
     void Update()
     {
-        scorePointText.text = "SCORE :"+scorePoint.ToString("000000");
+        //スコア描画
+        scorePointText.text =scorePoint.ToString("00000")+"点";
     }
 }
