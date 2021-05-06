@@ -4,47 +4,23 @@ using UnityEngine;
 
 public class S_Trigger : MonoBehaviour
 {
+    private CameraControl cameraControl;
+    private Move move;
 
+    private void Start()
+    {
+        cameraControl = GameObject.Find("Camera2").GetComponent<CameraControl>();
+
+        move = GameObject.Find("musslepants2Unity").GetComponent<Move>();
+    }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Trigger"))
         {
             Debug.Log("asd");
-            // step = speed * Time.deltaTime;
-            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
 
-            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
-
-
-
-            // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
-
-            // クォータニオン → オイラー角への変換
-            Vector3 rotationAngles = rotation.eulerAngles;
-
-            // 回転
-            rotationAngles.y = rotationAngles.y + 45.0f;
-
-            // Vector3の加算は以下のような書き方も可能
-            //rotationAngles += new Vector3(90.0f, 0.0f, 0.0f);
-
-            // オイラー角 → クォータニオンへの変換
-            rotation = Quaternion.Euler(rotationAngles);
-
-            // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
-
-        }
-
-        if (other.CompareTag("Trigger0"))
-        {
-            Debug.Log("zxc");
+            move.MoveFlg = false;
 
             // step = speed * Time.deltaTime;
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
@@ -75,11 +51,117 @@ public class S_Trigger : MonoBehaviour
             this.transform.localRotation = rotation;
             this.transform.localScale = scale;
 
+            if (cameraControl.cameraflg == false)
+            {
+                cameraControl.cameraflg = true;
+            }
+
+        }
+
+        if (other.CompareTag("Trigger0"))
+        {
+            Debug.Log("zxc");
+
+            // step = speed * Time.deltaTime;
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
+
+            //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
+
+            move.MoveFlg = true;
+
+            // Transform値を取得する
+            Vector3 position = this.transform.localPosition;
+            Quaternion rotation = this.transform.localRotation;
+            Vector3 scale = this.transform.localScale;
+
+            // クォータニオン → オイラー角への変換
+            Vector3 rotationAngles = rotation.eulerAngles;
+
+            // 回転
+            rotationAngles.y = rotationAngles.y + 45.0f;
+
+            // Vector3の加算は以下のような書き方も可能
+            //rotationAngles += new Vector3(90.0f, 0.0f, 0.0f);
+
+            // オイラー角 → クォータニオンへの変換
+            rotation = Quaternion.Euler(rotationAngles);
+
+            // Transform値を設定する
+            this.transform.localPosition = position;
+            this.transform.localRotation = rotation;
+            this.transform.localScale = scale;
+
+            
+
         }
 
         if (other.CompareTag("Trigger1"))
         {
+            move.MoveFlg = false;
+
+            // Transform値を取得する
+            Vector3 position = this.transform.localPosition;
+            Quaternion rotation = this.transform.localRotation;
+            Vector3 scale = this.transform.localScale;
+
+            // クォータニオン → オイラー角への変換
+            Vector3 rotationAngles = rotation.eulerAngles;
+
+            // 回転
+            rotationAngles.y = rotationAngles.y + 45.0f;
+
+            // Vector3の加算は以下のような書き方も可能
+            //rotationAngles += new Vector3(90.0f, 0.0f, 0.0f);
+
+            // オイラー角 → クォータニオンへの変換
+            rotation = Quaternion.Euler(rotationAngles);
+
+            // Transform値を設定する
+            this.transform.localPosition = position;
+            this.transform.localRotation = rotation;
+            this.transform.localScale = scale;
+
+            if (cameraControl.cameraflg == false)
+            {
+                cameraControl.cameraflg = true;
+            }
+
+        }
+
+        if (other.CompareTag("Trigger2"))
+        {
+            move.MoveFlg = true;
+
+            // Transform値を取得する
+            Vector3 position = this.transform.localPosition;
+            Quaternion rotation = this.transform.localRotation;
+            Vector3 scale = this.transform.localScale;
+
+            // クォータニオン → オイラー角への変換
+            Vector3 rotationAngles = rotation.eulerAngles;
+
+            // 回転
+            rotationAngles.y = rotationAngles.y + 90.0f;
+
+            // Vector3の加算は以下のような書き方も可能
+            //rotationAngles += new Vector3(90.0f, 0.0f, 0.0f);
+
+            // オイラー角 → クォータニオンへの変換
+            rotation = Quaternion.Euler(rotationAngles);
+
+            // Transform値を設定する
+            this.transform.localPosition = position;
+            this.transform.localRotation = rotation;
+            this.transform.localScale = scale;
+
+        }
+
+        if (other.CompareTag("2_Trigger"))
+        {
             Debug.Log("asd");
+
+            move.MoveFlg = false;
+
             // step = speed * Time.deltaTime;
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
 
@@ -109,17 +191,23 @@ public class S_Trigger : MonoBehaviour
             this.transform.localRotation = rotation;
             this.transform.localScale = scale;
 
+            if (cameraControl.cameraflg == false)
+            {
+                cameraControl.cameraflg = true;
+            }
+
         }
 
-        if (other.CompareTag("Trigger2"))
+        if (other.CompareTag("2_Trigger0"))
         {
-            Debug.Log("asd");
+            Debug.Log("zxc");
+
             // step = speed * Time.deltaTime;
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
 
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
 
-
+            move.MoveFlg = true;
 
             // Transform値を取得する
             Vector3 position = this.transform.localPosition;
@@ -142,6 +230,81 @@ public class S_Trigger : MonoBehaviour
             this.transform.localPosition = position;
             this.transform.localRotation = rotation;
             this.transform.localScale = scale;
+
+
+
+        }
+
+        if (other.CompareTag("2_Trigger1"))
+        {
+            move.MoveFlg = false;
+
+            // Transform値を取得する
+            Vector3 position = this.transform.localPosition;
+            Quaternion rotation = this.transform.localRotation;
+            Vector3 scale = this.transform.localScale;
+
+            // クォータニオン → オイラー角への変換
+            Vector3 rotationAngles = rotation.eulerAngles;
+
+            // 回転
+            rotationAngles.y = rotationAngles.y + -45.0f;
+
+            // Vector3の加算は以下のような書き方も可能
+            //rotationAngles += new Vector3(90.0f, 0.0f, 0.0f);
+
+            // オイラー角 → クォータニオンへの変換
+            rotation = Quaternion.Euler(rotationAngles);
+
+            // Transform値を設定する
+            this.transform.localPosition = position;
+            this.transform.localRotation = rotation;
+            this.transform.localScale = scale;
+
+            if (cameraControl.cameraflg == false)
+            {
+                cameraControl.cameraflg = true;
+            }
+
+        }
+
+        if (other.CompareTag("2_Trigger2"))
+        {
+            move.MoveFlg = true;
+
+            // Transform値を取得する
+            Vector3 position = this.transform.localPosition;
+            Quaternion rotation = this.transform.localRotation;
+            Vector3 scale = this.transform.localScale;
+
+            // クォータニオン → オイラー角への変換
+            Vector3 rotationAngles = rotation.eulerAngles;
+
+            // 回転
+            rotationAngles.y = rotationAngles.y + -90.0f;
+
+            // Vector3の加算は以下のような書き方も可能
+            //rotationAngles += new Vector3(90.0f, 0.0f, 0.0f);
+
+            // オイラー角 → クォータニオンへの変換
+            rotation = Quaternion.Euler(rotationAngles);
+
+            // Transform値を設定する
+            this.transform.localPosition = position;
+            this.transform.localRotation = rotation;
+            this.transform.localScale = scale;
+
+        }
+
+
+        if (other.CompareTag("Ca_Trigger"))
+        {
+            if (cameraControl.cameraflg == true)
+            {
+                cameraControl.clearflg = true;
+
+                cameraControl.cameraflg = false;
+            }
 
         }
 

@@ -11,6 +11,11 @@ TagManager:
   - Trigger0
   - Trigger1
   - Trigger2
+  - Ca_Trigger
+  - 2_Trigger
+  - 2_Trigger0
+  - 2_Trigger1
+  - 2_Trigger2
   layers:
   - Default
   - TransparentFX
