@@ -15,6 +15,8 @@ public class DoramuCon : MonoBehaviour
     public bool KillFlg;       //殴られた判定
     Rigidbody rb;
 
+    private Runaway runaway;
+
     // Use this for initialization
     void Start()
     {
@@ -22,6 +24,7 @@ public class DoramuCon : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         KillFlg = false;
 
+        runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
         score = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
         playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
         partsHuge = GameObject.Find("musslepants2Unity").GetComponent<PartsHuge>();
@@ -41,7 +44,6 @@ public class DoramuCon : MonoBehaviour
         {
             Damege();
         }
-        if (Input.GetKeyDown(KeyCode.A)) Damege();
     }
 
     private void Move()
@@ -72,19 +74,16 @@ public class DoramuCon : MonoBehaviour
 
         if (other.name == "PlayerDet")
         {
-            //if (runaway.DushFlg)
-            //{
-            //    KillFlg = true;
-            //    score.AddPoint(100);
-            //    Invoke("ExplosionSet", 1.5f);
-            //}
-            //else
-            //{
-            //    playerLife.Damege();
-            //}
-
-            //いったん無敵判定なし
-            playerLife.Damege();
+            if (runaway.DushFlg)
+            {
+                KillFlg = true;
+                score.AddPoint(100);
+                Invoke("ExplosionSet", 1.5f);
+            }
+            else
+            {
+                playerLife.Damege();
+            }
         }
     }
 

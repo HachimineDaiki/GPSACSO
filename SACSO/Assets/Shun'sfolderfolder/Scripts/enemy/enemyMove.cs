@@ -16,6 +16,7 @@ public class enemyMove : MonoBehaviour
     public GameObject BreakDrum;//壊れた後のドラムを入れる
 
     public GameObject explosion;
+    private Runaway runaway;
 
     Material material;
 
@@ -35,6 +36,7 @@ public class enemyMove : MonoBehaviour
         KillFlg = false;
 
         score = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
+        runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
         playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
         partsHuge = GameObject.Find("musslepants2Unity").GetComponent<PartsHuge>();
 
@@ -87,19 +89,17 @@ public class enemyMove : MonoBehaviour
 
         if (other.name == "PlayerDet")
         {
-            //if (runaway.DushFlg)
-            //{
-            //    KillFlg = true;
-            //    score.AddPoint(100);
-            //    Invoke("ExplosionSet", 1.5f);
-            //}
-            //else
-            //{
-            //    playerLife.Damege();
-            //}
+            if (runaway.DushFlg)
+            {
+                KillFlg = true;
+                score.AddPoint(100);
+                Invoke("ExplosionSet", 1.5f);
+            }
+            else
+            {
+                playerLife.Damege();
+            }
 
-            //いったん無敵判定なし
-            playerLife.Damege();
         }
     }
 
