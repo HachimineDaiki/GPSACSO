@@ -9,6 +9,8 @@ TagManager:
   - enemy
   - Trigger
   - Trigger0
+  - Trigger1
+  - Trigger2
   layers:
   - Default
   - TransparentFX
