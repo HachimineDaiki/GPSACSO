@@ -30,9 +30,9 @@ public class S_Trigger : MonoBehaviour
 
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -47,9 +47,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
             if (cameraControl.cameraflg == false)
             {
@@ -70,9 +70,9 @@ public class S_Trigger : MonoBehaviour
             move.MoveFlg = true;
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -87,9 +87,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
             
 
@@ -100,9 +100,9 @@ public class S_Trigger : MonoBehaviour
             move.MoveFlg = false;
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -117,9 +117,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
             if (cameraControl.cameraflg == false)
             {
@@ -133,9 +133,9 @@ public class S_Trigger : MonoBehaviour
             move.MoveFlg = true;
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -150,9 +150,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
         }
 
@@ -170,9 +170,9 @@ public class S_Trigger : MonoBehaviour
 
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -187,9 +187,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
             if (cameraControl.cameraflg == false)
             {
@@ -210,9 +210,9 @@ public class S_Trigger : MonoBehaviour
             move.MoveFlg = true;
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -227,9 +227,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
 
 
@@ -240,9 +240,9 @@ public class S_Trigger : MonoBehaviour
             move.MoveFlg = false;
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -257,9 +257,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
             if (cameraControl.cameraflg == false)
             {
@@ -273,9 +273,9 @@ public class S_Trigger : MonoBehaviour
             move.MoveFlg = true;
 
             // Transform値を取得する
-            Vector3 position = this.transform.localPosition;
-            Quaternion rotation = this.transform.localRotation;
-            Vector3 scale = this.transform.localScale;
+            Vector3 position = transform.root.gameObject.transform.localPosition;
+            Quaternion rotation = transform.root.gameObject.transform.localRotation;
+            Vector3 scale = transform.root.gameObject.transform.localScale;
 
             // クォータニオン → オイラー角への変換
             Vector3 rotationAngles = rotation.eulerAngles;
@@ -290,9 +290,9 @@ public class S_Trigger : MonoBehaviour
             rotation = Quaternion.Euler(rotationAngles);
 
             // Transform値を設定する
-            this.transform.localPosition = position;
-            this.transform.localRotation = rotation;
-            this.transform.localScale = scale;
+            transform.root.gameObject.transform.localPosition = position;
+            transform.root.gameObject.transform.localRotation = rotation;
+            transform.root.gameObject.transform.localScale = scale;
 
         }
 
