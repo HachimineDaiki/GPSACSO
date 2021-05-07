@@ -36,9 +36,19 @@ public class NewPlayer : MonoBehaviour
 
         //矢印の向きに移動
         if (Input.GetKeyDown("z")) MoveAttack();
-        if (Input.GetButtonDown("Fire1")) MoveAttack();
         if (Input.GetKeyDown("x")) MoveAttack2();
-        if (Input.GetButtonDown("Fire2")) MoveAttack2();
+
+
+        if (Input.GetButton("Fire1"))
+        {
+            Debug.Log("A");
+            MoveAttack();
+        }
+        if (Input.GetButton("Fire2"))
+        {
+            Debug.Log("B");
+            MoveAttack2();
+        }
 
         MoveF310();
 
