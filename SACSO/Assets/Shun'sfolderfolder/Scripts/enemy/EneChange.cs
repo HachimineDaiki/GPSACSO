@@ -11,7 +11,11 @@ public class EneChange : MonoBehaviour
         //parentGameObjectは親要素のgameObject
         foreach (Transform child in gameObject.transform)
         {
-            Instantiate(Doramu, child.transform.position, Doramu.transform.rotation);
+            Vector3 rot = new Vector3(child.transform.rotation.x - 90, child.transform.localRotation.y, child.transform.rotation.z);
+            Vector3 vec = child.transform.localEulerAngles;
+            vec.x += 270;
+            Debug.Log(child.transform.localRotation + "      " + child.transform.rotation);
+            Instantiate(Doramu, child.transform.position, Quaternion.Euler(vec));
             GameObject.Destroy(child.gameObject);
         }
     }

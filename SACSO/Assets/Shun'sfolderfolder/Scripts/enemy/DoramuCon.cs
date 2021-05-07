@@ -57,7 +57,7 @@ public class DoramuCon : MonoBehaviour
         //rb.AddForce(vector3, ForceMode.Impulse);
         //rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
         //shadderBreak();
-        Instantiate(BreakObj, transform.position, BreakObj.transform.rotation);
+        Instantiate(BreakObj, transform.position, transform.localRotation);
         Destroy(gameObject);
     }
 
