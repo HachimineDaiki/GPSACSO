@@ -52,6 +52,7 @@ public class Select : MonoBehaviour
 
     public void Volume()
     {
+        //UIを表示
         PauseControlflg = true;
         volumeUI.SetActive(!volumeUI.activeSelf);
         pauseUI.SetActive(!pauseUI.activeSelf);

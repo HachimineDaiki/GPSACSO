@@ -90,14 +90,14 @@ public class NewPlayer : MonoBehaviour
 
         animator.SetTrigger("attack");
         punch = true;
-        Invoke("punchreset", 0.8f);
+        Invoke("punchreset", 0.3f);
     }
     public void MoveAttack2()
     {
 
         animator.SetTrigger("attack2");
         punch = true;
-        Invoke("punchreset", 0.8f);
+        Invoke("punchreset", 0.3f);
     }
     void punchreset()
     {
