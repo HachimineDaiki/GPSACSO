@@ -149,22 +149,7 @@ public class PartsHuge : MonoBehaviour
 
     public void HugeParts(int type)        //1:右パンチ2:左パンチ
     {
-        //if(type == 1)
-        //{
-        //    if(HugeType[type-1]++ >= 10)
-        //    {
-        //        HugeRight();
-        //        HugeType[type - 1] = 0;
-        //    }
-        //}else if(type == 2)
-        //{
-        //    if (HugeType[type - 1]++ >= 10)
-        //    {
-        //        HugeLeft();
-        //        HugeType[type - 1] = 0;
-        //    }
-        //}
-
+        if (type == 0) return;
         if (HugeType[type - 1]++ >= NextEv)
         {
             if (type == 1)
