@@ -12,7 +12,7 @@ public class ScoreCon : MonoBehaviour
     public Text Scoretext;
     void Start()
     {
-        score =100;
+        score =0;
         Scoretext.text = "Score : " + score;
     }
 

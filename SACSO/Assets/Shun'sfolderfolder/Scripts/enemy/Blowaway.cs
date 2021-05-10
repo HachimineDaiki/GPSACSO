@@ -14,8 +14,10 @@ public class Blowaway : MonoBehaviour
         rb = transform.GetComponent<Rigidbody>();
         Vector3 ue = new Vector3(0f, 100f, 0f);
 
-        rb.AddForce(transform.forward * 800, ForceMode.Impulse);
-        rb.AddTorque(transform.forward * 100);
+        transform.Rotate(270f, 0f, 0f);
+        rb.AddForce(transform.forward * -800, ForceMode.Impulse);
+        rb.AddForce(transform.up * -50, ForceMode.Impulse);
+        rb.AddTorque(transform.right * 500);
         Invoke("ExplosionSet", 1.5f);
         Destroy(gameObject, 1.5f);
     }

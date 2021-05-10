@@ -18,7 +18,7 @@ public class GameClearCon : MonoBehaviour
         if (Input.anyKeyDown)
         {
             //ゲームオーバーへ
-            SceneManager.LoadScene("GameOver");
+            SceneManager.LoadScene("TitleScene");
         }
 
 
