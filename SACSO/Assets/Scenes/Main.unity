@@ -1185,6 +1185,11 @@ PrefabInstance:
       propertyPath: m_ReflectionProbeUsage
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7105257652205716690, guid: bd881660a2dfdf74c9870d9b81396fad,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 78f317e82e6081244a2b4f7d8ceabed7, type: 2}
     - target: {fileID: 7914992173919211698, guid: bd881660a2dfdf74c9870d9b81396fad,
         type: 3}
       propertyPath: m_Name
