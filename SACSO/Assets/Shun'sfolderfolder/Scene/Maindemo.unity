@@ -1244,6 +1244,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Camera2
       objectReference: {fileID: 0}
+    - target: {fileID: 3023692646889996571, guid: 36a5e3955f0ab6d4f83aaf8244d44809,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3023692646889996573, guid: 36a5e3955f0ab6d4f83aaf8244d44809,
         type: 3}
       propertyPath: m_RootOrder
@@ -5263,6 +5268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 3
+  interval: 1
 --- !u!114 &1619274170086141921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7651,7 +7657,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -4002186962870436071, guid: da3a550879f9357458d73e2b12f8ee37, type: 3}
+  - {fileID: 2100000, guid: 8f47b3eefa07a6942a1f56c18864ec7b, type: 2}
   - {fileID: -9130586711530211351, guid: da3a550879f9357458d73e2b12f8ee37, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
