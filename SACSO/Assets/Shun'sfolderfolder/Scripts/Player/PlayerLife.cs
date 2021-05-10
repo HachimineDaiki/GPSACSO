@@ -13,6 +13,7 @@ public class PlayerLife : MonoBehaviour
 
     private ScoreCon SC;//ScoreCon.scの参照　こいつの書き方が分からないので大文字にしました　許してください
 
+    [SerializeField] GameObject M_player;       //プレイヤーのメッシュ
 
     void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerLife : MonoBehaviour
 
     public void Damege()
     {
+        if (muteki) return;
         Life--;
 
         //ヒットすると無敵時間を設定
@@ -49,9 +51,16 @@ public class PlayerLife : MonoBehaviour
         if(mutekiTime > 0)
         {
             mutekiTime -= Time.deltaTime;
-            if (mutekiTime <= 0) muteki = false;
+            if(Mathf.Floor(mutekiTime * 10) %2 == 0) M_player.SetActive(!M_player.activeSelf);
+            if (mutekiTime <= 0)
+            {
+                muteki = false;
+                M_player.SetActive(true);
+            }
         }
     }
+
+
 }
 
 /////////////////////
