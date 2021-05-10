@@ -7,12 +7,13 @@ public class Blowaway : MonoBehaviour
 
     private Rigidbody rb;
 
+    public bool KillSEflg;
+
     [SerializeField] GameObject explosion;
     // Start is called before the first frame update
     void Start()
     {
         rb = transform.GetComponent<Rigidbody>();
-        Vector3 ue = new Vector3(0f, 100f, 0f);
 
         transform.Rotate(270f, 0f, 0f);
         rb.AddForce(transform.forward * -800, ForceMode.Impulse);
@@ -20,12 +21,13 @@ public class Blowaway : MonoBehaviour
         rb.AddTorque(transform.right * 500);
         Invoke("ExplosionSet", 1.5f);
         Destroy(gameObject, 1.5f);
+        KillSEflg = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        KillSEflg = false;
     }
 
     private void ExplosionSet()

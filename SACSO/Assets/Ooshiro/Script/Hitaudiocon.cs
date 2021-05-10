@@ -8,7 +8,7 @@ public class Hitaudiocon : MonoBehaviour
     public bool Hitflg;
 
     GameObject expsound;
-    enemyMove enemymove;
+    Blowaway blowaway;
     void Start()
     {
         Hitflg = false;
@@ -18,11 +18,11 @@ public class Hitaudiocon : MonoBehaviour
     public void Update()
     {
         
-        expsound = GameObject.Find("enemy2.0(Clone)");
+        expsound = GameObject.Find("DamageDrum(Clone)");
         if(expsound != null)
         {
-            enemymove = expsound.GetComponent<enemyMove>();
-            if (enemymove.KillFlg == true)
+            blowaway = expsound.GetComponent<Blowaway>();
+            if (blowaway.KillSEflg == true)
             {
                 Hitflg = true;
             }

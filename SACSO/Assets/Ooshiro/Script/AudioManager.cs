@@ -23,7 +23,7 @@ public class AudioManager : MonoBehaviour
 
     private bool sound2flg;
 
-    int WaitTime;
+    //int WaitTime;
         //WaitTimeR;
 
     void Start()
@@ -37,7 +37,7 @@ public class AudioManager : MonoBehaviour
         hitflg = gamemanager.GetComponent<Hitaudiocon>();
         //enemymove = expsound.GetComponent<enemyMove>();
 
-        WaitTime = 0;
+        //WaitTime = 0;
         //WaitTimeR = 0;
     }
 
