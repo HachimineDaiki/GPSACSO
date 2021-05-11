@@ -46,7 +46,7 @@ public class AudioManager : MonoBehaviour
         if (newplayer.punch == true && sound2flg == false)
         {
             sound2flg = true;
-            audioSource.PlayOneShot(sound2);
+            audiosource2.PlayOneShot(sound2);
         }
         if (newplayer.punch == false && sound2flg == true) sound2flg = false;
 
@@ -65,7 +65,7 @@ public class AudioManager : MonoBehaviour
         if (hitflg.Hitflg == true)
         {
             hitflg.Hitflg = false;
-            audioSource.PlayOneShot(sound4);
+            audiosource2.PlayOneShot(sound4);
             Invoke("expsoundplay", 1.5f);
         }
     }
@@ -74,7 +74,7 @@ public class AudioManager : MonoBehaviour
 
     private void expsoundplay()
     {
-        audioSource.PlayOneShot(sound1);
+        audiosource2.PlayOneShot(sound1);
     }
 }
 
