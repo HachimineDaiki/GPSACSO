@@ -24,11 +24,6 @@ public class stageSpawner : MonoBehaviour
         new Vector3( 500f * (float)System.Math.Sqrt(3f),-750f,-500f ),        //下り坂の床V2
     };
 
-
-    private float ChangeTime;
-    [SerializeField] private static float CTime = 5f;
-
-
     public int startQuantity = 6;
 
     public int CreatType = 0;
@@ -38,7 +33,6 @@ public class stageSpawner : MonoBehaviour
         CreatType = 0;
 
         elapsedTime = 0f;
-        ChangeTime = 0f;
 
         for (int i = startQuantity; i>0; i--)
         {
@@ -66,7 +60,6 @@ public class stageSpawner : MonoBehaviour
 
 
         elapsedTime += Time.deltaTime;
-        ChangeTime += Time.deltaTime;
 
         childMove();
         if(elapsedTime > apperTime)

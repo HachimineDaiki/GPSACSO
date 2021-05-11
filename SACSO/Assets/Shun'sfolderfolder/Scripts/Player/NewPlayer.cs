@@ -20,13 +20,14 @@ public class NewPlayer : MonoBehaviour
 
 
     //峻が書いてます
-    const float MoveX = 15f;        //横の移動量
+    private modelChange mC;
 
     // Start is called before the first frame update
     void Start()
     {
         //GetComponentでAnimatorを取得して変数animatorで参照します。
         animator = GetComponent<Animator>();
+        mC = transform.root.gameObject.GetComponent<modelChange>();
 
     }
 
@@ -41,12 +42,10 @@ public class NewPlayer : MonoBehaviour
 
         if (Input.GetButton("Fire1"))
         {
-            Debug.Log("A");
             MoveAttack();
         }
         if (Input.GetButton("Fire2"))
         {
-            Debug.Log("B");
             MoveAttack2();
         }
 
@@ -89,6 +88,7 @@ public class NewPlayer : MonoBehaviour
     {
 
         animator.SetTrigger("attack");
+        mC.AttacInfo = 0;
         punch = true;
         Invoke("punchreset", 0.3f);
     }
@@ -96,6 +96,7 @@ public class NewPlayer : MonoBehaviour
     {
 
         animator.SetTrigger("attack2");
+        mC.AttacInfo = 1;
         punch = true;
         Invoke("punchreset", 0.3f);
     }
