@@ -17112,7 +17112,7 @@ GameObject:
   - component: {fileID: 7632803677477670389}
   m_Layer: 0
   m_Name: HitDet1-2
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17205,7 +17205,7 @@ GameObject:
   - component: {fileID: 7632803677556646003}
   m_Layer: 0
   m_Name: HitDet2-3
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17298,7 +17298,7 @@ GameObject:
   - component: {fileID: 7632803677698507270}
   m_Layer: 0
   m_Name: HitDet3-3
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17391,7 +17391,7 @@ GameObject:
   - component: {fileID: 7632803678038890918}
   m_Layer: 0
   m_Name: HitDet2-2
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17484,7 +17484,7 @@ GameObject:
   - component: {fileID: 7632803678073294592}
   m_Layer: 0
   m_Name: HitDet2-1
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17577,7 +17577,7 @@ GameObject:
   - component: {fileID: 7632803678102715931}
   m_Layer: 0
   m_Name: HitDet3-2
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17824,7 +17824,7 @@ GameObject:
   - component: {fileID: 7632803678807039194}
   m_Layer: 0
   m_Name: HitDet1-3
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -17917,7 +17917,7 @@ GameObject:
   - component: {fileID: 7632803678859280432}
   m_Layer: 0
   m_Name: HitDet1-1
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -18010,7 +18010,7 @@ GameObject:
   - component: {fileID: 7632803678861277474}
   m_Layer: 0
   m_Name: HitDet3-1
-  m_TagString: Untagged
+  m_TagString: AttackDet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

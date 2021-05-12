@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class modelChange : MonoBehaviour
 {
-    private GameObject[] models = new GameObject[9];
+    public GameObject[] models = new GameObject[9];
     // Start is called before the first frame update
 
     private int[] punchNum = new int[2];        //0:右パンチ1:左パンチ のヒット回数
     private int[] ArmInfo = new int[2];         //0:右手1:左手 の状態
     static int EvoTimes = 5;                    //腕の進化までの回数
 
-    private int NowModelNum;
+    public int NowModelNum;
 
     /// <Summary>
     /// 殴りのタイプ 0:右手1:左手 

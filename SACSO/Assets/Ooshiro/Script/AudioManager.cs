@@ -23,6 +23,9 @@ public class AudioManager : MonoBehaviour
 
     private bool sound2flg;
 
+    //Playerの親からモデルを取得
+    private modelChange Mc;
+
     //int WaitTime;
         //WaitTimeR;
 
@@ -30,9 +33,12 @@ public class AudioManager : MonoBehaviour
     {
         //Componentを取得
         movesound = GameObject.FindGameObjectWithTag("PlayerParent");
+
+        newplayer = GetPlayerModel().GetComponent<NewPlayer>();
+
+
         gamemanager = GameObject.Find("GameManeger");
         //expsound = GameObject.Find("enemy2.0");
-        newplayer = movesound.GetComponent<NewPlayer>();
         pausescript = gamemanager.GetComponent<PauseScript>();
         hitflg = gamemanager.GetComponent<Hitaudiocon>();
         //enemymove = expsound.GetComponent<enemyMove>();
@@ -43,6 +49,8 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+
+        newplayer = GetPlayerModel().GetComponent<NewPlayer>();
         if (newplayer.punch == true && sound2flg == false)
         {
             sound2flg = true;
@@ -75,6 +83,17 @@ public class AudioManager : MonoBehaviour
     private void expsoundplay()
     {
         audiosource2.PlayOneShot(sound1);
+    }
+
+    GameObject GetPlayerModel()
+    {
+
+        //書くね！
+        //初期のプレイヤーのモデルのNewPlayerの取得
+        Mc = movesound.GetComponent<modelChange>();
+
+        return Mc.models[Mc.NowModelNum];
+
     }
 }
 
