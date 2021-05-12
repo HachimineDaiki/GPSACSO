@@ -17,7 +17,7 @@ public class ObstacleMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
-        playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
+        playerLife = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<PlayerLife>();
 
     }
 

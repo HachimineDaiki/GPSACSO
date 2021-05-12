@@ -29,7 +29,7 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         //Componentを取得
-        movesound = GameObject.Find("musslepants2Unity");
+        movesound = GameObject.FindGameObjectWithTag("PlayerParent");
         gamemanager = GameObject.Find("GameManeger");
         //expsound = GameObject.Find("enemy2.0");
         newplayer = movesound.GetComponent<NewPlayer>();

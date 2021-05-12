@@ -46,5 +46,10 @@ public class Move : MonoBehaviour
                 transform.position -= transform.right * speed * Time.deltaTime;
             }
         }
+
+        foreach (Transform child in gameObject.transform)
+        {
+            child.transform.localPosition = Vector3.zero;
+        }
     }
 }

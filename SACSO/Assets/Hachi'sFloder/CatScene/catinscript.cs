@@ -7,17 +7,17 @@ using UnityEngine.UI;
 public class catinscript : MonoBehaviour
 {
    private Animator animator;
-   private PartsHuge muscleplay;
+   private modelChange Mc;
 
     private void Start() {
         animator = GetComponent<Animator>();
-        muscleplay = GameObject.Find("musslepants2Unity").GetComponent<PartsHuge>();
+        Mc = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<modelChange>();
     }
 
 
 
     private void Update() {
-        if (muscleplay.muscleup) {
+        if (Mc.muscleup) {
             animator.SetTrigger("ms");
             Debug.Log("勝ったな！！");
         }

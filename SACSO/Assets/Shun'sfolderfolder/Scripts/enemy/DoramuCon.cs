@@ -7,7 +7,7 @@ public class DoramuCon : MonoBehaviour
 
     private PlayerLife playerLife;
     private ScoreCon score;
-    private PartsHuge partsHuge;
+    private modelChange Mc;
 
     public GameObject explosion;
     [SerializeField] GameObject BreakObj;
@@ -26,8 +26,8 @@ public class DoramuCon : MonoBehaviour
 
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
         score = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
-        playerLife = GameObject.Find("musslepants2Unity").GetComponent<PlayerLife>();
-        partsHuge = GameObject.Find("musslepants2Unity").GetComponent<PartsHuge>();
+        playerLife = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<PlayerLife>();
+        Mc = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<modelChange>();
 
     }
 
@@ -63,13 +63,13 @@ public class DoramuCon : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.name == "HitDet")
+        if (other.CompareTag("AttackDet"))
         {
             Invoke("ExplosionSet", 1.5f);
             KillFlg = true;
             score.AddPoint(100);
             rb.freezeRotation = false;
-            partsHuge.HugeParts(partsHuge.AttackInfo);
+            Mc.HitFlg = true;
         }
 
         if (other.name == "PlayerDet")

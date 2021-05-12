@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class partspoint : MonoBehaviour
 {
-    private PartsHuge rpom;
-    private PartsHuge lpom;
+    private modelChange rpom;
+    private modelChange lpom;
 
     int pl=0;//右腕に対する点数
     int pr=0;//左腕に対する点数
@@ -16,8 +16,8 @@ public class partspoint : MonoBehaviour
     {
         pl = 1;
         pr = 1;
-        rpom = GameObject.Find("musslepants2Unity").GetComponent<PartsHuge>();
-        lpom = GameObject.Find("musslepants2Unity").GetComponent<PartsHuge>();
+        rpom = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<modelChange>();
+        lpom = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<modelChange>();
     }
 
     // Update is called once per frame
