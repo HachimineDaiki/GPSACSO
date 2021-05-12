@@ -10,6 +10,7 @@ public class PlayerLife : MonoBehaviour
     [SerializeField] private const int MaxLife = 3;
     private bool muteki;
     private float mutekiTime;
+    private modelChange Mc;
 
     private ScoreCon SC;//ScoreCon.scの参照　こいつの書き方が分からないので大文字にしました　許してください
 
@@ -18,6 +19,7 @@ public class PlayerLife : MonoBehaviour
         SC = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
         Life = MaxLife;
         muteki = false;
+        Mc = gameObject.GetComponent<modelChange>();
     }
     private void FixedUpdate()
     {
@@ -48,12 +50,24 @@ public class PlayerLife : MonoBehaviour
     {
         if(mutekiTime > 0)
         {
+            activeChange Ac = getObj().GetComponent<activeChange>();
             mutekiTime -= Time.deltaTime;
+            if(Mathf.Floor(mutekiTime * 10) % 2 == 0)
+            {
+                Ac = getObj().GetComponent<activeChange>();
+                Ac.change();
+            }
             if (mutekiTime <= 0)
             {
                 muteki = false;
+                Ac.MeshTrue();
             }
         }
+    }
+
+    private GameObject getObj()
+    {
+        return Mc.models[Mc.NowModelNum];
     }
 
 

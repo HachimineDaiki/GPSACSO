@@ -8,12 +8,12 @@ public class activeChange : MonoBehaviour
 
     [SerializeField] GameObject objMesh;       //オブジェクトのメッシュ
     
-    void change()
+    public void change()
     {
         objMesh.SetActive(!objMesh.activeSelf);
     }
 
-    void MeshTrue()
+    public void MeshTrue()
     {
         objMesh.SetActive(true);
     }
