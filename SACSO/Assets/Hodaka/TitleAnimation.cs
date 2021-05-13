@@ -38,11 +38,23 @@ public class TitleAnimation : MonoBehaviour
     void Update()
     {
         elapsedTime += Time.deltaTime;//経過時間
-        Animation();
+        if (!(canvas.gameObject.activeSelf))
+        {
+            Animation();//タイトルのアニメーション再生
+        }
     }
 
     void Animation()
     {
+
+        //ボタンが何か押されたらアニメーションを高速化する
+        if (Input.anyKeyDown)
+        {
+            elapsedAnimation = "Title";
+            BlueAnim.Play();
+            RedAnim.Play();
+            elapsedTime = 1.0f;
+        }
         //elapsedTime
         if (elapsedTime > 2.0 && elapsedAnimation == "End")
         {
