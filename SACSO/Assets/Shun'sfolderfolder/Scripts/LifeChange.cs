@@ -8,32 +8,32 @@ public class LifeChange : MonoBehaviour
     // Start is called before the first frame update
 
     public Image LifeImage;
-    [SerializeField] private Sprite Green, Yellow, Red;
+    [SerializeField] private GameObject image_G;
+    [SerializeField] private GameObject image_Y;
+    [SerializeField] private GameObject image_R;
     private PlayerLife playerLife;
     void Start()
     {
-        LifeImage.sprite = Green;
+        //LifeImage.sprite = Green;
         playerLife = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<PlayerLife>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(playerLife.Life == 3)
+        if(playerLife.Life == 2 && image_G.activeSelf)
         {
-
-            LifeImage.sprite = Green;
+            image_G.SetActive(!image_G.activeSelf);
         }
-        else if(playerLife.Life== 2)
+        if(playerLife.Life== 1 && image_Y.activeSelf)
         {
-
-            LifeImage.sprite = Yellow;
+            image_Y.SetActive(!image_Y.activeSelf);
         }
-        else
-        {
-            LifeImage.sprite = Red;
+        //if
+        //{
+        //    image_R.SetActive(!image_R.activeSelf);
 
-        }
+        //}
 
     }
 }

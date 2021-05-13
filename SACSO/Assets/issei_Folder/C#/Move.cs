@@ -18,7 +18,7 @@ public class Move : MonoBehaviour
 
     [SerializeField] float Speed = 50.0f;
     [SerializeField] float speed = 10.0f;
-    private bool moveflg = true;
+    public bool moveflg = true;
 
 
     //長押し移動を防止する　
