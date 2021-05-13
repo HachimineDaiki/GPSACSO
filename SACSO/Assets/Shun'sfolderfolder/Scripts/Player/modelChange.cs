@@ -60,7 +60,7 @@ public class modelChange : MonoBehaviour
     {
         if(++punchNum[AttacInfo] > EvoTimes)
         {
-            ArmInfo[AttacInfo]++;
+            if (++ArmInfo[AttacInfo] >= 3) ArmInfo[AttacInfo] = 2;
             PlayerChange();
         }
         HitFlg = false;
@@ -68,11 +68,15 @@ public class modelChange : MonoBehaviour
 
     void PlayerChange()
     {
-        int modelNum = ArmInfo[0] + ArmInfo[1] * 3;
+        int modelNum =( ArmInfo[0] * 3) + ArmInfo[1];
+
 
         //モデルの差し替え
-        models[modelNum].SetActive(true);
-        models[NowModelNum].SetActive(false);
+        if (modelNum != NowModelNum)
+        {
+            models[modelNum].SetActive(true);
+            models[NowModelNum].SetActive(false);
+        }
 
         //今のモデルの要素番号
         NowModelNum = modelNum;
