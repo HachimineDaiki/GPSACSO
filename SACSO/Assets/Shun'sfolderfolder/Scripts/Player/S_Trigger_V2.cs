@@ -20,7 +20,7 @@ public class S_Trigger_V2 : MonoBehaviour
         {
             Debug.Log("asd");
 
-            move.MoveFlg = false;
+            move.moveflg = false;
 
             // step = speed * Time.deltaTime;
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
@@ -67,7 +67,7 @@ public class S_Trigger_V2 : MonoBehaviour
 
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
 
-            move.MoveFlg = true;
+            
 
             // Transform値を取得する
             Vector3 position = transform.root.gameObject.transform.localPosition;
@@ -97,7 +97,7 @@ public class S_Trigger_V2 : MonoBehaviour
 
         if (other.CompareTag("Trigger1"))
         {
-            move.MoveFlg = false;
+            move.moveflg = false;
 
             // Transform値を取得する
             Vector3 position = transform.root.gameObject.transform.localPosition;
@@ -130,8 +130,7 @@ public class S_Trigger_V2 : MonoBehaviour
 
         if (other.CompareTag("Trigger2"))
         {
-            move.MoveFlg = true;
-
+            
             // Transform値を取得する
             Vector3 position = transform.root.gameObject.transform.localPosition;
             Quaternion rotation = transform.root.gameObject.transform.localRotation;
@@ -160,7 +159,7 @@ public class S_Trigger_V2 : MonoBehaviour
         {
             Debug.Log("asd");
 
-            move.MoveFlg = false;
+            move.moveflg = false;
 
             // step = speed * Time.deltaTime;
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
@@ -207,7 +206,7 @@ public class S_Trigger_V2 : MonoBehaviour
 
             //transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.Euler(0, 90f, 0), step);
 
-            move.MoveFlg = true;
+          
 
             // Transform値を取得する
             Vector3 position = transform.root.gameObject.transform.localPosition;
@@ -237,7 +236,7 @@ public class S_Trigger_V2 : MonoBehaviour
 
         if (other.CompareTag("2_Trigger1"))
         {
-            move.MoveFlg = false;
+            move.moveflg = false;
 
             // Transform値を取得する
             Vector3 position = transform.root.gameObject.transform.localPosition;
@@ -270,7 +269,7 @@ public class S_Trigger_V2 : MonoBehaviour
 
         if (other.CompareTag("2_Trigger2"))
         {
-            move.MoveFlg = true;
+           
 
             // Transform値を取得する
             Vector3 position = transform.root.gameObject.transform.localPosition;
@@ -302,7 +301,7 @@ public class S_Trigger_V2 : MonoBehaviour
             if (cameraControl.cameraflg == true)
             {
                 cameraControl.clearflg = true;
-
+                move.moveflg = true;
                 cameraControl.cameraflg = false;
             }
 

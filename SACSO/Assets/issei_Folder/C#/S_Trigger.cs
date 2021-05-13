@@ -11,7 +11,7 @@ public class S_Trigger : MonoBehaviour
     {
         cameraControl = GameObject.Find("Camera2").GetComponent<CameraControl>();
 
-        move = GameObject.Find("musslepants2Unity").GetComponent<Move>();
+        move = gameObject.transform.root.GetComponent<Move>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -91,7 +91,7 @@ public class S_Trigger : MonoBehaviour
             transform.root.gameObject.transform.localRotation = rotation;
             transform.root.gameObject.transform.localScale = scale;
 
-            
+
 
         }
 

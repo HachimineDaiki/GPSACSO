@@ -11,6 +11,7 @@ public class CameraControl : MonoBehaviour
     private Vector3 posVector;
     public float scale = 3.0f;
     public float cameraSpeed = 1.0f;
+    public float angle = 80.0f;
 
     public bool cameraflg = false;
     public bool clearflg = false;
@@ -19,11 +20,11 @@ public class CameraControl : MonoBehaviour
     void Start()
     {
        
-         player = GameObject.Find("musslepants2Unity");
+         player = GameObject.FindGameObjectWithTag("PlayerParent");
          prevPlayerPos = new Vector3(0, 0, -1);
 
         //unitychanの情報を取得
-        this.g_player = GameObject.Find("musslepants2Unity");
+        this.g_player = GameObject.FindGameObjectWithTag("PlayerParent");
 
         // MainCamera(自分自身)とplayerとの相対距離を求める
         offset = transform.position - g_player.transform.position;
@@ -36,7 +37,7 @@ public class CameraControl : MonoBehaviour
         if(clearflg == true)
         {
             //unitychanの情報を取得
-            this.g_player = GameObject.Find("musslepants2Unity");
+            this.g_player = GameObject.FindGameObjectWithTag("PlayerParent");
 
             // MainCamera(自分自身)とplayerとの相対距離を求める
             offset = transform.position - g_player.transform.position;
@@ -50,7 +51,7 @@ public class CameraControl : MonoBehaviour
             Vector3 backVector = (prevPlayerPos - currentPlayerPos).normalized;
             posVector = (backVector == Vector3.zero) ? posVector : backVector;
             Vector3 targetPos = currentPlayerPos + scale * posVector;
-            targetPos.y = targetPos.y + 50.0f;
+            targetPos.y = targetPos.y + angle;
             this.transform.position = Vector3.Lerp(
                 this.transform.position,
                 targetPos,
