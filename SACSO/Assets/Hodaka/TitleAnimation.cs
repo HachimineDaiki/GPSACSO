@@ -74,6 +74,6 @@ public class TitleAnimation : MonoBehaviour
     void canvasActiv()//canvasをアクティブにする
     {
         canvas.gameObject.SetActive(true);//canvasの表示
-        animationCanvas.gameObject.SetActive(false);//animationCanvasの非表示
+        //animationCanvas.gameObject.SetActive(false);//animationCanvasの非表示
     }
 }
