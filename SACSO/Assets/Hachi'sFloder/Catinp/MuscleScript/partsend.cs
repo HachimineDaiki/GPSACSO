@@ -21,9 +21,9 @@ public class partsend : MonoBehaviour
         rightPointText = GameObject.Find("RightPoint").GetComponent<Text>();
         leftPointText = GameObject.Find("LeftPoint").GetComponent<Text>();
 
-        //仮％変換(筋肉の増加量が明確になったら修正して）
-        rightpoint *= 50;
-        leftpoint  *= 50;
+        //％変換(成長量0~2*50+パンチ量0~4*10の計算）
+        rightpoint *= 50+ PlayerPrefs.GetInt("RPunchCt", 0)*10;
+        leftpoint  *= 50+ PlayerPrefs.GetInt("LPunchCt", 0)*10;
     }
 
     // Update is called once per frame
