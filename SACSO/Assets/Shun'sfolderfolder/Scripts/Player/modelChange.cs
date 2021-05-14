@@ -7,8 +7,8 @@ public class modelChange : MonoBehaviour
     public GameObject[] models = new GameObject[9];
     // Start is called before the first frame update
 
-    private int[] punchNum = new int[2];        //0:右パンチ1:左パンチ のヒット回数
-    private int[] ArmInfo = new int[2];         //0:右手1:左手 の状態
+    public int[] punchNum = new int[2];        //0:右パンチ1:左パンチ のヒット回数
+    public int[] ArmInfo = new int[2];         //0:右手1:左手 の状態
     static int EvoTimes = 5;                    //腕の進化までの回数
 
     public int NowModelNum;

@@ -29,9 +29,12 @@ public class partspoint : MonoBehaviour
         else if(lpom.plt){
             pl += 1;
         }
-        
-        PlayerPrefs.SetInt("rpumpup",pr);
-        PlayerPrefs.SetInt("lpumpup",pl);
+
+        PlayerPrefs.SetInt("rpumpup", rpom.ArmInfo[0]);
+        PlayerPrefs.SetInt("lpumpup",rpom.ArmInfo[1]);
+
+        PlayerPrefs.SetInt("RPunchCt", rpom.punchNum[0]);
+        PlayerPrefs.SetInt("LPunchCt", rpom.punchNum[1]);
         PlayerPrefs.Save();
     }
 }
