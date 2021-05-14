@@ -53,13 +53,18 @@ public class modelChange : MonoBehaviour
 
     private void FixedUpdate()
     {
+
+        muscleup = false;
+
         if (HitFlg) punchHit();
+
     }
 
     void punchHit()
     {
         if(++punchNum[AttacInfo] > EvoTimes)
         {
+            punchNum[AttacInfo] = 0;
             if (++ArmInfo[AttacInfo] >= 3) ArmInfo[AttacInfo] = 2;
             PlayerChange();
         }
