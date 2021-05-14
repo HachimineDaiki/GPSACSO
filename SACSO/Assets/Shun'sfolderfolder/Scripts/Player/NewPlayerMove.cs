@@ -40,6 +40,9 @@ public class NewPlayerMove : MonoBehaviour
     //長押し移動を防止する　
     public bool MoveFlg = false;
 
+    public Runaway runaway;
+    float DushSpeed;
+
 
 
 
@@ -56,6 +59,7 @@ public class NewPlayerMove : MonoBehaviour
 
         OldDis = Mathf.Infinity;
 
+        DushSpeed = 1f;
     }
 
     private void FixedUpdate()
@@ -88,6 +92,7 @@ public class NewPlayerMove : MonoBehaviour
         }
         ChildStop();    //子要素のゼイバスくんの移動の削除
 
+        Dush();
         
     }
 
@@ -132,7 +137,7 @@ public class NewPlayerMove : MonoBehaviour
     {
         Vector3 velocity = gameObject.transform.forward * Speed;
         //gameObject.transform.position += velocity * Time.deltaTime;
-        Depthdistance += Mathf.Abs(Speed * Time.deltaTime);
+        Depthdistance += Mathf.Abs(Speed * DushSpeed * Time.deltaTime);
 
 
     }
@@ -302,5 +307,11 @@ public class NewPlayerMove : MonoBehaviour
         // オイラー角 → クォータニオンへの変換
         EndRot = Quaternion.Euler(rotationAngles);
         dosuu = -45f;
+    }
+
+    void Dush()
+    {
+        if (runaway.DushFlg)DushSpeed = 1.5f;
+        else DushSpeed = 1f;
     }
 }

@@ -6,7 +6,7 @@ public class CameraCon : MonoBehaviour
 {
     // Start is called before the first frame update
     const float MoveZ = 0.4f;
-    [SerializeField]private float Pos;
+    private float Pos;
 
     Vector3 StartPos;
     Vector3 EndPos;
@@ -30,7 +30,7 @@ public class CameraCon : MonoBehaviour
         Dush();
         Rot();
         Right();
-        //transform.position = Vector3.Lerp(StartPos, EndPos, Pos);
+        transform.localPosition = Vector3.Lerp(StartPos, EndPos, Pos);
 
 
     }
