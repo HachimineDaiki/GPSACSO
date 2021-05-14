@@ -19,6 +19,8 @@ public class TitleAnimation : MonoBehaviour
     Animation BlueAnim;
     Animation TitleAnim;
 
+    private bool animSkipflg = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +34,7 @@ public class TitleAnimation : MonoBehaviour
         TitleAnim = titleMusleRunRogo.GetComponent<Animation>();
 
         elapsedAnimation = "Green";
+        animSkipflg = true;
     }
 
     // Update is called once per frame
@@ -47,14 +50,15 @@ public class TitleAnimation : MonoBehaviour
     void Animation()
     {
 
-        //ボタンが何か押されたらアニメーションを高速化する
-        if (Input.anyKeyDown)
-        {
-            elapsedAnimation = "Title";
-            BlueAnim.Play();
-            RedAnim.Play();
-            elapsedTime = 1.0f;
-        }
+        ////ボタンが何か押されたらアニメーションを高速化する
+        //if (Input.anyKeyDown && animSkipflg == true)
+        //{
+        //    elapsedAnimation = "Title";
+        //    BlueAnim.Play();
+        //    RedAnim.Play();
+        //    elapsedTime = 1.0f;
+        //    animSkipflg = false;
+        //}
         //elapsedTime
         if (elapsedTime > 2.0 && elapsedAnimation == "End")
         {
