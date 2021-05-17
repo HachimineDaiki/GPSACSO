@@ -38,7 +38,6 @@ public class CameraCon : MonoBehaviour
             if (Pos >= 1.0f)
             {
                 Pos = 1.0f;
-                Invoke("DushRelease", 3.0f);
             }
         }
         else

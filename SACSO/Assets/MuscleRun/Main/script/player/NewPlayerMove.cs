@@ -44,6 +44,8 @@ public class NewPlayerMove : MonoBehaviour
     float AdjustmentTime;
     bool AdjustmentFlg;
 
+    private float DisTime;      //距離によって曲がる時間を変える
+
 
 
 
@@ -61,6 +63,7 @@ public class NewPlayerMove : MonoBehaviour
 
         DushSpeed = 1f;
         AdjustmentTime = 0f;
+        DisTime = 0f;
         AdjustmentFlg = false;
     }
 
@@ -174,7 +177,7 @@ public class NewPlayerMove : MonoBehaviour
 
         if (TurnNum / 2 == 0)
         {
-            if ((TurnTime += Time.deltaTime * 135f) > (TurnNum + 1) * 135f) TurnTime = (TurnNum + 1) * 135f;
+            if ((TurnTime += Time.deltaTime * 135f / DisTime) > (TurnNum + 1) * 135f) TurnTime = (TurnNum + 1) * 135f;
             // クォータニオン → オイラー角への変換
             float rad = (135f - TurnTime) * Mathf.Deg2Rad;
             //基準点とプレイヤーの座標の距離の取得
@@ -207,7 +210,7 @@ public class NewPlayerMove : MonoBehaviour
         {
             int type = Mathf.Abs(TurnNum - 3) % 3;      //2を1に　3を0に
 
-            if ((TurnTime -= Time.deltaTime * 135f) < (type) * 135f) TurnTime = (type) * 135f;
+            if ((TurnTime -= Time.deltaTime * 135f / DisTime) < (type) * 135f) TurnTime = (type) * 135f;
             // クォータニオン → オイラー角への変換
             float rad = (405 -  TurnTime) * Mathf.Deg2Rad;
             //基準点とプレイヤーの座標の距離の取得
@@ -275,7 +278,9 @@ public class NewPlayerMove : MonoBehaviour
 
             StartP = gameObject.transform.position;
 
-            
+            DisTime = Mathf.Abs(Sidedistance - 100) / 100;
+            if (TurnNum >= 2) DisTime = Mathf.Abs(DisTime - 2);
+            DisTime += 0.1f;
             TurnTime = rotationAngles.y;
             TurnCheck = true;
         }

@@ -7,6 +7,10 @@ public class ObstacleMove : MonoBehaviour
     private Runaway runaway;
     private PlayerLife playerLife;
 
+    private ScoreCon score;
+
+
+    public GameObject explosion;
 
     private bool KillFlg;       //殴られた判定
     Rigidbody rb;
@@ -17,6 +21,7 @@ public class ObstacleMove : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
+        score = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
         playerLife = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<PlayerLife>();
 
     }
@@ -24,14 +29,7 @@ public class ObstacleMove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!KillFlg)
-        {
-            Move();
-        }
-        else
-        {
-            Damege();
-        }
+        
     }
 
     private void Move()
@@ -41,11 +39,17 @@ public class ObstacleMove : MonoBehaviour
 
     private void Damege()
     {
+        rb = transform.GetComponent<Rigidbody>();
 
-        Vector3 vector3 = new Vector3(0f, 1.2f, 1.4f);
-        rb.AddForce(vector3, ForceMode.Impulse);
-        rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
-        Destroy(gameObject, 3f);
+        transform.Rotate(270f, 0f, 0f);
+        rb.AddForce(transform.forward * -800, ForceMode.Impulse);
+        rb.AddForce(transform.up * -50, ForceMode.Impulse);
+        rb.AddTorque(transform.right * 500);
+        ExplosionSet();
+
+
+
+        Destroy(gameObject, 1.5f);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -53,11 +57,21 @@ public class ObstacleMove : MonoBehaviour
         if (other.name == "PlayerDet" && !runaway.DushFlg)
         {
             playerLife.Damege();
+        }else if(other.name == "PlayerDet" && runaway.DushFlg)
+        {
+            score.AddPoint(200);
+            Damege();
         }
+
 
         if (other.name == "HitDet" && !runaway.DushFlg)
         {
             playerLife.Damege();
         }
+    }
+    private void ExplosionSet()
+    {
+        GameObject obj = Instantiate(explosion, this.transform.position, Quaternion.identity);
+        Destroy(obj, 2.5f);
     }
 }
