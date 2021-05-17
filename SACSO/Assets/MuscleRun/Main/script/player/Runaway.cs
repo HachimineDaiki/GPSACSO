@@ -7,12 +7,16 @@ public class Runaway : MonoBehaviour
     Slider _slider;
     public bool DushFlg;
     float _hp;
+
+    [SerializeField] private GameObject Dush;
+
+
     void Start()
     {
         // スライダーを取得する
         _slider = GameObject.Find("Slider").GetComponent<Slider>();
         DushFlg = false;
-        _hp = 0;
+        _hp = 0; PaticleAc();
     }
 
     void FixedUpdate()
@@ -39,10 +43,12 @@ public class Runaway : MonoBehaviour
 
         if (DushFlg)        //tureならダッシュ状態
         {
+            PaticleAc();
             _hp -= 0.1f * Time.deltaTime;
         }
         else　           　 //falseなら通常状態
         {
+            ParticleNotAc();
             _hp += 0.05f * Time.deltaTime;
         }
 
@@ -54,5 +60,15 @@ public class Runaway : MonoBehaviour
     {
         _hp = 0f;
         DushFlg = false;
+    }
+
+    void PaticleAc()
+    {
+        Dush.SetActive(true);
+    }
+
+    void ParticleNotAc()
+    {
+        Dush.SetActive(false);
     }
 }

@@ -23,6 +23,7 @@ public class modelChange : MonoBehaviour
     /// </Summary>
     public bool HitFlg;
 
+    [SerializeField] private GameObject LevelUP;
 
     public bool muscleup;//カットイン（catinscript用のフラグ）
     public bool plt; //筋肉点数用フラグ
@@ -49,6 +50,8 @@ public class modelChange : MonoBehaviour
         NowModelNum = 0;   //今のモデルの要素番号:初期値０
 
         HitFlg = false;
+        PatNotActive();
+
     }
 
     private void FixedUpdate()
@@ -57,6 +60,7 @@ public class modelChange : MonoBehaviour
         muscleup = false;
 
         if (HitFlg) punchHit();
+
 
     }
 
@@ -74,7 +78,8 @@ public class modelChange : MonoBehaviour
     void PlayerChange()
     {
         int modelNum =( ArmInfo[0] * 3) + ArmInfo[1];
-
+        PatActive();
+        Invoke("PatNotActive", 4f);
 
         //モデルの差し替え
         if (modelNum != NowModelNum)
@@ -99,5 +104,15 @@ public class modelChange : MonoBehaviour
             plt = true;
         }
 
+    }
+
+    void PatActive()
+    {
+        LevelUP.SetActive(true);
+    }
+
+    void PatNotActive()
+    {
+        LevelUP.SetActive(false) ;
     }
 }

@@ -121,6 +121,18 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &63798604 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3186102827010696852, guid: b81b221002ff72a48b17db68a2bc14fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 3592342104845780456}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1499126906 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 799226961745169189, guid: b81b221002ff72a48b17db68a2bc14fa,
+    type: 3}
+  m_PrefabInstance: {fileID: 3592342104845780456}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1563405242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5869150858190403572, guid: 0bd64442193658e45bd18bae47419657,
@@ -719,6 +731,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6280318367109530270, guid: b81b221002ff72a48b17db68a2bc14fa,
+        type: 3}
+      propertyPath: LevelUP
+      value: 
+      objectReference: {fileID: 63798604}
     - target: {fileID: 6280318367109530271, guid: b81b221002ff72a48b17db68a2bc14fa,
         type: 3}
       propertyPath: m_Name
@@ -886,6 +903,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManeger
       objectReference: {fileID: 0}
+    - target: {fileID: 5869150858190403572, guid: 0bd64442193658e45bd18bae47419657,
+        type: 3}
+      propertyPath: Dush
+      value: 
+      objectReference: {fileID: 1499126906}
     - target: {fileID: 5869150858190403573, guid: 0bd64442193658e45bd18bae47419657,
         type: 3}
       propertyPath: m_RootOrder
