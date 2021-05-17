@@ -5,14 +5,12 @@ using UnityEngine;
 public class CameraCon : MonoBehaviour
 {
     // Start is called before the first frame update
-    const float MoveZ = 0.4f;
     private float Pos;
 
     Vector3 StartPos;
     Vector3 EndPos;
 
     private Runaway runaway;
-    private stageSpawner spawner;
 
     void Start()
     {
@@ -21,15 +19,12 @@ public class CameraCon : MonoBehaviour
         EndPos = new Vector3(transform.position.x, transform.position.y + 20.0f, transform.position.z - 30.0f);
 
         runaway = GameObject.Find("GameManeger").GetComponent<Runaway>();
-        spawner = GameObject.Find("StageScroll").GetComponent<stageSpawner>();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         Dush();
-        Rot();
-        Right();
         transform.localPosition = Vector3.Lerp(StartPos, EndPos, Pos);
 
 
@@ -57,14 +52,5 @@ public class CameraCon : MonoBehaviour
 
     }
 
-    void Right()
-    {
-        //カメラの回転でメビウスって伝わるんですか？！
-        //transform.Rotate(0, 0, 0.1f);
-    }
-
-    void Rot()
-    {
-    }
 
 }

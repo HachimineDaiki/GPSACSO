@@ -30,10 +30,8 @@ public class NewPlayerMove : MonoBehaviour
     private bool TurnCheck;
     private float TurnTime;     //曲がる時間
 
-    private Vector3 StartP, EndP;
+    private Vector3 StartP , EndP;
     private Quaternion StartRot, EndRot;
-
-    private float dosuu;
 
     private float NowDis, OldDis;
 
@@ -42,6 +40,9 @@ public class NewPlayerMove : MonoBehaviour
 
     public Runaway runaway;
     float DushSpeed;
+
+    float AdjustmentTime;
+    bool AdjustmentFlg;
 
 
 
@@ -52,7 +53,6 @@ public class NewPlayerMove : MonoBehaviour
         Depthdistance = 0f;
 
         TurnCheck = false;
-        dosuu = 0f;
 
         Turn = GameObject.Find("TurnObj");
         TurnNum = 0;
@@ -60,12 +60,13 @@ public class NewPlayerMove : MonoBehaviour
         OldDis = Mathf.Infinity;
 
         DushSpeed = 1f;
+        AdjustmentTime = 0f;
+        AdjustmentFlg = false;
     }
 
     private void FixedUpdate()
     {
-
-        if (!TurnCheck)
+        if (!TurnCheck && !AdjustmentFlg)
         {
             Advance();      //前に進む
             RLMove();       //左右移動 
@@ -82,13 +83,16 @@ public class NewPlayerMove : MonoBehaviour
                                              RefPos.z + ((Sidedistance * Mathf.Sin(test)) + (Depthdistance * Mathf.Cos(rad))));
 
 
-
             PosCheck();
 
         }
-        else
+        else if(TurnCheck)
         {
             TurnMove();     //道を曲がる
+        }
+        else
+        {
+            AdjustmentPos();        //道を曲がった後の調整
         }
         ChildStop();    //子要素のゼイバスくんの移動の削除
 
@@ -112,7 +116,6 @@ public class NewPlayerMove : MonoBehaviour
 
         if (TurnNum == 0)
         {
-            Sidedistance = transform.position.x - (Sidedistance * Mathf.Cos(test));
             OriginPoint = new Vector3(0,
                                          transform.position.y,
                                          transform.position.z - (Sidedistance * Mathf.Sin(test)));
@@ -121,13 +124,15 @@ public class NewPlayerMove : MonoBehaviour
         {
             TurnPosGet PosGet = Turn.gameObject.GetComponent<TurnPosGet>();
 
-            Sidedistance = ((PosGet.TurnPos[TurnNum - 1].transform.position.z + PosGet.TurnPos[TurnNum].transform.position.z) / 2) - (transform.position.z - (Sidedistance * Mathf.Sin(test)));
             OriginPoint = new Vector3(transform.position.x - (Sidedistance * Mathf.Cos(test)),
                                       transform.position.y,
                                       (PosGet.TurnPos[TurnNum -1].transform.position.z + PosGet.TurnPos[TurnNum].transform.position.z) / 2);
+
         }
 
         RefPos = OriginPoint;
+        StartP = transform.position;
+        EndP = RefPos;
 
 
 
@@ -181,8 +186,9 @@ public class NewPlayerMove : MonoBehaviour
 
             transform.rotation = Quaternion.Lerp(StartRot, EndRot, TurnTime / ((TurnNum + 1) * 135f));
 
-            if ((TurnTime) >= ((TurnNum + 1) * 135f))
-            {
+
+            if (TurnTime / ((TurnNum + 1) * 135f) > 0.7f)
+            { 
                 if (++TurnNum >= 4) TurnNum = 0;
                 TurnTime = TurnNum  * 135f;
 
@@ -194,6 +200,7 @@ public class NewPlayerMove : MonoBehaviour
                 OldDis = Mathf.Infinity;
                 //曲がりの終わり
                 TurnCheck = false;
+                AdjustmentFlg = true;
             }
         }
         else
@@ -210,9 +217,10 @@ public class NewPlayerMove : MonoBehaviour
                                         gameObject.transform.position.y,
                                         Get().z + (distance * Mathf.Sin(rad)));
 
-            transform.rotation = Quaternion.Lerp(StartRot, EndRot, Mathf.Abs(-270 + TurnTime) / Mathf.Abs(135 - ((type + 1) * 135f)));
-            
-            if ((TurnTime) <= ((type) * 135f))
+            transform.rotation = Quaternion.Lerp(StartRot, EndRot, Mathf.Abs((TurnTime - (type * 135)) - 135) / 135);
+
+
+            if (Mathf.Abs((TurnTime - (type * 135)) - 135) / 135 >= 0.7f)
             {
                 if (++TurnNum >= 4) TurnNum = 0;
                 TurnTime = type * 135f;
@@ -225,6 +233,7 @@ public class NewPlayerMove : MonoBehaviour
                 OldDis = Mathf.Infinity;
                 //曲がりの終わり
                 TurnCheck = false;
+                AdjustmentFlg = true;
             }
         }
        
@@ -244,39 +253,33 @@ public class NewPlayerMove : MonoBehaviour
 
     void PosCheck()
     {
-        NowDis = Vector3.Distance(Get(), gameObject.transform.position);
+        // クォータニオン → オイラー角への変換
+        Vector3 rotationAngles = transform.rotation.eulerAngles;
+        float rad = (rotationAngles.y) * Mathf.Deg2Rad;
+        float test = (360 - rotationAngles.y) * Mathf.Deg2Rad;
+
+
+        //最終的な移動の場所
+        Vector3 PPos = new Vector3(RefPos.x + (Depthdistance * Mathf.Sin(rad)),
+                                         transform.position.y,
+                                         RefPos.z + (Depthdistance * Mathf.Cos(rad)));
+
+        NowDis = Vector3.Distance(Get(), PPos);
 
         if (NowDis > OldDis)      //領域を超えたら
         {
-            //基準点とプレイヤーの座標の距離の取得
-            float distance = Vector3.Distance(Get(), gameObject.transform.position);
 
             if (TurnNum / 2 == 0) Rotplus();
             else Rotminus();
 
 
-            float rad = dosuu * Mathf.Deg2Rad;
-
             StartP = gameObject.transform.position;
 
-            if(TurnNum %2 == 0)
-            {
-                EndP = new Vector3(Get().x + (distance * Mathf.Cos(rad)),
-                                    gameObject.transform.position.y,
-                                    Get().z + (distance * Mathf.Sin(rad)));
-            }
-            else
-            {
-                EndP = new Vector3(Get().x - (distance * Mathf.Cos(rad)),
-                                    gameObject.transform.position.y,
-                                    Get().z - (distance * Mathf.Sin(rad)));
-            }
-
-            Vector3 rotationAngles = transform.rotation.eulerAngles;
+            
             TurnTime = rotationAngles.y;
             TurnCheck = true;
         }
-        OldDis = Vector3.Distance(Get(), gameObject.transform.position);
+        OldDis = Vector3.Distance(Get(), PPos);
     }
 
     Vector3 Get()
@@ -296,7 +299,6 @@ public class NewPlayerMove : MonoBehaviour
         // オイラー角 → クォータニオンへの変換
         EndRot = Quaternion.Euler(rotationAngles);
 
-        dosuu = 45f;
     }
     void Rotminus()
     {
@@ -306,12 +308,31 @@ public class NewPlayerMove : MonoBehaviour
         rotationAngles.y -= 135;
         // オイラー角 → クォータニオンへの変換
         EndRot = Quaternion.Euler(rotationAngles);
-        dosuu = -45f;
     }
 
     void Dush()
     {
         if (runaway.DushFlg)DushSpeed = 1.5f;
         else DushSpeed = 1f;
+    }
+
+    void AdjustmentPos()
+    {
+        transform.position =  Vector3.Lerp(StartP, EndP, AdjustmentTime);
+
+        transform.rotation = Quaternion.Lerp(StartRot, EndRot, 0.7f + (AdjustmentTime * 0.3f));
+
+        if ((AdjustmentTime += Time.deltaTime * 3f) > 1f)
+        {
+            AdjustmentFlg = false;
+            AdjustmentTime = 0f;
+
+            int Roty = 0;
+            Roty += (TurnNum % 2) * 135;
+            if (TurnNum == 2) Roty = 270;
+
+            transform.rotation = Quaternion.Euler(new Vector3(0, Roty, 0));
+        }
+
     }
 }
