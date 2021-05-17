@@ -12,7 +12,7 @@ public class NewPlayer : MonoBehaviour
     //bool nowExecCoroutine_ = false; //コルーチンが実行中かどうか
 
     public bool punch = false;
-
+    public bool PunchCon = false;
 
 
     //長押し移動を防止する　　具志堅が操作
@@ -40,12 +40,14 @@ public class NewPlayer : MonoBehaviour
         if (Input.GetKeyDown("x")) MoveAttack2();
 
 
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButton("Fire1") && PunchCon == false)
         {
+            PunchCon = true;
             MoveAttack();
         }
-        if (Input.GetButton("Fire2"))
+        if (Input.GetButton("Fire2") && PunchCon == false)
         {
+            PunchCon = true;
             MoveAttack2();
         }
 
@@ -90,7 +92,7 @@ public class NewPlayer : MonoBehaviour
         animator.SetTrigger("attack");
         mC.AttacInfo = 0;
         punch = true;
-        Invoke("punchreset", 0.3f);
+        Invoke("punchreset", 1f);
     }
     public void MoveAttack2()
     {
@@ -98,11 +100,12 @@ public class NewPlayer : MonoBehaviour
         animator.SetTrigger("attack2");
         mC.AttacInfo = 1;
         punch = true;
-        Invoke("punchreset", 0.3f);
+        Invoke("punchreset", 1f);
     }
     void punchreset()
     {
         punch = false;
+        PunchCon = false;
     }
 
 }
