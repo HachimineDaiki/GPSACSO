@@ -51,12 +51,15 @@ public class AudioManager : MonoBehaviour
     {
 
         newplayer = GetPlayerModel().GetComponent<NewPlayer>();
-        if (newplayer.punch == true && sound2flg == false)
+        if (sound2flg == false)
         {
-            sound2flg = true;
-            audiosource2.PlayOneShot(sound2);
+            if (newplayer.PunchCon == true)
+            {
+                sound2flg = true;
+                audiosource2.PlayOneShot(sound2);
+            }
         }
-        if (newplayer.punch == false && sound2flg == true) sound2flg = false;
+        if (newplayer.PunchCon == false) sound2flg = false;
 
         if (pausescript.pauseflg == true)
         {
