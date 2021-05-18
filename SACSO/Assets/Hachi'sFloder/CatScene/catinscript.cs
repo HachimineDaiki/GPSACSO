@@ -19,7 +19,7 @@ public class catinscript : MonoBehaviour
     private void Update() {
         if (Mc.muscleup) {
             animator.SetTrigger("ms");
-            Debug.Log("勝ったな！！");
+            //Debug.Log("勝ったな！！");
         }
     }
 
