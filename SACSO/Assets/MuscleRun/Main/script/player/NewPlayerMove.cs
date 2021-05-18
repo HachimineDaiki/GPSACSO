@@ -17,6 +17,8 @@ public class NewPlayerMove : MonoBehaviour
 
     private int TurnNum;
 
+    private MainSceneCon_Proto MSCon;
+    GameObject gamemanager;
 
     //左右の移動の割合
     /// <summary>
@@ -51,6 +53,9 @@ public class NewPlayerMove : MonoBehaviour
 
     private void Start()
     {
+        gamemanager = GameObject.Find("GameManeger");
+        MSCon = gamemanager.GetComponent<MainSceneCon_Proto>();
+
         Sidedistance = 0f;
         Depthdistance = 0f;
 
@@ -225,7 +230,11 @@ public class NewPlayerMove : MonoBehaviour
 
             if (Mathf.Abs((TurnTime - (type * 135)) - 135) / 135 >= 0.7f)
             {
-                if (++TurnNum >= 4) TurnNum = 0;
+                if (++TurnNum >= 4)
+                {
+                    MSCon.GameClearCon();
+                    TurnNum = 0;
+                }
                 TurnTime = type * 135f;
 
                 //基準点の更新

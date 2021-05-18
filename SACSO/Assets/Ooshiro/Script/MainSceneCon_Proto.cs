@@ -29,14 +29,13 @@ public class MainSceneCon_Proto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(CallOnlyOnce != true)
-        {
-            Invoke("GameClearCon", 30f);
-            CallOnlyOnce = true;
-        }
+        //if(CallOnlyOnce != true)
+        //{
+        //    CallOnlyOnce = true;
+        //}
     }
 
-    private void GameClearCon()
+    public void GameClearCon()
     {
         select.PauseControlflg = true;
         clearUI.SetActive(!clearUI.activeSelf);
