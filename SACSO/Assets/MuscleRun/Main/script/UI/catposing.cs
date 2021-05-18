@@ -20,7 +20,7 @@ public class catposing : MonoBehaviour
     {
         if (muscleplay.muscleup) {
             poseanimator.SetTrigger("mcm");
-            Debug.Log("動け！動けってんだよ！");
+           //Debug.Log("動け！動けってんだよ！");
         }
 
     }

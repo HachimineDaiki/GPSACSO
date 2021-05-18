@@ -43,8 +43,8 @@ public class Modchenge : MonoBehaviour
         
         //int modelNum = rightarm + leftarm;
 
-        Debug.Log(rightarm);
-        Debug.Log(leftarm);
+        /*Debug.Log(rightarm);
+        Debug.Log(leftarm);*/
 
 
         //モデル差し替え
