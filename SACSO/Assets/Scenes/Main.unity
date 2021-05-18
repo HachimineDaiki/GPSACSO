@@ -829,6 +829,27 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -150
       objectReference: {fileID: 0}
+    - target: {fileID: 4157340842338572958, guid: aeb9cccf34917c245b113b76f9c285da,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157340842338572958, guid: aeb9cccf34917c245b113b76f9c285da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157340842338572958, guid: aeb9cccf34917c245b113b76f9c285da,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 4157340842338572958, guid: aeb9cccf34917c245b113b76f9c285da,
+        type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 126b36dbfcf2e8241949ae85d3080e9b,
+        type: 3}
     - target: {fileID: 4157340842572324368, guid: aeb9cccf34917c245b113b76f9c285da,
         type: 3}
       propertyPath: m_Name

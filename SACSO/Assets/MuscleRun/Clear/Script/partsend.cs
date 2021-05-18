@@ -30,8 +30,8 @@ public class partsend : MonoBehaviour
     void Update()
     {
         //右
-        rightPointText.text = "Right :" + rightpoint.ToString()+"%";
+        rightPointText.text = "右上腕筋 :" + rightpoint.ToString()+"%";
         //左
-        leftPointText.text = "Left :" + leftpoint.ToString() +"%";
+        leftPointText.text = "左上腕筋 :" + leftpoint.ToString() +"%";
     }
 }
