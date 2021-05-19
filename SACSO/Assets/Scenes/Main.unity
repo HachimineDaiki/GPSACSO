@@ -1308,6 +1308,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3283387631233412508, guid: b81b221002ff72a48b17db68a2bc14fa,
+        type: 3}
+      propertyPath: sound5
+      value: 
+      objectReference: {fileID: 8300000, guid: b77daf01973c8d74783bb10448ea29b1, type: 3}
     - target: {fileID: 6280318366303145435, guid: b81b221002ff72a48b17db68a2bc14fa,
         type: 3}
       propertyPath: runaway

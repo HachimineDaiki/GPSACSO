@@ -9,6 +9,7 @@ public class Runaway : MonoBehaviour
     float _hp;
 
     [SerializeField] private GameObject Dush;
+    [SerializeField]AudioManager audio;
 
 
     void Start()
@@ -35,6 +36,7 @@ public class Runaway : MonoBehaviour
         if(_hp >= 1f)       //ゲージがMAXになったら
         {
             DushFlg = true;
+            audio.Se5Ref();
         }
         else if(_hp <= 0)       //ゲージが0になったら
         {
@@ -44,6 +46,7 @@ public class Runaway : MonoBehaviour
         if (DushFlg)        //tureならダッシュ状態
         {
             PaticleAc();
+            audio.MensPlay();
             _hp -= 0.1f * Time.deltaTime;
         }
         else　           　 //falseなら通常状態
