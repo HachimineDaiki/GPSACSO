@@ -108,17 +108,15 @@ public class AudioManager : MonoBehaviour
     {
         if (S5flg)      //最初に入る
         {
-            S5StartTime = audiosource2.time;
+            S5StartTime = Time.time;
 
             audiosource2.PlayOneShot(sound5);
             S5flg = false;
         }
 
-            if (sound5.length + S5StartTime <= audiosource2.time + Time.deltaTime)       //終了判定
+        if (sound5.length + S5StartTime - 1f <= Time.time)       //終了判定
         {
-
             S5flg = true;
-            Debug.Log((sound5.length + S5StartTime) + "    >     " + (audiosource2.time + Time.deltaTime));
         }
     }
 
