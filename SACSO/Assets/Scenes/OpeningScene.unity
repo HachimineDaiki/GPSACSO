@@ -442,10 +442,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -869872450659563699, guid: f822ae0f5ae7f0c40bf35547f8f70eb1,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f47b3eefa07a6942a1f56c18864ec7b, type: 2}
     - target: {fileID: 919132149155446097, guid: f822ae0f5ae7f0c40bf35547f8f70eb1,
         type: 3}
       propertyPath: m_Name
       value: opMussle3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: f822ae0f5ae7f0c40bf35547f8f70eb1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f822ae0f5ae7f0c40bf35547f8f70eb1, type: 3}
@@ -5500,6 +5510,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -869872450659563699, guid: 2bffe653d644a184dbe3eaea1ffe8b37,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f47b3eefa07a6942a1f56c18864ec7b, type: 2}
     - target: {fileID: 919132149155446097, guid: 2bffe653d644a184dbe3eaea1ffe8b37,
         type: 3}
       propertyPath: m_Name
@@ -5508,7 +5523,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 2bffe653d644a184dbe3eaea1ffe8b37,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2bffe653d644a184dbe3eaea1ffe8b37, type: 3}
@@ -5589,6 +5604,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -869872450659563699, guid: ed8e277abe8a3594396e77046d3784db,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8f47b3eefa07a6942a1f56c18864ec7b, type: 2}
     - target: {fileID: 919132149155446097, guid: ed8e277abe8a3594396e77046d3784db,
         type: 3}
       propertyPath: m_Name
