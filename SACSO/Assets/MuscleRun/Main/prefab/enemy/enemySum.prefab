@@ -1222,7 +1222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 311bc3ad5f188074a908cecfbcc2090f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Doramu: {fileID: 2711141157273957308, guid: 207b3d6954ea2e343b69db65f8a00726, type: 3}
+  Doramu: {fileID: 2711141157273957308, guid: 93c529c420d421b47ac484dd23052338, type: 3}
 --- !u!1 &804704489486742618
 GameObject:
   m_ObjectHideFlags: 0
