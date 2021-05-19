@@ -9,7 +9,6 @@ public class DoramuCon : MonoBehaviour
     private ScoreCon score;
     private modelChange Mc;
 
-    public GameObject explosion;
     [SerializeField] GameObject BreakObj;
 
     public bool KillFlg;       //殴られた判定
@@ -53,19 +52,15 @@ public class DoramuCon : MonoBehaviour
 
     private void Damege()
     {
-        //Vector3 vector3 = new Vector3(0f, 0.6f, 3.6f);
-        //rb.AddForce(vector3, ForceMode.Impulse);
-        //rb.AddTorque(Vector3.right * 3f, ForceMode.Impulse);
-        //shadderBreak();
-        Instantiate(BreakObj, transform.position, transform.localRotation);
-        Destroy(gameObject);
+        Instantiate(BreakObj, transform.position, transform.rotation);
+        KillFlg = false;
+        this.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("AttackDet"))
         {
-            Invoke("ExplosionSet", 1.5f);
             KillFlg = true;
             score.AddPoint(100);
             rb.freezeRotation = false;
@@ -78,20 +73,11 @@ public class DoramuCon : MonoBehaviour
             {
                 KillFlg = true;
                 score.AddPoint(100);
-                Invoke("ExplosionSet", 1.5f);
             }
             else
             {
                 playerLife.Damege();
             }
         }
-    }
-
-    private void ExplosionSet()
-    {
-        GameObject obj = Instantiate(explosion, this.transform.position, Quaternion.identity);
-        //gameObject.SetActive(false);
-        Destroy(gameObject, 2.0f);
-        Destroy(obj, 2.5f);
     }
 }
