@@ -19,8 +19,8 @@ public class BGMController : MonoBehaviour
         //bgmslider = GameObject.Find("Canvas/Panel2/BGMSlider");
         //slider = bgmslider.GetComponent<Slider>();
 
-        float maxvolume = 10f;
-        float nowvolume = -10f;
+        float maxvolume = 20f;
+        float nowvolume = -5f;
 
 
         //スライダーの最大値の設定

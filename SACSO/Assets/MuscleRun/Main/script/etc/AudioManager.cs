@@ -17,9 +17,12 @@ public class AudioManager : MonoBehaviour
 
     GameObject movesound;
     GameObject gamemanager;
-    Hitaudiocon hitflg;
+    GameObject expsound;
+    //Hitaudiocon hitflg;
     NewPlayer newplayer;
     PauseScript pausescript;
+    Blowaway blowaway;
+
 
     private bool sound2flg;
 
@@ -44,7 +47,7 @@ public class AudioManager : MonoBehaviour
         gamemanager = GameObject.Find("GameManeger");
         //expsound = GameObject.Find("enemy2.0");
         pausescript = gamemanager.GetComponent<PauseScript>();
-        hitflg = gamemanager.GetComponent<Hitaudiocon>();
+        //hitflg = gamemanager.GetComponent<Hitaudiocon>();
         //enemymove = expsound.GetComponent<enemyMove>();
 
         //WaitTime = 0;
@@ -78,20 +81,26 @@ public class AudioManager : MonoBehaviour
             audiosource2.UnPause();
         }
 
-        if (hitflg.Hitflg == true)
-        {
-            hitflg.Hitflg = false;
-            audiosource2.PlayOneShot(sound4);
-            Invoke("expsoundplay", 1.5f);
-        }
+        //expsound = GameObject.Find("DamageDrum(Clone)");
+        //if (expsound != null)
+        //{
+        //    blowaway = expsound.GetComponent<Blowaway>();
+        //    if (blowaway.KillSEflg == true)
+        //    {
+        //        audiosource2.PlayOneShot(sound4);
+        //        Invoke("expsoundplay",1.5f);
+        //        Debug.Log("おぉん");
+        //        blowaway.KillSEflg = false;
+        //    }
+        //}
     }
 
 
 
-    private void expsoundplay()
-    {
-        audiosource2.PlayOneShot(sound1);
-    }
+    //private void expsoundplay()
+    //{
+    //    audiosource2.PlayOneShot(sound1);
+    //}
 
     GameObject GetPlayerModel()
     {

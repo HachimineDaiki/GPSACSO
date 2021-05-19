@@ -17,8 +17,8 @@ public class SEController : MonoBehaviour
         //seslider = GameObject.Find("Canvas/Panel2/SESlider");
         //slider2 = seslider.GetComponent<Slider>();
 
-        float maxvolume = 10f;
-        float nowvolume = -10f;
+        float maxvolume = 20f;
+        float nowvolume = -5f;
 
         slider2.maxValue = maxvolume;
         slider2.value = nowvolume;
@@ -34,6 +34,7 @@ public class SEController : MonoBehaviour
     public void SetSE(float volume)
     {
         audioMixer.SetFloat("SEvol", volume);
+        //audioMixer.SetFloat("SE2vol", volume - 50f);
     }
     public void Method()
     {
