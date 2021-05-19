@@ -26,6 +26,10 @@ public class AudioManager : MonoBehaviour
     //Playerの親からモデルを取得
     private modelChange Mc;
 
+    //
+    private float S5StartTime,S5EndTime;
+    private bool S5flg;
+
     //int WaitTime;
         //WaitTimeR;
 
@@ -45,6 +49,7 @@ public class AudioManager : MonoBehaviour
 
         //WaitTime = 0;
         //WaitTimeR = 0;
+        S5flg = true;
     }
 
     void Update()
@@ -97,6 +102,29 @@ public class AudioManager : MonoBehaviour
 
         return Mc.models[Mc.NowModelNum];
 
+    }
+
+    public void MensPlay()
+    {
+        if (S5flg)      //最初に入る
+        {
+            S5StartTime = audiosource2.time;
+
+            audiosource2.PlayOneShot(sound5);
+            S5flg = false;
+        }
+
+            if (sound5.length + S5StartTime <= audiosource2.time + Time.deltaTime)       //終了判定
+        {
+
+            S5flg = true;
+            Debug.Log((sound5.length + S5StartTime) + "    >     " + (audiosource2.time + Time.deltaTime));
+        }
+    }
+
+    public void Se5Ref()
+    {
+        S5flg = true;
     }
 }
 
