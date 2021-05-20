@@ -20,8 +20,14 @@ public class TitleCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Yボタンが押されてて、textが表示されている場合
+        if (Input.GetKeyDown("joystick button 3") && canvas.gameObject.activeSelf == true)
+        {
+            //ストーリシーンへ
+            SceneManager.LoadScene("OpeningScene");
+        }
         //何かのキーが押されてて、textが表示されている場合
-        if (Input.anyKeyDown && canvas.gameObject.activeSelf == true)
+        else if (Input.anyKeyDown && canvas.gameObject.activeSelf == true)
         {
             //メインへ
             SceneManager.LoadScene("Main");

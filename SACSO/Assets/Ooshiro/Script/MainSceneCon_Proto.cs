@@ -40,7 +40,7 @@ public class MainSceneCon_Proto : MonoBehaviour
         select.PauseControlflg = true;
         clearUI.SetActive(!clearUI.activeSelf);
         //if(button != null)
-        button = GameObject.Find("Canvas/Panel3/YES_ClearButton").GetComponent<Button>();
+        button = GameObject.Find("Canvas/Panel3/NO_ClearButton").GetComponent<Button>();
         button.Select();
         Time.timeScale = 0f;
     }
