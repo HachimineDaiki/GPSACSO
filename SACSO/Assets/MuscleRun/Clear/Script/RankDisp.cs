@@ -50,11 +50,11 @@ public class RankDisp : MonoBehaviour
         {
             rank_S.gameObject.SetActive(true);
         }
-        else if(ScorePoint >= SCOREMAX *0.8)
+        else if(ScorePoint >= SCOREMAX *0.7)
         {
             rank_A.gameObject.SetActive(true);
         }
-        else if (ScorePoint >= SCOREMAX *0.65)
+        else if (ScorePoint >= SCOREMAX *0.5)
         {
             rank_B.gameObject.SetActive(true);
         }
