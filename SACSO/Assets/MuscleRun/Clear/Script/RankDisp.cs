@@ -20,8 +20,10 @@ public class RankDisp : MonoBehaviour
         //スコア用変数の加算処理　上から順にスコア+右筋肉スコア+左筋肉スコア
         ScorePoint = 
             PlayerPrefs.GetInt("Score",   0) + 
-            PlayerPrefs.GetInt("rpumpup", 0) * 500 + PlayerPrefs.GetInt("RPunchCt", 0) * 100 +
-            PlayerPrefs.GetInt("lpumpup", 0) * 500 + PlayerPrefs.GetInt("LPunchCt", 0) * 100;
+            PlayerPrefs.GetInt("rpumpup", 0) * 5000 + PlayerPrefs.GetInt("RPunchCt", 0) * 100 +
+            PlayerPrefs.GetInt("lpumpup", 0) * 5000 + PlayerPrefs.GetInt("LPunchCt", 0) * 100;
+
+        if (ScorePoint >= 100000) ScorePoint = 99999;
 
         //画像読み込み
         rank_A = GameObject.Find("Image(A)").GetComponent<Image>();
