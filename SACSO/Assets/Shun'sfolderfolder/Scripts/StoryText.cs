@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using UnityEngine.SceneManagement;
+
 public class StoryText : MonoBehaviour
 {
     [SerializeField] List<string> messageList = new List<string>();//会話文リスト
@@ -11,7 +13,7 @@ public class StoryText : MonoBehaviour
     [SerializeField] float NextLineTime;  //次の行に進む時間
 
     public GameObject Cam1, Cam2, Cam3;  //opシーンで使われているカメラ1番目、2番目、3番目
-    public GameObject LoseObj;   //2シーン目のゼイバスを格納します
+    public GameObject OpObj,OpObj2,OpObj3;   //2シーン目のゼイバスを格納します
 
     int novelListIndex = 0; //現在表示中の会話文の配列
     private float time;
@@ -56,12 +58,13 @@ public class StoryText : MonoBehaviour
         if (SceneCnt == 1)
         {
             Cam1.SetActive(false);
-            LoseObj.SetActive(true);
+            OpObj2.SetActive(true);
         }
         else if (SceneCnt == 2)
         {
 
             Cam2.SetActive(false);
+            OpObj3.SetActive(true);
             
         }
 
@@ -87,6 +90,10 @@ public class StoryText : MonoBehaviour
             time = Time.time;
             LineComp = true;
             LineCnt++;
+            if (LineCnt >= 12)
+            {
+                Invoke("ToMain", 5.0f);
+            }
         }
     }
 
@@ -98,5 +105,10 @@ public class StoryText : MonoBehaviour
             LineComp = false;
         }
 
+    }
+    void ToMain()
+    {
+        //メインへ
+        SceneManager.LoadScene("Main");
     }
 }
