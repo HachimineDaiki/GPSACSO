@@ -9,6 +9,10 @@ public class StoryText : MonoBehaviour
     [SerializeField] Text text;
     [SerializeField] float novelSpeed;//一文字一文字の表示する速さ
     [SerializeField] float NextLineTime;  //次の行に進む時間
+
+    public GameObject Cam1, Cam2, Cam3;  //opシーンで使われているカメラ1番目、2番目、3番目
+    public GameObject LoseObj;   //2シーン目のゼイバスを格納します
+
     int novelListIndex = 0; //現在表示中の会話文の配列
     private float time;
     private bool LineComp;
@@ -46,6 +50,23 @@ public class StoryText : MonoBehaviour
             SceneCnt = 2;
             NextLineTime = 0.5f;
         }
+
+
+        //シーン内のカメラの切り替えをする
+        if (SceneCnt == 1)
+        {
+            Cam1.SetActive(false);
+            LoseObj.SetActive(true);
+        }
+        else if (SceneCnt == 2)
+        {
+
+            Cam2.SetActive(false);
+            
+        }
+
+
+
     }
 
 
