@@ -13,11 +13,15 @@ public class StoryText : MonoBehaviour
     private float time;
     private bool LineComp;
 
+    public int SceneCnt,LineCnt;
+
 
     void Start()
     {
 
         LineComp = false;
+        SceneCnt = 0;
+        LineCnt = 0;
         StartCoroutine(Novel());
     }
 
@@ -26,6 +30,21 @@ public class StoryText : MonoBehaviour
         if (LineComp)
         {
             NextLine();
+        }
+
+        if(LineCnt <= 7)
+        {
+            SceneCnt = 0;
+        }
+        else if(LineCnt == 8)
+        {
+            SceneCnt = 1;
+            NextLineTime = 3.0f;
+        }
+        else
+        {
+            SceneCnt = 2;
+            NextLineTime = 0.5f;
         }
     }
 
@@ -46,6 +65,7 @@ public class StoryText : MonoBehaviour
         {
             time = Time.time;
             LineComp = true;
+            LineCnt++;
         }
     }
 
