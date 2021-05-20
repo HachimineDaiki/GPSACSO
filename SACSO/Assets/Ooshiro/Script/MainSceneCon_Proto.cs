@@ -11,6 +11,7 @@ public class MainSceneCon_Proto : MonoBehaviour
 
     [SerializeField] private Button YES_ClearButton;
     [SerializeField] private Button NO_ClearButton;
+    [SerializeField] private ScoreCon SC;
 
     Button button;
     Select select;
@@ -21,7 +22,6 @@ public class MainSceneCon_Proto : MonoBehaviour
     void Start()
     {
         select = GetComponent<Select>();
-
         YES_ClearButton.onClick.AddListener(YesButton);
         NO_ClearButton.onClick.AddListener(NoButton);
     }
@@ -50,6 +50,9 @@ public class MainSceneCon_Proto : MonoBehaviour
         select.PauseControlflg = false;
         clearUI.SetActive(!clearUI.activeSelf);
         Time.timeScale = 1f;
+
+        SC = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
+        SC.ScoreSave();
         SceneManager.LoadScene("ClearScene");
     }
 
