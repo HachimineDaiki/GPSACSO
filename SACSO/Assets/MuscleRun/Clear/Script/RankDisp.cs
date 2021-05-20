@@ -13,6 +13,7 @@ public class RankDisp : MonoBehaviour
     //スコア用変数
     private int ScorePoint;
     private int SCOREMAX = 30000;
+    [SerializeField] private Text ScoerText;
 
     // Start is called before the first frame update
     void Start()
@@ -20,8 +21,9 @@ public class RankDisp : MonoBehaviour
         //スコア用変数の加算処理　上から順にスコア+右筋肉スコア+左筋肉スコア
         ScorePoint = 
             PlayerPrefs.GetInt("Score",   0) + 
-            PlayerPrefs.GetInt("rpumpup", 0) * 5000 + PlayerPrefs.GetInt("RPunchCt", 0) * 100 +
-            PlayerPrefs.GetInt("lpumpup", 0) * 5000 + PlayerPrefs.GetInt("LPunchCt", 0) * 100;
+            (PlayerPrefs.GetInt("rpumpup", 0) * 5000 + PlayerPrefs.GetInt("RPunchCt", 0) * 100) +
+            (PlayerPrefs.GetInt("lpumpup", 0) * 5000 + PlayerPrefs.GetInt("LPunchCt", 0) * 100);
+        Debug.Log(ScorePoint);
 
         if (ScorePoint >= 100000) ScorePoint = 99999;
 
@@ -36,6 +38,8 @@ public class RankDisp : MonoBehaviour
         rank_B.gameObject.SetActive(false);
         rank_C.gameObject.SetActive(false);
         rank_S.gameObject.SetActive(false);
+
+        ScoerText.text = ScorePoint.ToString("00000") + "点";
     }
 
     // Update is called once per frame

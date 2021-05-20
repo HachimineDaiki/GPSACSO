@@ -379,6 +379,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1915509619 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2166636715400504336, guid: d844687bc1812b7449654af5123f3a75,
+    type: 3}
+  m_PrefabInstance: {fileID: 2166636716893995020}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1883687051661805
 Transform:
   m_ObjectHideFlags: 0
@@ -5182,6 +5194,11 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -65
       objectReference: {fileID: 0}
+    - target: {fileID: 2166636715400504343, guid: d844687bc1812b7449654af5123f3a75,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2166636715401814386, guid: d844687bc1812b7449654af5123f3a75,
         type: 3}
       propertyPath: m_IsActive
@@ -5479,6 +5496,11 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 308.93
       objectReference: {fileID: 0}
+    - target: {fileID: 2166636716243613103, guid: d844687bc1812b7449654af5123f3a75,
+        type: 3}
+      propertyPath: ScoerText
+      value: 
+      objectReference: {fileID: 1915509619}
     - target: {fileID: 2166636716528558873, guid: d844687bc1812b7449654af5123f3a75,
         type: 3}
       propertyPath: m_LocalScale.x
