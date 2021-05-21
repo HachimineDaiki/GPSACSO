@@ -157,10 +157,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a14fcb6e81267b641accb4ad2a1f8f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosion: {fileID: 287059446183364576, guid: 7819f72fc962c8c48bf1ae3ec15d219e,
-    type: 3}
   BreakObj: {fileID: 6535189161251907424, guid: 58cd552c2cae4af448a056fdfd1c2ece,
     type: 3}
+  Flare: {fileID: 8253722605989764737, guid: 19bc7400f0c371e4abedc4dcf711ca66, type: 3}
   KillFlg: 0
 --- !u!1 &2711141157398105669
 GameObject:

@@ -9,7 +9,8 @@ public class DoramuCon : MonoBehaviour
     private ScoreCon score;
     private modelChange Mc;
 
-    [SerializeField] GameObject BreakObj;
+    [SerializeField] GameObject BreakObj;          //こわれたオブジェクトのモデル
+    [SerializeField] GameObject Flare;           //当たったときのエフェクト
 
     public bool KillFlg;       //殴られた判定
     Rigidbody rb;
@@ -53,6 +54,7 @@ public class DoramuCon : MonoBehaviour
     private void Damege()
     {
         Instantiate(BreakObj, transform.position, transform.rotation);
+        Instantiate(Flare, transform.position, transform.rotation);
         KillFlg = false;
         this.gameObject.SetActive(false);
     }

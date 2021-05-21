@@ -159,11 +159,11 @@ public class NewPlayerMove : MonoBehaviour
     {
         if (moveflg == true)
         {
-            if (Input.GetAxis("Horizontal") > 0 && Sidedistance < Max)
+            if (Input.GetAxis("Horizontal") > 0.5 && Sidedistance < Max)
             {
                 Sidedistance += Time.deltaTime * 100;
             }
-            if (Input.GetAxis("Horizontal") < 0 && Sidedistance > Min)
+            if (Input.GetAxis("Horizontal") < -0.5 && Sidedistance > Min)
             {
                 Sidedistance -= Time.deltaTime * 100;
             }
