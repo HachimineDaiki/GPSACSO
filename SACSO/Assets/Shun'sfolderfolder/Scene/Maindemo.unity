@@ -16152,6 +16152,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Flare
       objectReference: {fileID: 0}
+    - target: {fileID: 8253722605989764737, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722605989764739, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722605989764743, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8253722605990052513, guid: 19bc7400f0c371e4abedc4dcf711ca66,
         type: 3}
       propertyPath: m_RootOrder
@@ -16206,6 +16221,51 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258211, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258211, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258213, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: RotationModule.x.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258213, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: RotationModule.y.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258213, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: RotationModule.x.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258213, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: RotationModule.y.minMaxState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258215, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: ShapeModule.type
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005258215, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: ShapeModule.radiusThickness
+      value: 1.0000
+      objectReference: {fileID: 0}
+    - target: {fileID: 8253722606005370439, guid: 19bc7400f0c371e4abedc4dcf711ca66,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 19bc7400f0c371e4abedc4dcf711ca66, type: 3}
