@@ -516,8 +516,33 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6276534033777876524, guid: 3855eef02178d4b498c4a20b1bf1a060,
         type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276534033777876524, guid: 3855eef02178d4b498c4a20b1bf1a060,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276534033777876524, guid: 3855eef02178d4b498c4a20b1bf1a060,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276534033777876524, guid: 3855eef02178d4b498c4a20b1bf1a060,
+        type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276534033777876524, guid: 3855eef02178d4b498c4a20b1bf1a060,
+        type: 3}
+      propertyPath: m_FontData.m_Alignment
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6276534033777876526, guid: 3855eef02178d4b498c4a20b1bf1a060,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -315.5
       objectReference: {fileID: 0}
     - target: {fileID: 6276534033777876526, guid: 3855eef02178d4b498c4a20b1bf1a060,
         type: 3}
@@ -621,7 +646,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 333528434}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1671022229}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
@@ -6345,6 +6370,27 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 671419536}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1671022229 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6276534033777876525, guid: 3855eef02178d4b498c4a20b1bf1a060,
+    type: 3}
+  m_PrefabInstance: {fileID: 333528434}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1671022230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671022229}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e19747de3f5aca642ab2be37e372fb86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: 1}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1763043743
 GameObject:
   m_ObjectHideFlags: 0
