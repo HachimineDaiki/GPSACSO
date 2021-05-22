@@ -48,7 +48,7 @@ public class NewPlayerMove : MonoBehaviour
 
     private float DisTime;      //距離によって曲がる時間を変える
 
-
+    private PlayerLife deadstopFlg; //ゲームオーバー時に前に進むのを止める。
 
 
     private void Start()
@@ -70,10 +70,18 @@ public class NewPlayerMove : MonoBehaviour
         AdjustmentTime = 0f;
         DisTime = 0f;
         AdjustmentFlg = false;
+
+        deadstopFlg = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<PlayerLife>();
     }
 
     private void FixedUpdate()
     {
+
+        if (deadstopFlg.ply_dead)
+        {
+            DushSpeed = 0;
+
+        }
         if (!TurnCheck && !AdjustmentFlg)
         {
             Advance();      //前に進む
@@ -84,6 +92,7 @@ public class NewPlayerMove : MonoBehaviour
             float rad = (rotationAngles.y) * Mathf.Deg2Rad;
             float test = (360 - rotationAngles.y) * Mathf.Deg2Rad;
 
+            
 
             //最終的な移動の場所
             transform.position = new Vector3(RefPos.x + ((Sidedistance * Mathf.Cos(test)) + (Depthdistance * Mathf.Sin(rad))),
@@ -148,15 +157,20 @@ public class NewPlayerMove : MonoBehaviour
 
     void Advance()
     {
+
         Vector3 velocity = gameObject.transform.forward * Speed;
         //gameObject.transform.position += velocity * Time.deltaTime;
         Depthdistance += Mathf.Abs(Speed * DushSpeed * Time.deltaTime);
-
 
     }
 
     void RLMove()
     {
+        //横移動を止める。
+        if (deadstopFlg.ply_dead)
+        {
+            return;
+        }
         if (moveflg == true)
         {
             if (Input.GetAxis("Horizontal") > 0.5 && Sidedistance < Max)
