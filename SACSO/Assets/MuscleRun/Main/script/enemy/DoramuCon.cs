@@ -53,8 +53,12 @@ public class DoramuCon : MonoBehaviour
 
     private void Damege()
     {
+        // クォータニオン → オイラー角への変換
+        Vector3 rotationAngles = transform.rotation.eulerAngles;
+        rotationAngles.x -= 90;
+
         Instantiate(BreakObj, transform.position, transform.rotation);
-        Instantiate(Flare, transform.position, transform.rotation);
+        Instantiate(Flare, transform.position, Quaternion.Euler(rotationAngles));
         KillFlg = false;
         this.gameObject.SetActive(false);
     }
