@@ -11,6 +11,8 @@ public class NewPlayer : MonoBehaviour
 
     //bool nowExecCoroutine_ = false; //コルーチンが実行中かどうか
 
+    private PlayerLife deadanime; //PlayerLifenoのply_deadがTRUEの時
+    
     public bool punch = false;
     public bool PunchCon = false;
 
@@ -27,6 +29,7 @@ public class NewPlayer : MonoBehaviour
     {
         //GetComponentでAnimatorを取得して変数animatorで参照します。
         animator = GetComponent<Animator>();
+        deadanime  = GameObject.FindGameObjectWithTag("PlayerParent").GetComponent<PlayerLife>();
         mC = transform.root.gameObject.GetComponent<modelChange>();
 
     }
@@ -49,6 +52,10 @@ public class NewPlayer : MonoBehaviour
         {
             PunchCon = true;
             MoveAttack2();
+        }
+
+        if (deadanime.ply_dead) {
+            animator.SetTrigger("dead");
         }
 
         MoveF310();

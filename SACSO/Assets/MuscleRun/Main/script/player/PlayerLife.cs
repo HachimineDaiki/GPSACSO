@@ -12,7 +12,9 @@ public class PlayerLife : MonoBehaviour
     private float mutekiTime;
     private modelChange Mc;
 
-    private ScoreCon SC;//ScoreCon.scの参照　こいつの書き方が分からないので大文字にしました　許してください
+   public bool ply_dead; //死んだときにAnimationを使う
+
+   private ScoreCon SC;//ScoreCon.scの参照　こいつの書き方が分からないので大文字にしました　許してください
 
     void Start()
     {
@@ -20,6 +22,7 @@ public class PlayerLife : MonoBehaviour
         Life = MaxLife;
         muteki = false;
         Mc = gameObject.GetComponent<modelChange>();
+        ply_dead = false;
     }
     private void FixedUpdate()
     {
@@ -41,8 +44,10 @@ public class PlayerLife : MonoBehaviour
         {
             //スコアを記録する
             SC.ScoreSave();
-            //ゲームオーバーへ
-            SceneManager.LoadScene("GameOver");
+              //死んだときにTRUEになる。
+            ply_dead = true;
+            //ゲームオーバーへ　倒れるアニメーション後にゲームオーバーに移行したいためゲームオーバーをずらす。
+            Invoke("GamePlayerOver", 2f);
         }
     }
 
@@ -70,7 +75,10 @@ public class PlayerLife : MonoBehaviour
         return Mc.models[Mc.NowModelNum];
     }
 
-
+    void GamePlayerOver()
+    {
+        SceneManager.LoadScene("GameOver");
+    }
 }
 
 /////////////////////
