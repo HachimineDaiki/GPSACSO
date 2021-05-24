@@ -13,12 +13,18 @@ public class SelectButton : MonoBehaviour
 
     bool isCalledOnce = false;
 
+    void Start()
+    {
+    }
+
     void Update()
     {
         if (pauseUI.activeSelf)
         {
             if (isCalledOnce == false)
             {
+                button = GameObject.Find("Canvas/Panel/SelectButton/Return_To_Title").GetComponent<Button>();
+                button.Select();
                 button = GameObject.Find("Canvas/Panel/SelectButton/Return_To_Game").GetComponent<Button>();
                 //ボタンが選択された状態になる
                 button.Select();
