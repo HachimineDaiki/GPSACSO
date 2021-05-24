@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.EventSystems;
 
 
 public class MainSceneCon_Proto : MonoBehaviour
@@ -11,12 +12,14 @@ public class MainSceneCon_Proto : MonoBehaviour
 
     [SerializeField] private Button YES_ClearButton;
     [SerializeField] private Button NO_ClearButton;
+    [SerializeField] private GameObject SelectButton;
     [SerializeField] private ScoreCon SC;
 
     Button button;
     Select select;
 
     public bool CallOnlyOnce = false;
+
 
     // Start is called before the first frame update
     void Start()
@@ -29,10 +32,7 @@ public class MainSceneCon_Proto : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if(CallOnlyOnce != true)
-        //{
-        //    CallOnlyOnce = true;
-        //}
+
     }
 
     public void GameClearCon()
@@ -58,6 +58,8 @@ public class MainSceneCon_Proto : MonoBehaviour
 
     private void NoButton()
     {
+        button = GameObject.Find("Canvas/Panel3/YES_ClearButton").GetComponent<Button>();
+        button.Select();
         select.PauseControlflg = false;
         clearUI.SetActive(!clearUI.activeSelf);
         Time.timeScale = 1f;

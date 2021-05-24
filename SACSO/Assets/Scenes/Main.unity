@@ -843,6 +843,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4622704498315636119}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1393468002 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4157340842184650322, guid: aeb9cccf34917c245b113b76f9c285da,
+    type: 3}
+  m_PrefabInstance: {fileID: 2378873719128380037}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1466705363 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 413218, guid: 826b6a0b570e8460990010fa615b5a2a,
@@ -14600,7 +14606,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2378873719128380037}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1393468002}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
@@ -37998,6 +38004,11 @@ PrefabInstance:
       propertyPath: clearUI
       value: 
       objectReference: {fileID: 1779663418593570195}
+    - target: {fileID: 5869150859560127749, guid: 0bd64442193658e45bd18bae47419657,
+        type: 3}
+      propertyPath: SelectButton
+      value: 
+      objectReference: {fileID: 1393468002}
     - target: {fileID: 5869150859560127749, guid: 0bd64442193658e45bd18bae47419657,
         type: 3}
       propertyPath: NO_ClearButton
