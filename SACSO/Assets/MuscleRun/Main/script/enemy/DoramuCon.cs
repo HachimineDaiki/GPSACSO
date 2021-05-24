@@ -57,8 +57,12 @@ public class DoramuCon : MonoBehaviour
         Vector3 rotationAngles = transform.rotation.eulerAngles;
         rotationAngles.x -= 90;
 
+        var pos = (transform.TransformPoint(transform.localPosition.x,
+                                            transform.localPosition.y + 15,
+                                            transform.localPosition.z));
+       
         Instantiate(BreakObj, transform.position, transform.rotation);
-        Instantiate(Flare, transform.position, Quaternion.Euler(rotationAngles));
+        Instantiate(Flare, pos, Quaternion.Euler(rotationAngles));
         KillFlg = false;
         this.gameObject.SetActive(false);
     }
