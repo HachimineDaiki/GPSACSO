@@ -5,26 +5,26 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour
 {
 
-    public AudioClip sound1;
-    public AudioClip sound2;
-    public AudioClip sound3;
-    public AudioClip sound4;
-    public AudioClip sound5;
-    public AudioClip sound6;
+    public AudioClip sound1;            //爆発音
+    public AudioClip sound2;            //パンチ音（素振り
+    public AudioClip sound3;            //左右移動音（使ってません）
+    public AudioClip sound4;            //パンチヒット音
+    public AudioClip sound5;            //ウルトラマッスルモード中の掛け声
+    public AudioClip sound6;            //null
 
-    public AudioSource audioSource;
-    public AudioSource audiosource2;
+    public AudioSource audioSource;     //BGM用のオーディオソース
+    public AudioSource audiosource2;    //SE用のオーディオソース
 
-    GameObject movesound;
+    GameObject movesound;               
     GameObject gamemanager;
-    GameObject expsound;
+    //GameObject expsound;
     //Hitaudiocon hitflg;
     NewPlayer newplayer;
     PauseScript pausescript;
-    Blowaway blowaway;
+    //Blowaway blowaway;
 
 
-    private bool sound2flg;
+    private bool sound2flg;             //素振りが重複しないためのフラグ
 
     //Playerの親からモデルを取得
     private modelChange Mc;
@@ -41,12 +41,12 @@ public class AudioManager : MonoBehaviour
         //Componentを取得
         movesound = GameObject.FindGameObjectWithTag("PlayerParent");
 
-        newplayer = GetPlayerModel().GetComponent<NewPlayer>();
+        newplayer = GetPlayerModel().GetComponent<NewPlayer>();         //プレイヤー.csのコンポーネント取得
 
 
-        gamemanager = GameObject.Find("GameManeger");
+        gamemanager = GameObject.Find("GameManeger");                   //ゲームマネージャーを探す
         //expsound = GameObject.Find("enemy2.0");
-        pausescript = gamemanager.GetComponent<PauseScript>();
+        pausescript = gamemanager.GetComponent<PauseScript>();          //ゲームマネージャーのポーズ.cs取得
         //hitflg = gamemanager.GetComponent<Hitaudiocon>();
         //enemymove = expsound.GetComponent<enemyMove>();
 
@@ -59,23 +59,23 @@ public class AudioManager : MonoBehaviour
     {
 
         newplayer = GetPlayerModel().GetComponent<NewPlayer>();
-        if (sound2flg == false)
+        if (sound2flg == false)                             //一度も素振りが鳴ってなかったら
         {
-            if (newplayer.PunchCon == true)
+            if (newplayer.PunchCon == true)                 //パンチのアニメーション中なら
             {
-                sound2flg = true;
-                audiosource2.PlayOneShot(sound2);
+                sound2flg = true;                           //フラグをオンに
+                audiosource2.PlayOneShot(sound2);           //一度だけ鳴らす
             }
         }
-        if (newplayer.PunchCon == false) sound2flg = false;
+        if (newplayer.PunchCon == false) sound2flg = false; //パンチのアニメーションが終わったらフラグをオフに
 
-        if (pausescript.pauseflg == true)
+        if (pausescript.pauseflg == true)                   //ポーズ中なら音も止める
         {
             audioSource.Pause();
             audiosource2.Pause();
         }
 
-        if (pausescript.pauseflg == false)
+        if (pausescript.pauseflg == false)                  //ポーズが終わったら音を再生（途中で途切れたら続きから
         {
             audioSource.UnPause();
             audiosource2.UnPause();

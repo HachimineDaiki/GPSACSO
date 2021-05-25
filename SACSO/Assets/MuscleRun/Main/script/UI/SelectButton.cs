@@ -24,6 +24,7 @@ public class SelectButton : MonoBehaviour
             if (isCalledOnce == false)
             {
                 button = GameObject.Find("Canvas/Panel/SelectButton/Return_To_Title").GetComponent<Button>();
+                //２回目以降カーソルが消えないようにするための初期化
                 button.Select();
                 button = GameObject.Find("Canvas/Panel/SelectButton/Return_To_Game").GetComponent<Button>();
                 //ボタンが選択された状態になる

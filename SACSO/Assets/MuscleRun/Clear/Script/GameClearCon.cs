@@ -15,7 +15,7 @@ public class GameClearCon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (Input.anyKeyDown)   //なんか押したら
         {
             //ゲームオーバーへ
             SceneManager.LoadScene("TitleScene");
