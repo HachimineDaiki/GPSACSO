@@ -29,11 +29,11 @@ public class LifeChange : MonoBehaviour
         {
             image_Y.SetActive(!image_Y.activeSelf);
         }
-        //if
-        //{
-        //    image_R.SetActive(!image_R.activeSelf);
+        if (playerLife.Life == 0 && image_R.activeSelf)
+          {
+            image_R.SetActive(!image_R.activeSelf);
 
-        //}
+          }
 
     }
 }
