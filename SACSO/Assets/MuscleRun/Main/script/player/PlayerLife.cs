@@ -26,7 +26,9 @@ public class PlayerLife : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        MutekiCon();
+        if (Life >= 1) {
+            MutekiCon();
+        }
     }
 
     // Update is called once per frame
@@ -62,7 +64,7 @@ public class PlayerLife : MonoBehaviour
                 Ac = getObj().GetComponent<activeChange>();
                 Ac.change();
             }
-            if (mutekiTime <= 0)
+            if (mutekiTime <= 1)
             {
                 muteki = false;
                 Ac.MeshTrue();
