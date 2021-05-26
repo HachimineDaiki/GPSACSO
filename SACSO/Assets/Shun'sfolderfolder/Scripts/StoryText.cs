@@ -38,11 +38,11 @@ public class StoryText : MonoBehaviour
             NextLine();
         }
 
-        if(LineCnt <= 7)
+        if(LineCnt <= 1)
         {
             SceneCnt = 0;
         }
-        else if(LineCnt == 8)
+        else if(LineCnt == 2)
         {
             SceneCnt = 1;
             NextLineTime = 3.0f;
@@ -90,9 +90,9 @@ public class StoryText : MonoBehaviour
             time = Time.time;
             LineComp = true;
             LineCnt++;
-            if (LineCnt >= 12)
+            if (LineCnt >= 6)
             {
-                Invoke("ToMain", 5.0f);
+                Invoke("ToMain", 2.5f);
             }
         }
     }
