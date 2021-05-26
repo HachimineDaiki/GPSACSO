@@ -34,8 +34,7 @@ public class DoramuCon : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-
+  
         if (!KillFlg)
         {
             Move();
@@ -87,6 +86,20 @@ public class DoramuCon : MonoBehaviour
             else
             {
                 playerLife.Damege();
+            }
+            if (playerLife.Life == 0) {
+                // クォータニオン → オイラー角への変換
+                Vector3 rotationAngles = transform.rotation.eulerAngles;
+                rotationAngles.x -= 90;
+
+                var pos = (transform.TransformPoint(transform.localPosition.x,
+                                                    transform.localPosition.y + 15,
+                                                    transform.localPosition.z));
+
+                Instantiate(BreakObj, transform.position, transform.rotation);
+                Instantiate(Flare, pos, Quaternion.Euler(rotationAngles));
+                KillFlg = false;
+                this.gameObject.SetActive(false);
             }
         }
     }
