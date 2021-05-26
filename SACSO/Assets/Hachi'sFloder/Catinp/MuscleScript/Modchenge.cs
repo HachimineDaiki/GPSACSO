@@ -55,39 +55,39 @@ public class Modchenge : MonoBehaviour
 
         if (rightarm == 0 && leftarm == 0) {
             Cmodels[0].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 1 && leftarm == 0) {
             Cmodels[1].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 2 && leftarm == 0) {
             Cmodels[2].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 1 && leftarm == 1) {
             Cmodels[3].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 1 && leftarm == 1) {
             Cmodels[4].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 1 && leftarm == 2) {
             Cmodels[5].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 0 && leftarm == 2) {
             Cmodels[6].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 1 && leftarm == 2) {
             Cmodels[7].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+           // Cmodels[NowModelNum].SetActive(false);
         }
         else if (rightarm == 2 && leftarm == 2) {
             Cmodels[8].SetActive(true);
-            Cmodels[NowModelNum].SetActive(false);
+            //Cmodels[NowModelNum].SetActive(false);
         }
 
         //NowModelNum = modelNum;

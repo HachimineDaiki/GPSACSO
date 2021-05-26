@@ -15381,7 +15381,11 @@ MonoBehaviour:
   sound3: {fileID: 8300000, guid: c58733c85e92ba240a49a7d15428c9cd, type: 3}
   sound4: {fileID: 8300000, guid: 04dae46d4a8bb56499f31bb27ec747b8, type: 3}
   sound5: {fileID: 8300000, guid: b77daf01973c8d74783bb10448ea29b1, type: 3}
-  sound6: {fileID: 0}
+  sound6: {fileID: 8300000, guid: 145d28499d901cf4b8d2265cf9f5944f, type: 3}
+  sound7: {fileID: 8300000, guid: 44408ddb4552db3478650a0faea2205d, type: 3}
+  sound8: {fileID: 8300000, guid: 51a6e3af19aa763499fce7d2006ba0ac, type: 3}
+  sound9: {fileID: 8300000, guid: af530b3a9fee59448aa50c312f223d18, type: 3}
+  sound10: {fileID: 8300000, guid: 220156702d21b44479e60f5feeea20c7, type: 3}
   audioSource: {fileID: 2038582226577729654}
   audiosource2: {fileID: 2038582226577729653}
 --- !u!82 &2038582226577729653

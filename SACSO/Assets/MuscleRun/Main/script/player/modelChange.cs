@@ -9,7 +9,8 @@ public class modelChange : MonoBehaviour
 
     public int[] punchNum = new int[2];        //0:右パンチ1:左パンチ のヒット回数
     public int[] ArmInfo = new int[2];         //0:右手1:左手 の状態
-    static int EvoTimes = 5;                    //腕の進化までの回数
+    private int EvoTimes = 10;                    //腕の進化までの回数（第一段階）
+    //static int EvoTimes2 = 15;                    //腕の進化までの回数（第二段階）
 
     public int NowModelNum;
 
@@ -66,7 +67,12 @@ public class modelChange : MonoBehaviour
 
     void punchHit()
     {
-        if(++punchNum[AttacInfo] > EvoTimes)
+        EvoTimes = 10;
+        if (ArmInfo[AttacInfo] == 1)
+        {
+            EvoTimes += 5;
+        }
+        if (++punchNum[AttacInfo] > EvoTimes)
         {
             punchNum[AttacInfo] = 0;
             if (++ArmInfo[AttacInfo] >= 3) ArmInfo[AttacInfo] = 2;
