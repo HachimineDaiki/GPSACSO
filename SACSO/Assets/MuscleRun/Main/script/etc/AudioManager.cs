@@ -10,10 +10,16 @@ public class AudioManager : MonoBehaviour
     public AudioClip sound3;            //左右移動音（使ってません）
     public AudioClip sound4;            //パンチヒット音
     public AudioClip sound5;            //ウルトラマッスルモード中の掛け声
-    public AudioClip sound6;            //null
+    public AudioClip sound6;            //マッチョ
+    public AudioClip sound7;            //キレてる
+    public AudioClip sound8;            //空き部屋
+    public AudioClip sound9;            //空き部屋
+    public AudioClip sound10;           //空き部屋
 
     public AudioSource audioSource;     //BGM用のオーディオソース
     public AudioSource audiosource2;    //SE用のオーディオソース
+
+    private float random;
 
     GameObject movesound;               
     GameObject gamemanager;
@@ -25,13 +31,16 @@ public class AudioManager : MonoBehaviour
 
 
     private bool sound2flg;             //素振りが重複しないためのフラグ
+    private bool voiceflg;
 
     //Playerの親からモデルを取得
     private modelChange Mc;
 
     //
     private float S5StartTime,S5EndTime;
+    private float S6StartTime,S6EndTime;
     private bool S5flg;
+    private bool S6flg;
 
     //int WaitTime;
         //WaitTimeR;
@@ -40,13 +49,11 @@ public class AudioManager : MonoBehaviour
     {
         //Componentを取得
         movesound = GameObject.FindGameObjectWithTag("PlayerParent");
+        gamemanager = GameObject.Find("GameManeger");                   //ゲームマネージャーを探す
 
         newplayer = GetPlayerModel().GetComponent<NewPlayer>();         //プレイヤー.csのコンポーネント取得
-
-
-        gamemanager = GameObject.Find("GameManeger");                   //ゲームマネージャーを探す
-        //expsound = GameObject.Find("enemy2.0");
         pausescript = gamemanager.GetComponent<PauseScript>();          //ゲームマネージャーのポーズ.cs取得
+        //expsound = GameObject.Find("enemy2.0");
         //hitflg = gamemanager.GetComponent<Hitaudiocon>();
         //enemymove = expsound.GetComponent<enemyMove>();
 
@@ -59,6 +66,13 @@ public class AudioManager : MonoBehaviour
     {
 
         newplayer = GetPlayerModel().GetComponent<NewPlayer>();
+        if (Mc.muscleup == true && voiceflg == false)
+        {
+            Invoke("RandomVoice", 1f);
+            voiceflg = true;
+        }
+        if (Mc.muscleup == false) voiceflg = false;
+
         if (sound2flg == false)                             //一度も素振りが鳴ってなかったら
         {
             if (newplayer.PunchCon == true)                 //パンチのアニメーション中なら
@@ -101,6 +115,19 @@ public class AudioManager : MonoBehaviour
     //{
     //    audiosource2.PlayOneShot(sound1);
     //}
+    private void RandomVoice()
+    {
+        random = Random.Range(1.0f,40.0f);
+        Debug.Log(random);
+        
+        if (random < 10) audiosource2.PlayOneShot(sound7);
+
+        if (random > 10 && random < 20) audiosource2.PlayOneShot(sound8);
+
+        if (random > 20 && random < 30) audiosource2.PlayOneShot(sound9);
+
+        if (random > 30 && random < 40) audiosource2.PlayOneShot(sound10);
+    }
 
     GameObject GetPlayerModel()
     {
@@ -126,6 +153,18 @@ public class AudioManager : MonoBehaviour
         if (sound5.length + S5StartTime - 1f <= Time.time)       //終了判定
         {
             S5flg = true;
+        }
+        if(S6flg)
+        {
+            S6StartTime = Time.time;
+
+            audiosource2.PlayOneShot(sound6);
+            S6flg = false;
+        }
+
+        if (sound6.length + S6StartTime <= Time.time)
+        {
+            S6flg = true;
         }
     }
 
