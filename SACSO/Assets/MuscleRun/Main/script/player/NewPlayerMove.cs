@@ -246,7 +246,6 @@ public class NewPlayerMove : MonoBehaviour
             {
                 if (++TurnNum >= 4)
                 {
-                    MSCon.GameClearCon();
                     TurnNum = 0;
                 }
                 TurnTime = type * 135f;

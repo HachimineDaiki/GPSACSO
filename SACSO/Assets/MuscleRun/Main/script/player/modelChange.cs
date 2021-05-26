@@ -30,6 +30,8 @@ public class modelChange : MonoBehaviour
     public bool plt; //筋肉点数用フラグ
     public bool prt; //筋肉点数用フラグ
 
+    public bool BonusHit;
+
     void Start()
     {
         int i = 0;
@@ -51,6 +53,7 @@ public class modelChange : MonoBehaviour
         NowModelNum = 0;   //今のモデルの要素番号:初期値０
 
         HitFlg = false;
+        BonusHit = false;
         PatNotActive();
 
     }
@@ -72,7 +75,14 @@ public class modelChange : MonoBehaviour
         {
             EvoTimes += 5;
         }
-        if (++punchNum[AttacInfo] > EvoTimes)
+
+        if (BonusHit)
+        {
+            punchNum[AttacInfo] = EvoTimes;
+            BonusHit = false;
+        }
+
+        if (++punchNum[AttacInfo] >= EvoTimes)
         {
             punchNum[AttacInfo] = 0;
             if (++ArmInfo[AttacInfo] >= 3) ArmInfo[AttacInfo] = 2;

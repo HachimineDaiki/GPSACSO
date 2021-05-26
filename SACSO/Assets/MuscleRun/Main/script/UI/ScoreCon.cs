@@ -23,7 +23,7 @@ public class ScoreCon : MonoBehaviour
 
     public void AddPoint(int Point)
     {
-        score += 100;
+        score += Point;
         Scoretext.text = "Score :" + score;
     }
 
