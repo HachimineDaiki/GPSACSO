@@ -14,6 +14,8 @@ public class RankDisp : MonoBehaviour
     private int ScorePoint;
     private int SCOREMAX = 30000;
     [SerializeField] private Text ScoerText;
+    //スコア用フラグ
+    private bool scoreMaxFlg;
 
     // Start is called before the first frame update
     void Start()
@@ -40,6 +42,8 @@ public class RankDisp : MonoBehaviour
         rank_S.gameObject.SetActive(false);
 
         ScoerText.text = ScorePoint.ToString("00000") + "点";
+
+        scoreMaxFlg = false;
     }
 
     // Update is called once per frame
@@ -49,9 +53,10 @@ public class RankDisp : MonoBehaviour
         rp = (PlayerPrefs.GetInt("rpumpup", 0) * 50 + PlayerPrefs.GetInt("RPunchCt", 0) * 10);
         lp = (PlayerPrefs.GetInt("lpumpup", 0) * 50 + PlayerPrefs.GetInt("LPunchCt", 0) * 10);
         //腕が片方だけムキムキ（2段階）の場合、点数の幅を増やす
-        if ( rp - lp >= 100 || rp - lp >= -100)
+        if ( (rp - lp >= 100 || lp - rp >= 100) && scoreMaxFlg == false)
         {
             ScorePoint -= 5000;
+            scoreMaxFlg = true;
         }
         //点数のランク確認
         if(ScorePoint >= SCOREMAX)
