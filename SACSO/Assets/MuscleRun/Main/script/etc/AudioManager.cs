@@ -21,6 +21,7 @@ public class AudioManager : MonoBehaviour
     public AudioSource audiosource2;    //SE用のオーディオソース
 
     private float random;
+    private float random2;
 
     GameObject movesound;               
     GameObject gamemanager;
@@ -166,9 +167,9 @@ public class AudioManager : MonoBehaviour
             S5flg = true;
         }
 
-        random = Random.Range(1f, 10f);
-
-        if(S6flg && random > 9)
+        random = Random.Range(1.0f, 10.0f);
+        Debug.Log(random2);
+        if(S6flg && random2 > 9)
         {
             S6StartTime = Time.time;
 
@@ -187,43 +188,3 @@ public class AudioManager : MonoBehaviour
         S5flg = true;
     }
 }
-
-
-//if (WaitTime > 0) WaitTime--;
-//if (WaitTimeR > 0) WaitTimeR--;
-// 攻撃音
-//{
-//if ((Input.GetKeyDown(KeyCode.Z)) && (WaitTime == 0))
-//{
-//    audiosource2.PlayOneShot(sound2);
-//    WaitTime = 135;
-//}
-
-//if ((Input.GetKeyDown(KeyCode.X)) && (WaitTime == 0))
-//{
-//    audiosource2.PlayOneShot(sound2);
-//    WaitTime = 130;
-//}
-
-//if ((Input.GetButtonDown("Fire1")) && (WaitTime == 0))
-//{
-//    audiosource2.PlayOneShot(sound2);
-//    WaitTime = 135;
-//}
-
-//if ((Input.GetButtonDown("Fire2")) && (WaitTime == 0))
-//{
-//    audiosource2.PlayOneShot(sound2);
-//    WaitTime = 130;
-//}
-//左右移動音
-//if (Input.GetKeyDown("left")) audiosource2.PlayOneShot(sound3);
-
-//if (Input.GetKeyDown("right")) audiosource2.PlayOneShot(sound3);
-//}
-//if(sound3flg == false)
-//{
-//    if (player.MoveFlg == true) audiosource2.PlayOneShot(sound3);
-//    sound3flg = true;
-//}
-//if (player.MoveFlg == false) sound3flg = false;
