@@ -11,10 +11,11 @@ public class AudioManager : MonoBehaviour
     public AudioClip sound4;            //パンチヒット音
     public AudioClip sound5;            //ウルトラマッスルモード中の掛け声
     public AudioClip sound6;            //マッチョ
-    public AudioClip sound7;            //キレてる
-    public AudioClip sound8;            //空き部屋
-    public AudioClip sound9;            //空き部屋
-    public AudioClip sound10;           //空き部屋
+    public AudioClip sound7;            //ランダムボイス１
+    public AudioClip sound8;            //ランダムボイス２
+    public AudioClip sound9;            //ランダムボイス３
+    public AudioClip sound10;           //ランダムボイス４
+    public AudioClip sound11;           //マッスルゲージMAX
 
     public AudioSource audioSource;     //BGM用のオーディオソース
     public AudioSource audiosource2;    //SE用のオーディオソース
@@ -27,11 +28,13 @@ public class AudioManager : MonoBehaviour
     //Hitaudiocon hitflg;
     NewPlayer newplayer;
     PauseScript pausescript;
+    Runaway runaway;
     //Blowaway blowaway;
 
 
     private bool sound2flg;             //素振りが重複しないためのフラグ
     private bool voiceflg;
+    private bool sound11flg;
 
     //Playerの親からモデルを取得
     private modelChange Mc;
@@ -53,6 +56,7 @@ public class AudioManager : MonoBehaviour
 
         newplayer = GetPlayerModel().GetComponent<NewPlayer>();         //プレイヤー.csのコンポーネント取得
         pausescript = gamemanager.GetComponent<PauseScript>();          //ゲームマネージャーのポーズ.cs取得
+        runaway = gamemanager.GetComponent<Runaway>();
         //expsound = GameObject.Find("enemy2.0");
         //hitflg = gamemanager.GetComponent<Hitaudiocon>();
         //enemymove = expsound.GetComponent<enemyMove>();
@@ -82,6 +86,14 @@ public class AudioManager : MonoBehaviour
             }
         }
         if (newplayer.PunchCon == false) sound2flg = false; //パンチのアニメーションが終わったらフラグをオフに
+
+        if(runaway.DushFlg == true && sound11flg == false)
+        {
+            audiosource2.PlayOneShot(sound11);
+            sound11flg = true;
+        }
+
+        if (runaway.DushFlg == false && sound11flg == true) sound11flg = false;
 
         if (pausescript.pauseflg == true)                   //ポーズ中なら音も止める
         {
@@ -118,7 +130,6 @@ public class AudioManager : MonoBehaviour
     private void RandomVoice()
     {
         random = Random.Range(1.0f,40.0f);
-        Debug.Log(random);
         
         if (random < 10) audiosource2.PlayOneShot(sound7);
 
@@ -154,11 +165,14 @@ public class AudioManager : MonoBehaviour
         {
             S5flg = true;
         }
-        if(S6flg)
+
+        random = Random.Range(1f, 10f);
+
+        if(S6flg && random > 9)
         {
             S6StartTime = Time.time;
 
-            audiosource2.PlayOneShot(sound6);
+            audiosource2.PlayOneShot(sound6,0.5f);
             S6flg = false;
         }
 
