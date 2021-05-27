@@ -56,6 +56,7 @@ public class B_DoramuCon : MonoBehaviour
                 //プレイヤーの攻撃の当たり判定
                 KillFlg = true;
                 score.AddPoint(500);
+                runaway.BonusAdd();
                 rb.freezeRotation = false;
                 Mc.HitFlg = true;
                 Mc.BonusHit = true;
@@ -69,6 +70,7 @@ public class B_DoramuCon : MonoBehaviour
                 {
                     KillFlg = true;
                     score.AddPoint(500);
+                    runaway.BonusAdd();
                     Damege();
                 }
                 else

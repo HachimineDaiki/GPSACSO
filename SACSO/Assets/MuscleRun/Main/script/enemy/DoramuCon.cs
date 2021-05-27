@@ -72,6 +72,7 @@ public class DoramuCon : MonoBehaviour
         {
             KillFlg = true;
             score.AddPoint(100);
+            runaway.GageAdd();
             rb.freezeRotation = false;
             Mc.HitFlg = true;
         }
@@ -82,6 +83,7 @@ public class DoramuCon : MonoBehaviour
             {
                 KillFlg = true;
                 score.AddPoint(100);
+                runaway.GageAdd();
             }
             else
             {
