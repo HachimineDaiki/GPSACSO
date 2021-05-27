@@ -14,8 +14,8 @@ public class partsend : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rightpoint = PlayerPrefs.GetInt("rpumpup",0);
-        leftpoint = PlayerPrefs.GetInt("lpumpup",0);
+        rightpoint = PlayerPrefs.GetInt("rpumpup",2);
+        leftpoint = PlayerPrefs.GetInt("lpumpup",2);
         Debug.Log(rightpoint);
         Debug.Log(leftpoint);
 
@@ -27,6 +27,10 @@ public class partsend : MonoBehaviour
         //％変換(成長量0~2*50+パンチ量0~9*5の計算）
         rightpoint *= 50+ PlayerPrefs.GetInt("RPunchCt", 0)*5;
         leftpoint  *= 50+ PlayerPrefs.GetInt("LPunchCt", 0)*5;
+
+        //％が150を超えてた場合150で固定する
+        if (rightpoint >= 150) rightpoint = 150;
+        if (leftpoint >= 150) rightpoint = 150;
     }
 
     // Update is called once per frame
