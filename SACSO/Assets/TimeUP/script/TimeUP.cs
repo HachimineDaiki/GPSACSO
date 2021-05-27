@@ -24,9 +24,9 @@ public class TimeUP : MonoBehaviour
     void Start()
     {
         minute = 0;
-        seconds = 120;
+        seconds = 90;
         oldSeconds = 0f;
-        ElapsedTime = 120;
+        ElapsedTime = 90;
         TimePanel.SetActive(false);
         timerText = GetComponentInChildren<Text>();
 
