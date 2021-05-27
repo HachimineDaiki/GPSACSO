@@ -60,7 +60,7 @@ public class Modchenge : MonoBehaviour
             Cmodels[2].SetActive(true);
             Cmodels[NowModelNum].SetActive(false);
         }
-        else if (rightarm == 1 && leftarm == 1) {
+        else if (rightarm == 0 && leftarm == 1) {
             Cmodels[3].SetActive(true);
             Cmodels[NowModelNum].SetActive(false);
         }
@@ -68,7 +68,7 @@ public class Modchenge : MonoBehaviour
             Cmodels[4].SetActive(true);
             Cmodels[NowModelNum].SetActive(false);
         }
-        else if (rightarm == 1 && leftarm == 2) {
+        else if (rightarm == 2 && leftarm == 1) {
             Cmodels[5].SetActive(true);
             Cmodels[NowModelNum].SetActive(false);
         }

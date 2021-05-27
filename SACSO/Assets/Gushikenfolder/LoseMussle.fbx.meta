@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 7b88b59ac6ec9fc4f95c2479d3bacf65
+guid: c6f2b43696641554983748e2349f6a82
 ModelImporter:
   serializedVersion: 19301
   internalIDToNameTable:
   - first:
       74: -4791504522942941401
-    second: usodadonndokodonn
+    second: usodadonndokodonnnnn
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -26,7 +26,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -35,7 +35,7 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: usodadonndokodonn
+      name: usodadonndokodonnnnn
       takeName: Armature|Armature|mixamo.com|Layer0
       internalID: 0
       firstFrame: 0
@@ -116,13 +116,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

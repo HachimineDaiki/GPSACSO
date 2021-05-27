@@ -21,7 +21,7 @@ public class ContestSelect : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
         //if (!CheckFlg) selectNum();
         //else Prevention();
