@@ -72,6 +72,15 @@ public class TimeUP : MonoBehaviour
         if (ElapsedTime <= LimitTime)//経過時間が時間制限を超えたら
         {
             TimePanel.SetActive(true);
+            Invoke("NextScene", 2.0f);
         }
+    }
+
+    void NextScene()
+    {
+
+        ScoreCon SC = GameObject.Find("GameManeger").GetComponent<ScoreCon>();
+        SC.ScoreSave();
+        SceneManager.LoadScene("ClearScene");
     }
 }

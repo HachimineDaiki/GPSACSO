@@ -21,8 +21,8 @@ public class ContestSelect : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!CheckFlg) selectNum();
-        else Prevention();
+        //if (!CheckFlg) selectNum();
+        //else Prevention();
         EventSystem.current.SetSelectedGameObject(YesObj[selectObj]);
     }
 

@@ -1410,6 +1410,41 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1779663419475479705}
     m_Modifications:
+    - target: {fileID: 4943230553660879160, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: YesObj.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943230553660879164, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943230553959400100, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 19
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943230553959400101, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943230554276246121, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943230554454511245, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4943230554820415014, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8946634572590467985, guid: 2386e641499806149879628add6db1e4,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -19013,7 +19048,7 @@ AudioSource:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2038582226577729662}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 6942065866640195607, guid: 64a8c42cdcde64d4496868fb37804b97,
     type: 2}
