@@ -121,6 +121,12 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &3034595 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4943230553660879164, guid: 2386e641499806149879628add6db1e4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1950031375}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &25357660
 GameObject:
   m_ObjectHideFlags: 0
@@ -1404,6 +1410,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1779663419475479705}
     m_Modifications:
+    - target: {fileID: 8946634572590467985, guid: 2386e641499806149879628add6db1e4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -136
+      objectReference: {fileID: 0}
     - target: {fileID: 8946634574247971784, guid: 2386e641499806149879628add6db1e4,
         type: 3}
       propertyPath: m_Name
@@ -1422,7 +1433,7 @@ PrefabInstance:
     - target: {fileID: 8946634574247971785, guid: 2386e641499806149879628add6db1e4,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 8946634574247971785, guid: 2386e641499806149879628add6db1e4,
         type: 3}
@@ -40803,6 +40814,11 @@ PrefabInstance:
       propertyPath: pauseUI
       value: 
       objectReference: {fileID: 1895940073764039364}
+    - target: {fileID: 5869150858190403576, guid: 0bd64442193658e45bd18bae47419657,
+        type: 3}
+      propertyPath: TimeUPPnel
+      value: 
+      objectReference: {fileID: 3034595}
     - target: {fileID: 5869150858190403577, guid: 0bd64442193658e45bd18bae47419657,
         type: 3}
       propertyPath: Return

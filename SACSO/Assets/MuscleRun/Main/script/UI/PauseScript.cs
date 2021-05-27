@@ -14,6 +14,8 @@ public class PauseScript : MonoBehaviour
     Select select;
     //AudioSource audiosource;
     public bool pauseflg;
+
+    [SerializeField] GameObject TimeUPPnel;
     private void Start() {
         //audiosource = GetComponent<AudioSource>();
         select = GetComponent<Select>();
@@ -24,6 +26,8 @@ public class PauseScript : MonoBehaviour
     {
         if ((Input.GetKeyDown("q") || Input.GetKeyDown("joystick button 7")) && select.PauseControlflg == false)
         {
+            if (TimeUPPnel.activeSelf) return;
+
             //　ポーズUIのアクティブ、非アクティブを切り替え
             pauseUI.SetActive(!pauseUI.activeSelf);
 

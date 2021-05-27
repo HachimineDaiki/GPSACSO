@@ -6,7 +6,7 @@ public class Runaway : MonoBehaviour
 {
     Slider _slider;
     public bool DushFlg;
-    float _hp;
+    float _hp;              //gageの総量
 
     [SerializeField] private GameObject Dush;
     [SerializeField]AudioManager audio;
@@ -22,17 +22,6 @@ public class Runaway : MonoBehaviour
 
     void FixedUpdate()
     {
-        
-        //if (_hp > 1 && !DushFlg)
-        //{
-        //    DushFlg = true;
-        //    Invoke("Refresh", DushTime);
-        //}
-        //else
-        //{
-        //    _hp += 0.05f * Time.deltaTime;
-        //}
-
         if(_hp >= 1f)       //ゲージがMAXになったら
         {
             DushFlg = true;
@@ -73,5 +62,17 @@ public class Runaway : MonoBehaviour
     void ParticleNotAc()
     {
         Dush.SetActive(false);
+    }
+
+    public void GageAdd()
+    {
+        _hp += 0.05f;
+        if (_hp > 1.0f) _hp = 1f;
+    }
+
+    public void BonusAdd()
+    {
+        _hp += 0.15f;
+        if (_hp > 1.0f) _hp = 1f;
     }
 }
