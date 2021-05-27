@@ -45,7 +45,15 @@ public class RankDisp : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //スコアで評価分岐
+        int rp,lp;
+        rp = (PlayerPrefs.GetInt("rpumpup", 0) * 50 + PlayerPrefs.GetInt("RPunchCt", 0) * 10);
+        lp = (PlayerPrefs.GetInt("lpumpup", 0) * 50 + PlayerPrefs.GetInt("LPunchCt", 0) * 10);
+        //腕が片方だけムキムキ（2段階）の場合、点数の幅を増やす
+        if ( rp - lp >= 100 || rp - lp >= -100)
+        {
+            ScorePoint -= 5000;
+        }
+        //点数のランク確認
         if(ScorePoint >= SCOREMAX)
         {
             rank_S.gameObject.SetActive(true);
