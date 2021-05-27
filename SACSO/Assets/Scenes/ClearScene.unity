@@ -4235,13 +4235,26 @@ GameObject:
   m_Component:
   - component: {fileID: 2156703440146980463}
   - component: {fileID: 5408271810316665877}
+  - component: {fileID: 1631981979524302038}
   m_Layer: 0
   m_Name: musslepants2Unity2-1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &1631981979524302038
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631981979524302037}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1645163640430331141
 Transform:
   m_ObjectHideFlags: 0
@@ -6042,13 +6055,26 @@ GameObject:
   m_Component:
   - component: {fileID: 3110257378621044839}
   - component: {fileID: 9064046548010361373}
+  - component: {fileID: 2333438792533205726}
   m_Layer: 0
   m_Name: musslepants2Unity1-3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &2333438792533205726
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2333438792533205725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2353497544762161965
 GameObject:
   m_ObjectHideFlags: 0
@@ -6762,13 +6788,26 @@ GameObject:
   m_Component:
   - component: {fileID: 3455868357509341358}
   - component: {fileID: 8725048226734324436}
+  - component: {fileID: 2647665070668724757}
   m_Layer: 0
   m_Name: musslepants2Unity2-2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &2647665070668724757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2647665070668724756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2650874429999072917
 GameObject:
   m_ObjectHideFlags: 0
@@ -7555,13 +7594,26 @@ GameObject:
   m_Component:
   - component: {fileID: 2574186117252739333}
   - component: {fileID: 8455917825887480703}
+  - component: {fileID: 2950570299762355136}
   m_Layer: 0
   m_Name: musslepants2Unity3-1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &2950570299762355136
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950570299762355135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2962346308696307628
 GameObject:
   m_ObjectHideFlags: 0
@@ -8651,13 +8703,26 @@ GameObject:
   m_Component:
   - component: {fileID: 2604993894675355233}
   - component: {fileID: 8270545094412749851}
+  - component: {fileID: 3417419069876325596}
   m_Layer: 0
   m_Name: musslepants2Unity3-3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &3417419069876325596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3417419069876325595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3424451888431628983
 GameObject:
   m_ObjectHideFlags: 0
@@ -12362,13 +12427,26 @@ GameObject:
   m_Component:
   - component: {fileID: 5559107941114229903}
   - component: {fileID: 2001225428401352437}
+  - component: {fileID: 5075059339226181174}
   m_Layer: 0
   m_Name: musslepants2Unity2-3
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5075059339226181174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5075059339226181173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5076335844949911192
 Transform:
   m_ObjectHideFlags: 0
@@ -13508,13 +13586,26 @@ GameObject:
   m_Component:
   - component: {fileID: 5042640554858741917}
   - component: {fileID: 1376731540107057895}
+  - component: {fileID: 5670276514229639720}
   m_Layer: 0
   m_Name: musslepants2Unity1-2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &5670276514229639720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5670276514229639719}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5697176565228272452
 GameObject:
   m_ObjectHideFlags: 0
@@ -15130,13 +15221,26 @@ GameObject:
   m_Component:
   - component: {fileID: 6007967254183976912}
   - component: {fileID: 396522059442505130}
+  - component: {fileID: 6353249551211611499}
   m_Layer: 0
   m_Name: musslepants2Unity1-1
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &6353249551211611499
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6353249551211611498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6357432317910492297
 GameObject:
   m_ObjectHideFlags: 0
@@ -16178,13 +16282,26 @@ GameObject:
   m_Component:
   - component: {fileID: 6138746496061588446}
   - component: {fileID: 275029353439500708}
+  - component: {fileID: 6808006423098464613}
   m_Layer: 0
   m_Name: musslepants2Unity3-2
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
+--- !u!114 &6808006423098464613
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6808006423098464612}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e7948179ec81a84cb17bee1ecc23b5a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6811611090764701069
 GameObject:
   m_ObjectHideFlags: 0
