@@ -11,18 +11,22 @@ public class ContestSelect : MonoBehaviour
     private int selectObj = 0;
     private bool CheckFlg;      //二重押防止
     private float PushTime;     //ボタン時間制限
+    private bool flg = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        EventSystem.current.SetSelectedGameObject(YesObj[selectObj]);
+        flg = true;
+        selectObj = 0;
+        EventSystem.current.SetSelectedGameObject(YesObj[0]);
+        YesObj[0].GetComponent<Button>().Select();
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-        //if (!CheckFlg) selectNum();
-        //else Prevention();
+        if (!CheckFlg) selectNum();
+        else Prevention();
         EventSystem.current.SetSelectedGameObject(YesObj[selectObj]);
     }
 
