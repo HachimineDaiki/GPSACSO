@@ -14,8 +14,8 @@ public class partsend : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rightpoint = PlayerPrefs.GetInt("rpumpup",2);
-        leftpoint = PlayerPrefs.GetInt("lpumpup",2);
+        rightpoint = PlayerPrefs.GetInt("rpumpup",0);
+        leftpoint = PlayerPrefs.GetInt("lpumpup",0);
         Debug.Log(rightpoint);
         Debug.Log(leftpoint);
 
